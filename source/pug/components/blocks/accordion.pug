@@ -1,0 +1,21 @@
+mixin accordion(data)
+  .accordion&attributes(attributes)
+    ul.accordion__list(data-accordion="parent")
+      each item in data
+        li.accordion__item(data-accordion="element")
+          .accordion__heading(data-accordion="button")
+            p.accordion__item-stage.text.text--body!=item.stage
+            p.accordion__item-name.title.title--xxs-2!=item.name
+            p.accordion__item-time.text.text--body!=item.time
+            .accordion__icon
+              +icon("icon-arrow-2", 10, 5)
+          .accordion__content(data-accordion="content")
+            .accordion__text.text.text--body.text--desktop
+              each block in item.text
+                p!=block
+            .accordion__text.text.text--body.text--mobile
+              each block in item.text
+                p!=block
+            .accordion__img
+              .accordion__img-wrap
+                +picture(item.path + "/desktop", item.imgName, item.path + "/mobile", item.imgName, "jpg", item.imgWidth, item.imgHeight, item.alt)

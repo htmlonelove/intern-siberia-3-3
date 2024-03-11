@@ -1,0 +1,7 @@
+mixin address()
+  .address&attributes(attributes)
+    p.text.text--small Ждем вас в&nbsp;гости&nbsp;по&nbsp;адресу:
+    button.address__button.address__text.title.title--xxs-3(data-contacts-map="button") Москва, ул.&nbsp;Образцова&nbsp;31, строение&nbsp;3
+      span.address__button-icon
+        +icon("icon-marker", 16, 16).address__marker
+        +icon("icon-close", 16, 16).address__close

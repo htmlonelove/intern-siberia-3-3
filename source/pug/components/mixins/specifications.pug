@@ -1,0 +1,7 @@
+mixin specifications(data)
+  .specifications&attributes(attributes)
+    ul.specifications__list
+      each item in data
+        li.specifications__item
+          span.specifications__item-value.title.title--xxs-2!=item.value
+          span.specifications__item-name.text.text--small!=item.name

@@ -1,0 +1,12 @@
+.page-content {
+  padding: 0 0 0 size(304px);
+  overflow: hidden;
+
+  @include vp-1679 {
+    padding: 0 0 0 304px;
+  }
+
+  @include vp-1023 {
+    padding: 0;
+  }
+}

@@ -1,0 +1,191 @@
+.baths {
+  padding: size(41px) 0 size(120px) 0;
+
+  @include vp-1279 {
+    padding: 41px 0 60px 0;
+  }
+
+  @include vp-1023 {
+    padding: 0 0 80px 0;
+  }
+
+  @include vp-767 {
+    padding: 0 0 size(65px) 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+
+    @include vp-1023 {
+      display: block;
+    }
+  }
+
+  .subtitle {
+    padding: size(13px) 0 0 0;
+    margin: 0 size(205px) 0 0;
+
+    @include vp-1023 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__heading {
+    max-width: size(590px);
+    margin: 0 0 size(64px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(40px) 0;
+    }
+  }
+
+  .title--s {
+    max-width: size(550px);
+    margin: 0 0 size(22px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(16px) 0;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 size(-3px) size(48px) size(159px);
+
+    @include vp-1279 {
+      margin: 0 0 48px 0;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+
+    .btn-tab  {
+      margin: 0 8px 0 0;
+    }
+  }
+
+  &__wrapper {
+    @include vp-767 {
+      height: size(480px);
+    }
+
+    &.back {
+      .baths__slide.swiper-slide-active .bath-card__img-wrapper {
+        animation: slide-next $trans-eio-1000;
+
+        @include vp-767 {
+          animation: unset;
+        }
+      }
+
+      .baths__slide.swiper-slide-next {
+        z-index: 3;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+
+      .baths__slide.swiper-slide-prev {
+        z-index: -1;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+    }
+
+    &.next {
+      .baths__slide.swiper-slide-active .bath-card__img-wrapper {
+        animation: slide-next $trans-eio-1000;
+
+        @include vp-767 {
+          animation: unset;
+        }
+      }
+
+      .baths__slide.swiper-slide-next {
+        z-index: -1;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+
+      .baths__slide.swiper-slide-prev {
+        z-index: 3;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+    }
+
+    @include vp-767 {
+      width: calc(100% + size(48px));
+      margin: 0 size(-24px);
+    }
+  }
+
+  &__slider {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__slide {
+    position: relative;
+    width: 100%;
+
+    @include vp-1279 {
+      height: auto;
+    }
+
+    @include vp-767 {
+      height: auto;
+      width: calc(100% - #{size(56px)});
+      will-change: transform;
+    }
+
+    .title,
+    .text--small-2 {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity $trans-eio-500, transform $trans-eio-500;
+
+      @include vp-767 {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none;
+      }
+    }
+
+    &.swiper-slide-active {
+      z-index: 4;
+
+      @include vp-767 {
+        z-index: unset;
+      }
+
+      .title,
+      .text--small-2 {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.5s;
+
+        @include vp-767 {
+          transform: none;
+          transition-delay: 0s;
+        }
+      }
+    }
+  }
+}

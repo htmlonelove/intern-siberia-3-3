@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ru" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #E1DAD5; color: #322D29; font-family: Arial, sans-serif; height: 100% !important; margin: 0 auto !important; padding: 0 !important; width: 100% !important;">
+  <head style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <!-- utf-8 works for most cases-->
+    <meta charset="utf-8" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <!-- Forcing initial-scale shouldn't be necessary-->
+    <meta name="viewport" content="width=device-width" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <!-- Use the latest (edge) version of IE rendering engine-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <!-- Disable auto-scale in iOS 10 Mail entirely-->
+    <meta name="x-apple-disable-message-reformatting" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <!-- The title tag shows in email notifications, like Android 4.4.-->
+    <title style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">Title</title>
+    <!-- кастомные шрифты, используйте сервер заказчика/шрифты гугл-->
+    <link href="http://htmlonelove.top/test/fonts/somefont.woff" rel="stylesheet" type="text/css" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+    <style type="text/css" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">@charset "UTF-8";
+
+/*Примеры медиа*/
+
+/*кастомные шрифты, используйте сервер заказчика, поддержка кастомных шрифтов плохая, предусмотрите фолбек*/
+
+@import url("http://htmlonelove.top/test/fonts/somefont.woff");
+
+@font-face {
+  font-style: normal;
+  font-weight: normal;
+  font-family: "Somefont";
+  font-display: swap;
+  src: url("http://htmlonelove.top/fonts/fonts/somefont.woff2") format("woff2"), url("http://htmlonelove.top/fonts/fonts/somefont.woff") format("woff");
+}
+
+/*CSS Reset*/
+
+html,
+body {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  background: #E1DAD5;
+  font-family: Arial, sans-serif;
+  color: #322D29;
+}
+
+/* What it does: Stops email clients resizing small text. */
+
+* {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* What it does: Centers email on Android 4.4 */
+
+div[style*="margin: 16px 0"] {
+  margin: 0 !important;
+}
+
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+
+table,
+td {
+  mso-table-lspace: 0pt !important;
+  mso-table-rspace: 0pt !important;
+}
+
+/* What it does: Fixes webkit padding issue. */
+
+table {
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+  /*table-layout: fixed !important;*/
+  margin: 0 !important;
+}
+
+/* Reset padding and margin */
+
+td,
+tr {
+  margin: 0;
+  padding: 0;
+}
+
+/* What it does: Uses a better rendering method when resizing images in IE. */
+
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+
+a {
+  text-decoration: none;
+}
+
+/* What it does: A work-around for email clients meddling in triggered links. */
+
+*[x-apple-data-detectors],
+.unstyle-auto-detected-links *,
+.aBn {
+  border-bottom: 0 !important;
+  cursor: default !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+
+.a6S {
+  display: none !important;
+  opacity: 0.01 !important;
+}
+
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+
+.im {
+  color: inherit !important;
+}
+
+/* If the above doesn't work, add a .g-img class to any image in question. */
+
+img.g-img + div {
+  display: none !important;
+}
+
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+
+/* iPhone 6, 6S, 7, 8, and X */
+
+/* iPhone 6+, 7+, and 8+ */
+
+/* What it does: Prevents iOS from highlighting phones inside text (not links) */
+
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+.header h1 {
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  color: #322D29;
+  margin: 0;
+  padding: 0;
+}
+
+.header p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22px;
+  color: #6E6865;
+  padding: 0;
+  margin: 0;
+}
+
+.certificate {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.certificate__block {
+  white-space: nowrap;
+}
+
+.certificate__block p {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #322D29;
+  white-space: nowrap;
+}
+
+.certificate__block b {
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #322D29;
+  white-space: nowrap;
+  letter-spacing: 0.025em;
+}
+
+.certificate__block span {
+  display: block;
+  height: 1px;
+  background-color: #dfdad8;
+}
+
+.certificate__block--last {
+  width: 153px;
+}
+
+.footer {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.footer__item {
+  padding: 0 0 9px 0;
+}
+
+.footer__title {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  color: #67615D;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__link,
+.footer__address,
+.phone {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 18px;
+  color: #322D29;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__address {
+  letter-spacing: -0.025em;
+}
+
+.footer__block {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+  width: 169px;
+  min-width: 169px;
+  max-width: 169px;
+  padding-right: 39px;
+}
+
+.footer__block--last {
+  width: 87px;
+  max-width: 87px;
+  min-width: 87px;
+  padding-right: 0;
+}
+
+.footer__inner-block {
+  padding: 0;
+}
+
+.footer__menu {
+  font-size: 0;
+  line-height: 0;
+  width: 100%;
+}
+
+a {
+  transition: opacity 0.3s;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+@media (max-width: 459px) {
+  .certificate__block {
+    display: block !important;
+  }
+
+  .certificate__block--last {
+    padding-left: 0 !important;
+  }
+
+  .certificate__block--hidden {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  u ~ div .email-container {
+    min-width: 320px !important;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+  u ~ div .email-container {
+    min-width: 375px !important;
+  }
+}
+
+@media only screen and (min-device-width: 414px) {
+  u ~ div .email-container {
+    min-width: 414px !important;
+  }
+}
+    </style>
+  </head>
+  <body width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #E1DAD5; background-color: #E1DAD5; color: #322D29; font-family: Arial, sans-serif; height: 100% !important; margin: 0 auto !important; mso-line-height-rule: exactly; padding: 0 !important; width: 100% !important;"><span style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background-color: #333333 !important; border-radius: 4px 4px 0 0; color: #e7eaec; display: none !important; font-size: 1px; line-height: 1px; margin: 0; max-height: 0; max-width: 0; mso-hide: all !important; opacity: 0; overflow: hidden; padding: 0; visibility: hidden;">description</span>
+    <center style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #E1DAD5; background-color: #E1DAD5; margin: 0; padding: 0; width: 100%;">
+      <div style="-ms-text-size-adjust: none; -webkit-text-size-adjust: none; background: #E1DAD5; background-color: #E1DAD5; line-height: normal; margin: 0; padding: 0; padding-bottom: 18px; padding-top: 18px; width: 100%; word-break: normal;" align="center">
+        <!--HEADER start-->
+        <table bgcolor="#ffffff" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;"></table>
+        <!--HEADER start-->
+        <!--BODY start-->
+        <!-- простой пример-->
+        <table bgcolor="#F7F3F0" align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+          <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+            <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+              <td width="100%" valign="middle" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-bottom: 1px solid #dfdad8; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 40px;"><a href="siberia-spa.ru" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0; text-decoration: none; transition: opacity 0.3s;">
+                  <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #F7F3F0; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" bgcolor="#F7F3F0">
+                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;"><!--[if mso]>
+                      <td width="100%" align="center" valign="top" style="padding: 0; margin: 0; overflow: hidden"><img src="http://htmlonelove.top/siberia-dev/img/email/logo@1x.png" width="168" height="auto" alt="логотип" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:168px;font-size:13px;"></td><![endif]-->
+                      <td width="100%" align="center" valign="top" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-hide: all; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; overflow: hidden; padding: 0;"><img src="http://htmlonelove.top/siberia-dev/img/email/logo@2x.png" width="168" height="auto" alt="логотип" style="-ms-interpolation-mode: bicubic; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border: 0; display: block; font-size: 13px; height: auto; margin: 0; outline: none; padding: 0; text-decoration: none; width: 168px;"></td>
+                    </tr>
+                  </table></a></td>
+            </tr>
+            <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+              <td width="100%" valign="middle" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 40px 48px 41px;">
+                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                  <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                      <td class="header" width="100%" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-bottom: 16px;">
+                        <h1 style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-size: 28px; font-weight: 400; line-height: 34px; margin: 0; padding: 0;">Поздравляем с&nbsp;покупкой<br style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">сертификата на&nbsp;посещение Siberia!</h1>
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                      <td class="header" width="100%" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-bottom: 47px;">
+                        <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #6E6865; font-size: 15px; font-style: normal; font-weight: 400; line-height: 22px; margin: 0; padding: 0;">Вы&nbsp;получили это письмо, потому что оформили приобретение сертификата на&nbsp;сайте siberia-spa.</p>
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                      <td class="certificate" width="100%" valign="middle" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-bottom: 24px;">
+                        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                          <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                            <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                              <td class="certificate__block" width="1%" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-right: 16px;" nowrap="nowrap">
+                                <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-size: 13px; font-weight: 400; line-height: 18px; margin: 0; padding: 0; white-space: nowrap;">Номер вашего сертификата</p>
+                              </td>
+                              <td class="certificate__block certificate__block--hidden" width="auto" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" nowrap="nowrap">
+                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                                  <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                      <td width="1%" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-bottom: 1px solid #dfdad8; font-size: 0; line-height: 0; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" height="1"></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                              <td class="certificate__block certificate__block--last" width="147" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-left: 16px;" nowrap="nowrap"><b style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-size: 15px; font-weight: 700; letter-spacing: 0.025em; line-height: 22px; margin: 0; padding: 0; white-space: nowrap;"><span style="display: inline-block; height: auto; background-color: transparent">8888</span> <span style="display: inline-block; height: auto; background-color: transparent">8888</span> <span style="display: inline-block; height: auto; background-color: transparent">8888</span> <span style="display: inline-block; height: auto; background-color: transparent">8888</span></b></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                      <td class="certificate" width="100%" valign="middle" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-bottom: 24px;">
+                        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                          <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                            <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                              <td class="certificate__block" width="1%" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-right: 16px;" nowrap="nowrap">
+                                <p style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-size: 13px; font-weight: 400; line-height: 18px; margin: 0; padding: 0; white-space: nowrap;">Баланс сертификата</p>
+                              </td>
+                              <td class="certificate__block certificate__block--hidden" width="auto" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" nowrap="nowrap">
+                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                                  <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                      <td width="1%" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-bottom: 1px solid #dfdad8; font-size: 0; line-height: 0; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" height="1"></td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                              <td class="certificate__block certificate__block--last" width="147" valign="middle" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-left: 16px;" nowrap="nowrap"><b style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-size: 15px; font-weight: 700; letter-spacing: 0.025em; line-height: 22px; margin: 0; padding: 0; white-space: nowrap;">300 000 рублей</b></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--BODY end-->
+        <!--FOOTER start-->
+        <!-- Пример трех-колоночного футера, не ломающимся на адаптиве.-->
+        <table class="footer" bgcolor="#E1DAD5" align="center" role="presentation" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; max-width: 600px; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; text-align: center;" border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+            <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+              <td valign="top" align="center" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 40px 48px;">
+                <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; table-layout: fixed !important;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                    <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                      <td class="footer__menu" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 0; line-height: 0; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%">
+                        <!-- адаптируем сетку для аутлука. Используем HTML, так как нам надо закрывать теги в определенных местах--><!--[if mso]>
+<table style="border-collapse: collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;" width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr >
+<td style="padding: 0;" valign="top" align="left">
+<![endif]-->
+                        <div class="footer__block" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; display: inline-block; margin: 0; max-width: 169px; min-width: 169px; overflow: hidden; padding: 0; padding-right: 39px; vertical-align: top; width: 169px;">
+                          <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                              <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                <td class="footer__inner-block" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                                  <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                        <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;">
+                                          <p class="footer__title" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #67615D; font-family: Arial, sans-serif; font-size: 13px; font-weight: 400; line-height: 18px; margin: 0; padding: 0;">Телефон:</p>
+                                        </td>
+                                      </tr>
+                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                        <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;">
+                                          <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                            <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                              <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                                <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;"><a class="phone" href="tel:+79779917777" target="_blank" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; line-height: 18px; margin: 0; padding: 0; text-decoration: none; transition: opacity 0.3s;">+7 977 991 77 77</a></td>
+                                                <td valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0; padding-right: 14px;"><a class="footer__link" href="#" target="_blank" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; line-height: 18px; margin: 0; padding: 0; text-decoration: none; transition: opacity 0.3s;">
+                                                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #E1DAD5; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" bgcolor="#E1DAD5">
+                                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;"><!--[if mso]>
+                                                        <td width="100%" align="center" valign="top" style="padding: 0; margin: 0; overflow: hidden"><img src="http://htmlonelove.top/siberia-dev/img/email/wa@1x.png" width="16" height="auto" alt="whatsup" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:16px;font-size:13px;"></td><![endif]-->
+                                                        <td width="100%" align="center" valign="top" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-hide: all; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; overflow: hidden; padding: 0;"><img src="http://htmlonelove.top/siberia-dev/img/email/wa@2x.png" width="16" height="auto" alt="whatsup" style="-ms-interpolation-mode: bicubic; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border: 0; display: block; font-size: 13px; height: auto; margin: 0; outline: none; padding: 0; text-decoration: none; width: 16px;"></td>
+                                                      </tr>
+                                                    </table></a></td>
+                                                <td valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;"><a class="footer__link" href="#" target="_blank" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; line-height: 18px; margin: 0; padding: 0; text-decoration: none; transition: opacity 0.3s;">
+                                                    <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; background: #E1DAD5; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" bgcolor="#E1DAD5">
+                                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;"><!--[if mso]>
+                                                        <td width="100%" align="center" valign="top" style="padding: 0; margin: 0; overflow: hidden"><img src="http://htmlonelove.top/siberia-dev/img/email/tg@1x.png" width="16" height="auto" alt="telegram" style="border:0;display:block;outline:none;text-decoration:none;height:auto;width:16px;font-size:13px;"></td><![endif]-->
+                                                        <td width="100%" align="center" valign="top" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-hide: all; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; overflow: hidden; padding: 0;"><img src="http://htmlonelove.top/siberia-dev/img/email/tg@2x.png" width="16" height="auto" alt="telegram" style="-ms-interpolation-mode: bicubic; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border: 0; display: block; font-size: 13px; height: auto; margin: 0; outline: none; padding: 0; text-decoration: none; width: 16px;"></td>
+                                                      </tr>
+                                                    </table></a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div><!--[if mso]>
+</td>
+<td style="font-size: 0; line-height: 0;" valign="top" align="left">
+<![endif]-->
+                        <div class="footer__block" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; display: inline-block; margin: 0; max-width: 169px; min-width: 169px; overflow: hidden; padding: 0; padding-right: 39px; vertical-align: top; width: 169px;">
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                            <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                              <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                <td class="footer__inner-block" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                                  <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                        <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;">
+                                          <p class="footer__title" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #67615D; font-family: Arial, sans-serif; font-size: 13px; font-weight: 400; line-height: 18px; margin: 0; padding: 0;">Адрес:</p>
+                                        </td>
+                                      </tr>
+                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                        <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;">
+                                          <a href="https://yandex.ru/maps/-/CCURNTTKwB" class="footer__address" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; letter-spacing: -0.025em; line-height: 18px; margin: 0; padding: 0;">Москва, ул. Образцова 31, строение 3</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div><!--[if mso]>
+</td>
+<td style="font-size: 0; line-height: 0;" valign="top" align="left">
+<![endif]-->
+                        <div class="footer__block footer__block--last" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; display: inline-block; margin: 0; max-width: 87px; min-width: 87px; overflow: hidden; padding: 0; padding-right: 0; vertical-align: top; width: 87px;">
+                          <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                              <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                <td class="footer__inner-block" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;">
+                                  <table style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; border-collapse: collapse !important; border-spacing: 0 !important; margin: 0 !important; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0;" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                        <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;">
+                                          <p class="footer__title" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #67615D; font-family: Arial, sans-serif; font-size: 13px; font-weight: 400; line-height: 18px; margin: 0; padding: 0;">Сайт:</p>
+                                        </td>
+                                      </tr>
+                                      <tr style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; padding: 0;">
+                                        <td class="footer__item" valign="top" align="left" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0 0 9px 0;"><a class="footer__link" href="siberia-spa.ru" target="_blank" style="-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; color: #322D29; font-family: Arial, sans-serif; font-size: 13px; font-weight: 700; line-height: 18px; margin: 0; padding: 0; text-decoration: none; transition: opacity 0.3s;">siberia-spa.ru</a></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div><!--[if mso]>
+</td>
+</tr>
+</tbody>
+</table>
+<![endif]-->
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <!--FOOTER End-->
+      </div>
+    </center>
+  </body>
+</html>

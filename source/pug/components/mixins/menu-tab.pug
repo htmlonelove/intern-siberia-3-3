@@ -1,0 +1,109 @@
+-
+  const menuList = [
+    {
+      title: "Филе тилапии в травах",
+      text: "Рыба с лемонграссом, мятой и тимьяном",
+      weight: "200",
+      price: "2400",
+    },
+    {
+      title: "Строганина из муксуна и стерляди",
+      text: "Подается на льду с макалом",
+      weight: "300",
+      price: "450",
+    },
+    {
+      title: "Сибирские пельмени",
+      text: "Сочные пельмени из трех видов мяса",
+      weight: "200",
+      price: "5700",
+      img: {
+        path: "content/menu",
+        name: "img-1",
+        format: "jpg",
+        width: 355,
+        height: 237,
+      }
+    },
+    {
+      title: "Белые грузди в сметане",
+      text: "Грибы, собранные в экологически чистом лесу",
+      weight: "200",
+      price: "1800",
+    },
+    {
+      title: "Рыбный суп с кореньями",
+      text: "Три вида рыбы из сибирских рек",
+      weight: "300",
+      price: "400",
+    },
+    {
+      title: "Филе тилапии в травах",
+      text: "Рыба с лемонграссом, мятой и тимьяном",
+      weight: "200",
+      price: "2400",
+    },
+    {
+      title: "Строганина из муксуна и стерляди",
+      text: "Подается на льду с макалом",
+      weight: "300",
+      price: "450",
+    },
+    {
+      title: "Сибирские пельмени",
+      text: "Сочные пельмени из трех видов мяса",
+      weight: "200",
+      price: "5700",
+    },
+    {
+      title: "Белые грузди в сметане",
+      text: "Грибы, собранные в экологически чистом лесу",
+      weight: "200",
+      price: "1800",
+    },
+    {
+      title: "Рыбный суп с кореньями",
+      text: "Три вида рыбы из сибирских рек",
+      weight: "300",
+      price: "400",
+    },
+  ]
+
+
+mixin menu-tab(options = {})
+  - const list = options.list
+  - const total = options.total
+  - const caption = options.caption
+  - const isSubcat = options.isSubcat
+
+  .menu-tab&attributes(attributes)
+    if !isSubcat
+      ul.menu-tab__list
+        if list
+          each item in list
+            li.menu-tab__item
+              .menu-tab__info
+                p.menu-tab__title.title.title--xxs
+                  span= item.title
+                p.menu-tab__description.text.text--small= item.text
+                p.menu-tab__weight.text.text--small
+                  span= item.weight
+                  |  гр
+              p.menu-tab__price.text.text--body.text--color-not-opacity
+                span= item.price
+                |  ₽
+              if (item.img)
+                .menu-tab__img
+                  +picture(item.img.path, item.img.name, item.img.path, item.img.name, "jpg", item.img.width, item.img.height, item.title)
+
+    //- .menu-tab__pagination
+    //-   button.menu-tab__show(aria-label="Показать ещё 10 блюд", data-menu="show")
+    //-     +icon("icon-reload", 20, 20)
+    //-   p.text.text--small-caps.text--color-not-opacity Показать ещё 10 блюд
+    //-   .menu-tab__count
+    //-     .title.title--s-2
+    //-       span(data-menu="current") 10
+    //-       | /
+    //-       span.menu-tab__total= total
+    //-     p.menu-tab__caption.text.text--small= caption
+    //-       |  показано

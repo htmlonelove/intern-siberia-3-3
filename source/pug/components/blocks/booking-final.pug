@@ -1,0 +1,35 @@
+mixin booking-final(options={})
+  - const title = options.title;
+  - const subtitle = options.subtitle;
+  - const accent = options.accent;
+  - const text = options.text;
+  - const btnText = options.btnText;
+  - const btnMod = options.btnMod;
+  - const href = options.href;
+  - const balanceText = options.balanceText;
+  - const balance = options.balance;
+  - const number = options.number;
+  - const numberText = options.numberText;
+  - const img = options.img;
+
+  .booking-final&attributes(attributes)
+    .booking-final__img
+      +picture("content", img, "content", `${img}-mob`, "jpg", 1307, 871, "Баня Siberia")
+    .container
+      h1.subtitle.subtitle--white= subtitle
+      h2.title.title--white.title--s !{title}
+        span.accent!= accent
+      if text
+        p.booking-final__text.text.text--body.text--white !{text}
+      if number
+        .booking-final__balance
+          p.text.text--small= numberText
+          .booking-final__divider
+          p.text.text--body-medium= number
+      if balance
+        .booking-final__balance
+          p.text.text--small= balanceText
+          .booking-final__divider
+          p.text.text--body-medium= balance
+            |  ₽
+      +btn({text: btnText, href: href})(class= btnMod)

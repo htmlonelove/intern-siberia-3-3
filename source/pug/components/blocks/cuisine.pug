@@ -1,0 +1,32 @@
+mixin cuisine()
+  section.cuisine&attributes(attributes)
+    .container
+      .cuisine__content
+        h2.subtitle Кухня
+        p.title.title--s Традиционная
+          span.accent  сибирская кухня
+        p.text.text--body Деликатесы от бренд-шефа по рецептам, привезенным со всех уголков Сибири.
+        //- +btn({text: "подробнее о кухне", href: "#"})
+        p.text.text--body.cuisine__download Все предложения нашей кухни — в меню:
+        +download-btn({href: "downloads/menu_siberia.pdf", name: "меню Siberia", info: "pdf, 300 kb"})
+
+      .cuisine__slider-wrapper.swiper(data-slider="mobile")
+        .cuisine__slider.swiper-wrapper
+          .cuisine__slide.swiper-slide
+            .cuisine__slide-img
+              +picture("slides/cuisine-slider/desktop", "1", "slides/cuisine-slider/mobile", "1", "jpg", 1200, 960, "Слайд 1")
+            p.title.title--xxs-3 Меню от бренд-шефа Сергея&nbsp;Гордеева
+          .cuisine__slide.swiper-slide
+            .cuisine__slide-img
+              +picture("slides/cuisine-slider/desktop", "2", "slides/cuisine-slider/mobile", "2", "jpg", 1200, 960, "Слайд 2")
+            p.title.title--xxs-3 Готовим в русской печи на живом огне
+          .cuisine__slide.swiper-slide
+            .cuisine__slide-img
+              +picture("slides/cuisine-slider/desktop", "3", "slides/cuisine-slider/mobile", "3", "jpg", 1200, 960, "Слайд 3")
+            p.title.title--xxs-3 Строганина и другие северные деликатесы привезены самолетом
+          .cuisine__slide.swiper-slide
+            .cuisine__slide-img
+              +picture("slides/cuisine-slider/desktop", "4", "slides/cuisine-slider/mobile", "4", "jpg", 1200, 960, "Слайд 4")
+            p.title.title--xxs-3 Большие блюда для компании до 12 человек
+
+        +slider-nav()

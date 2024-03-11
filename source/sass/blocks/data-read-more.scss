@@ -1,0 +1,17 @@
+[data-read-more="block"] p {
+  @include vp-767 {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+[data-read-more="block"].is-active p {
+  @include vp-767 {
+    display: initial;
+    -webkit-line-clamp: initial;
+    -webkit-box-orient: initial;
+    overflow: initial;
+  }
+}

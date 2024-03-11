@@ -1,0 +1,31 @@
+mixin hospitality()
+  section.hospitality&attributes(attributes)
+    h2.visually-hidden Контакты Siberia
+    .container
+      p.subtitle сибирское гостеприимство
+      .hospitality__heading
+        h1.title Приглашаем вас в&nbsp;гости
+        p.text.text--body Удачное расположение SIBERIA позволит вам&nbsp;проще найти место в&nbsp;насыщенном графике&nbsp;для&nbsp;комфортного отдыха.
+      .hospitality__info
+        .hospitality__contacts
+          .hospitality__number
+            p.text.text--small Телефон:
+            +link("tel:+79779917777", "+7 977 991 77 77").title.title--s-2
+          +socials().socials--invert.socials--small
+        .hospitality__mail
+          p.text.text--small Email:
+          a(href="mailto:info@siberia-spa.ru").text.text--body-l-2.text--color-not-opacity info@siberia-spa.ru
+        .hospitality__address
+          p.text.text--small Адрес:
+          p.text.text--body.text--color-not-opacity Москва, ул.&nbsp;Образцова&nbsp;31, строение&nbsp;3
+        .swiper(data-slider="mobile", data-no-loop)
+          .swiper-wrapper
+            //- .hospitality__slide.swiper-slide
+            //-   +picture("content", "lobby", "content", "lobby", "jpg", 700, 352, "Слайд 1")
+            .hospitality__slide.swiper-slide
+              video(src="video/facade-warmcolor2.mp4" preload="auto" muted autoplay loop playsinline)
+        +address()(data-open-modal="map").address--hospitality
+        .hospitality__open
+          p.text.text--small Режим работы:
+          p.text.text--body-l-2.text--color-not-opacity Работаем ежедневно с&nbsp;10:00&nbsp;до&nbsp;00:00
+      +map("hospitality-map")

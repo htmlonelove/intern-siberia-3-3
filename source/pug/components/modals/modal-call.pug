@@ -1,0 +1,22 @@
+mixin modal-call(isDark)
+  .modal-call&attributes(attributes)
+    //- button.modal-call__close-btn(type="button", aria-label="Закрыть попап", data-close-modal)
+      +icon("icon-close", 20, 20)
+    .modal-call__top
+      p.title.title--s(class= isDark ? 'title--white-with-accent title--accent-rodeo-dust' : null) Оставьте свои контакты и&nbsp;наш
+        span.accent &nbsp;менеджер свяжется
+        |  с&nbsp;вами
+      p.text.text--body(class= isDark ? 'text--white-opacity' : null) Наши специалисты ответят на&nbsp;все&nbsp;вопросы и&nbsp;дадут исчерпывающую консультацию.
+    .modal-call__bottom.bottom-block
+      .bottom-block__wrapper
+        +form({name: "Константин Константинопольский", position: "Менеджер по работе с клиентами", action: "./php_mailer_contacts/send.php", id: "submit_form_zakazzvonka"})(data-callback="call", class= isDark ? 'form--dark' : null).form--row
+          +custom-input({inputLabel: "Ваше имя", inputId: "contacts-name", inputName: "contacts-name", inputError: "Ваше имя"})(data-validate-type="text", data-limitations="letters", class= isDark ? 'custom-input--dark' : null)
+          +custom-input({inputLabel: "Телефон", inputId: "contacts-phone", inputName: "contacts-phone", inputError: "Телефон"})(data-validate-type="phone", class= isDark ? 'custom-input--dark' : null)
+        //- .bottom-block__card
+        //-   +img('content', "club", "jpg", 700, 467, "")
+        //-   p.bottom-block__title.title.title--xs-1.title--white Заявка отправлена
+        //-   p.bottom-block__text.text.text--white.text--body Спасибо за обращение. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.
+    .modal-call__success
+      +picture("content", "club", "content", "success-error-mob", "jpg", 700, 467, "Заявка отправлена")
+      p.modal-call__title.title.title--s.title--white Заявка отправлена
+      p.modal-call__text.text.text--white.text--body Спасибо за обращение. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.

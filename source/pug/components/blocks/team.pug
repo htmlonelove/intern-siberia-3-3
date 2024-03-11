@@ -1,0 +1,50 @@
+mixin team()
+  section.team&attributes(attributes)
+    .container
+      .section__top
+        h2.subtitle всегда на связи
+        .section__heading
+          p.title.title--s
+            span.accent Команда Siberia
+            |  всегда поможет с&nbsp;выбором бани
+          p.text.text--body Наши специалисты ответят на&nbsp;все&nbsp;вопросы, дадут исчерпывающую консультацию по&nbsp;вопросам выбора бани и&nbsp;вариантам сотрудничества.
+      ul.team__list(data-accordion="parent", data-destroy="(max-width: 767px)")
+        li.team__item
+          .team__card(data-accordion="element")
+            .team__card-top(data-accordion="button")
+              .team__card-photo
+              .team__card-name
+                p.title.title--xxs Константин Константинопольский
+                p.text.text--small Менеджер по работе с&nbsp;клиентами
+              button.team__card-button
+                +icon("icon-dropdown", 20, 20)
+            div(data-accordion="content")
+              .team__card-info
+                +link("tel:+74953456789", "+7 495 345 67 89").title.title--xxs-4
+                +link("mailto:aleksandr@siberia.ru", "aleksandr@siberia.ru").text.text--body-s.text--color-not-opacity
+        li.team__item
+          .team__card(data-accordion="element" )
+            .team__card-top(data-accordion="button")
+              .team__card-photo
+              .team__card-name
+                p.title.title--xxs Константин Константинопольский
+                p.text.text--small Менеджер по работе с&nbsp;клиентами
+              button.team__card-button
+                +icon("icon-dropdown", 20, 20)
+            div(data-accordion="content")
+              .team__card-info
+                +link("tel:+74953456789", "+7 495 345 67 89").title.title--xxs-4
+                +link("mailto:aleksandr@siberia.ru", "aleksandr@siberia.ru").text.text--body-s.text--color-not-opacity
+        li.team__item
+          .team__card(data-accordion="element" )
+            .team__card-top(data-accordion="button")
+              .team__card-photo
+              .team__card-name
+                p.title.title--xxs Константин Константинопольский
+                p.text.text--small Менеджер по работе с&nbsp;клиентами
+              button.team__card-button
+                +icon("icon-dropdown", 20, 20)
+            div(data-accordion="content")
+              .team__card-info
+                +link("tel:+74953456789", "+7 495 345 67 89").title.title--xxs-4
+                +link("mailto:aleksandr@siberia.ru", "aleksandr@siberia.ru").text.text--body-s.text--color-not-opacity

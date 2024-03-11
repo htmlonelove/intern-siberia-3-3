@@ -1,0 +1,56 @@
+.membership__price {
+  margin-top: size(40px);
+  font-size: size(239px);
+  line-height: size(217px);
+  letter-spacing: -0.06em;
+  color: $color-charade;
+
+  @include vp-1679 {
+    font-size: 239px;
+    line-height: 217px;
+    margin-top: 40px;
+  }
+
+  @include vp-1439 {
+    font-size: 195px;
+    line-height: 175px;
+  }
+
+  @include vp-1279 {
+    font-size: 145px;
+    line-height: 125px;
+  }
+
+  @include vp-767 {
+    margin-top: size(35px);
+    font-size: size(76px);
+    line-height: size(68px);
+  }
+}
+
+.membership__text-block {
+  max-width: size(300px);
+  margin-left: 30%;
+  margin-top: size(45px);
+  margin-bottom: size(10px);
+
+  @include vp-1679 {
+    max-width: 300px;
+    margin-top: 45px;
+    margin-bottom: 10px;
+  }
+
+  @include vp-767 {
+    max-width: initial;
+    margin-left: 0;
+    margin-top: size(37px);
+  }
+
+  .title {
+    margin-bottom: size(16px);
+
+    @include vp-1679 {
+      margin-bottom: 16px;
+    }
+  }
+}

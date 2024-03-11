@@ -1,0 +1,24 @@
+mixin bath-slider(data, caption)
+  .bath-slider.swiper
+    .bath-slider__wrapper.swiper-wrapper
+      each item in data
+        .bath-slider__item.swiper-slide
+          if (item.video)
+            .video-inner(data-player="container", data-rotate-video="")
+              +btn-play-with-text(item.buttonText)(data-player="button")
+              .video-inner__block
+                video(data-video-src=item.srcDesktop src="/" preload="auto" data-player="desktop" data-src="desktop" controls)
+                //- video(data-video-src=item.srcMobile src="/" preload="auto" data-player="mobile" data-src="mobile" controls)
+              .video-inner__cover(data-player="prev")
+                video(data-video-src=item.srcDesktopPrev src="/" preload="auto" muted autoplay loop playsinline data-src="desktop")
+                video(data-video-src=item.srcMobilePrev src="/" preload="auto" muted autoplay loop playsinline data-src="mobile")
+              p.bath-slider__video-caption.text.text--small-caps.text--white!=item.videoCaption
+              p.bath-slider__video-time.text.text--small-caps.text--white!=item.videoTime
+          else
+            +picture("slides/" + item.path + "/desktop", item.name, "slides/" + item.path + "/mobile", item.name, "jpg", 600, 480, item.alt)
+    .bath-slider__bottom
+      .bath-slider__caption
+        p.title.title--xxs-2!=caption
+        p.text.text--small-2 Листайте вправо
+      .bath-slider__divider
+      +slider-nav()

@@ -1,0 +1,620 @@
+{
+  "data": [
+    {
+      "id": "nomad",
+      "name": "Баня кочевника",
+      "guest": {
+        "min": 2,
+        "max": 4
+      },
+      "guestMin": 1,
+      "price": "30 000 — 26 667",
+      "cover": {
+        "mobile": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        },
+        "desktop": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        }
+      },
+      "gallery": {
+        "mobile": [
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6@2x.webp"
+          }
+        ],
+        "desktop": [
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6.jpg",
+            "jpg2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6@2x.jpg",
+            "webp": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6.webp",
+            "webp2x": "img/slides/baths-slider-nomad/desktop/kochevnik-photo-6@2x.webp"
+          }
+        ]
+      },
+      "info": {
+        "description": "Вы ощутите на себе быструю смену климата в местах обитания кочевых народов: прохладный дождь, яркое солнце, теплый сильный ветер.",
+        "table": [
+          {
+            "key": "Пар",
+            "value": "Полынь лимонная, мята болотная, анис, можжевельник"
+          },
+          {
+            "key": "Скрабы",
+            "value": "Медово-травяное крошево, молотый кедровый орех с алтайскими травами"
+          },
+          {
+            "key": "Веники",
+            "value": "Дуб, береза, пихта, можжевельник"
+          },
+          {
+            "key": "Звуки",
+            "value": "Живые звуки — вибратоны, шейкеры"
+          }
+        ]
+      }
+    },
+    {
+      "id": "kurnaya-izba",
+      "name": "Курная изба",
+      "guest": {
+        "min": 2,
+        "max": 3
+      },
+      "guestMin": 1,
+      "price": "30 000 — 26 667",
+      "cover": {
+        "mobile": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        },
+        "desktop": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        }
+      },
+      "gallery": {
+        "mobile": [
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6@2x.webp"
+          }
+        ],
+        "desktop": [
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6.jpg",
+            "jpg2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6@2x.jpg",
+            "webp": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6.webp",
+            "webp2x": "img/slides/baths-slider-kyrnaia-izba/desktop/kyr-6@2x.webp"
+          }
+        ]
+      },
+      "info": {
+        "description": "Сибирская деревенская баня. Парная из липовой дранки, с ароматом бани по-черному, как у бабушки в деревне. Особый,  целебный, духмяный пар, наполненный запахами трав.",
+        "table": [
+          {
+            "key": "Пар",
+            "value": "Береза, смородина, душица, полынь горькая"
+          },
+          {
+            "key": "Скрабы",
+            "value": "Настой душицы, береза"
+          },
+          {
+            "key": "Веники",
+            "value": "Дуб, береза, липа"
+          },
+          {
+            "key": "Звуки",
+            "value": "Цимбалы, ботало"
+          }
+        ]
+      }
+    },
+    {
+      "id": "healer",
+      "name": "Баня знахаря",
+      "guest": {
+        "min": 3,
+        "max": 6
+      },
+      "guestMin": 1,
+      "price": "30 000 — 26 667",
+      "cover": {
+        "mobile": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        },
+        "desktop": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        }
+      },
+      "gallery": {
+        "mobile": [
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-1.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-1@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-1.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-2.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-2@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-2.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-3.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-3@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-3.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-4.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-4@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-4.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-5.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-5@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-5.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-6.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-6@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-6.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-6@2x.webp"
+          }
+        ],
+        "desktop": [
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-1.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-1@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-1.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-2.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-2@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-2.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-3.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-3@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-3.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-4.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-4@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-4.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-5.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-5@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-5.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-healer/desktop/healer-6.jpg",
+            "jpg2x": "img/slides/baths-slider-healer/desktop/healer-6@2x.jpg",
+            "webp": "img/slides/baths-slider-healer/desktop/healer-6.webp",
+            "webp2x": "img/slides/baths-slider-healer/desktop/healer-6@2x.webp"
+          }
+        ]
+      },
+      "info": {
+        "description": "Дубовая парная с ароматами сибирского разнотравья и звукотерапия в специальной фито-комнате.",
+        "table": [
+          {
+            "key": "Пар",
+            "value": "Прополисный положок, донник, таволга, мята лесная"
+          },
+          {
+            "key": "Скрабы",
+            "value": "Медовый, анисовый, пихтовый"
+          },
+          {
+            "key": "Веники",
+            "value": "Дуб, береза, можжевельник"
+          },
+          {
+            "key": "Звуки",
+            "value": "Шум ручья, валдайские колокольчики"
+          }
+        ]
+      }
+    },
+    {
+      "id": "olkhon",
+      "name": "Ольхон",
+      "guest": {
+        "min": 3,
+        "max": 6
+      },
+      "guestMin": 1,
+      "price": "30 000 — 26 667",
+      "cover": {
+        "mobile": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        },
+        "desktop": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        }
+      },
+      "gallery": {
+        "mobile": [
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-1.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-1@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-1.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-2.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-2@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-2.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-3.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-3@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-3.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-4.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-4@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-4.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-5.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-5@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-5.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-6.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-6@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-6.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-6@2x.webp"
+          }
+        ],
+        "desktop": [
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-1.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-1@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-1.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-2.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-2@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-2.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-3.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-3@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-3.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-4.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-4@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-4.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-5.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-5@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-5.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-olkhon/desktop/olkhon-6.jpg",
+            "jpg2x": "img/slides/baths-slider-olkhon/desktop/olkhon-6@2x.jpg",
+            "webp": "img/slides/baths-slider-olkhon/desktop/olkhon-6.webp",
+            "webp2x": "img/slides/baths-slider-olkhon/desktop/olkhon-6@2x.webp"
+          }
+        ]
+      },
+      "info": {
+        "description": "Глиняная парная без острых углов создает особое движение и насыщенность пара. Атмосфера настоящего стойбища шамана на Байкале.",
+        "table": [
+          {
+            "key": "Пар",
+            "value": "Артыш, анис, чабрец, зверобой, можжевельник"
+          },
+          {
+            "key": "Скрабы",
+            "value": "Сила шамана, байкальский лед"
+          },
+          {
+            "key": "Веники",
+            "value": "Дуб, береза, можжевельник"
+          },
+          {
+            "key": "Звуки",
+            "value": "Бубен, варган"
+          }
+        ]
+      }
+    },
+    {
+      "id": "taiga",
+      "name": "Таежная изба",
+      "guest": {
+        "min": 5,
+        "max": 10
+      },
+      "guestMin": 5,
+      "price": "30 000 — 26 667",
+      "cover": {
+        "mobile": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        },
+        "desktop": {
+          "jpg": "img/content/bath-options/img-1.jpg",
+          "jpg2x": "img/content/bath-options/img-1@2x.jpg",
+          "webp": "img/content/bath-options/img-1.webp",
+          "webp2x": "img/content/bath-options/img-1@2x.webp"
+        }
+      },
+      "gallery": {
+        "mobile": [
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-1.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-1@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-1.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-2.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-2@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-2.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-3.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-3@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-3.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-4.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-4@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-4.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-5.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-5@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-5.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-6.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-6@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-6.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-6@2x.webp"
+          }
+        ],
+        "desktop": [
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-1.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-1@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-1.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-1@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-2.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-2@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-2.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-2@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-3.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-3@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-3.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-3@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-4.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-4@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-4.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-4@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-5.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-5@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-5.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-5@2x.webp"
+          },
+          {
+            "jpg": "img/slides/baths-slider-tayga/desktop/tayga-6.jpg",
+            "jpg2x": "img/slides/baths-slider-tayga/desktop/tayga-6@2x.jpg",
+            "webp": "img/slides/baths-slider-tayga/desktop/tayga-6.webp",
+            "webp2x": "img/slides/baths-slider-tayga/desktop/tayga-6@2x.webp"
+          }
+        ]
+      },
+      "info": {
+        "description": "Хвойные ароматы и парение можжевеловыми вениками. Отдыхая в горячей кедровой купели среди живых елок, вы слышите звуки сибирской тайги.",
+        "table": [
+          {
+            "key": "Пар",
+            "value": "Пихта, можжевельник, масло сосны"
+          },
+          {
+            "key": "Скрабы",
+            "value": "Таежная клюква, хвойный затир, кедровый затир"
+          },
+          {
+            "key": "Веники",
+            "value": "Дуб, пихта, можжевельник, кедр"
+          },
+          {
+            "key": "Звуки",
+            "value": "Колокольчики, калимба"
+          }
+        ]
+      }
+    }
+  ],
+  "error": null
+}

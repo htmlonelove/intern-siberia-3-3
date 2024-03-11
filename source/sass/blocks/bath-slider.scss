@@ -1,0 +1,191 @@
+.bath-slider {
+  display: flex;
+  flex-wrap: wrap;
+  padding-right: size(44px);
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0;
+  // padding-left: size(68px);
+  overflow: initial;
+
+  @include vp-1679 {
+    width: 100%;
+  }
+
+  @include vp-1279 {
+    // padding-left: 48px;
+  }
+
+  @include vp-1023 {
+    // padding-left: 24px;
+  }
+
+  @include vp-767 {
+    overflow: hidden;
+    width: calc(100% + #{size(48px)});
+    margin: 0 size(-24px);
+  }
+
+  &__item {
+    // height: 404px;
+    // max-width: size(700px);
+    border-radius: size(23px);
+    background-color: $color-default-black;
+    position: relative;
+    overflow: hidden;
+
+    @include aspect-ratio(720, 405);
+
+    .btn-play-with-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @include vp-767 {
+      @include aspect-ratio(500, 405);
+      height: size(190px);
+      border-radius: size(23px);
+
+      .btn-play-with-text {
+        top: initial;
+        bottom: size(16px);
+        left: size(16px);
+        transform: translate(0);
+      }
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: size(30px) size(-44px) 0 auto;
+    max-width: size(714px);
+
+    @include vp-1679 {
+      margin: 30px -44px 0 auto;
+    }
+
+    @include vp-767 {
+      display: none;
+      margin: size(46px) size(24px) 0 0;
+    }
+  }
+
+  &__caption {
+    flex-shrink: 0;
+    padding-left: size(12px);
+    margin-top: size(15px);
+    margin-right: size(16px);
+    min-width: size(230px);
+
+    @include vp-1679 {
+      margin-top: 15px;
+      padding-left: 12px;
+      margin-right: 16px;
+    }
+
+    @include vp-1279 {
+      min-width: size(180px);
+    }
+
+    @include vp-767 {
+      padding-left: size(12px);
+    }
+
+    .title {
+      margin-bottom: size(4px);
+
+      @include vp-1679 {
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &__caption .text {
+    flex-shrink: 0;
+    margin: 0 size(17px) 0 0;
+  }
+
+  &__caption .title {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: size(-12px);
+      transform: translateY(-50%);
+      display: block;
+      width: size(5px);
+      height: size(5px);
+      background-color: $color-coffee-bean;
+      border-radius: 50%;
+
+
+      @include vp-1679 {
+        width: 5px;
+        height: 5px;
+        left: -12px;
+      }
+
+      @include vp-767 {
+        left: size(-12px);
+        width: size(5px);
+        height: size(5px);
+      }
+    }
+  }
+
+  &__divider {
+    flex-shrink: 1;
+    position: relative;
+    width: size(326px);
+    height: 1px;
+    margin: 0 size(16px) 0 0;
+    background-color: rgba($color-coffee-bean, 0.12);
+
+    @include vp-1679 {
+      width: 326px;
+    }
+
+    @include vp-1279 {
+      flex-shrink: 1;
+    }
+  }
+
+  &__video-caption {
+    display: none;
+    margin: 0;
+
+    @include vp-767 {
+      display: block;
+      position: absolute;
+      top: size(16px);
+      left: size(16px);
+    }
+  }
+
+  &__video-time {
+    display: none;
+    margin: 0;
+
+    @include vp-767 {
+      position: absolute;
+      display: block;
+      bottom: size(16px);
+      right: size(16px);
+    }
+  }
+}

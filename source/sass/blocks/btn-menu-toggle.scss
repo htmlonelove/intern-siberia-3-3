@@ -1,0 +1,27 @@
+.btn-menu-toggle {
+  display: none;
+  border: none;
+  background-color: $color-transparent;
+  cursor: pointer;
+  color: $color-coffee-bean;
+
+  @include vp-1023 {
+    display: flex;
+    padding: size(10px);
+    width: size(64px);
+
+    &::after {
+      display: none;
+    }
+
+    svg {
+      margin: auto;
+      width: size(24px);
+      height: size(24px);
+    }
+  }
+}
+
+.btn-menu-toggle__close-icon {
+  display: none;
+}

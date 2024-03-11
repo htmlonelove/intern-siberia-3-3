@@ -1,0 +1,243 @@
+.event-info {
+  width: 100%;
+  max-width: size(600px);
+  font-size: size(13px);
+  line-height: size(18px);
+  background-color: $color-default-white;
+  border-radius: size(16px);
+  overflow: hidden;
+
+  @include vp-1679 {
+    max-width: 600px;
+    font-size: 13px;
+    line-height: 18px;
+    border-radius: 16px;
+  }
+
+  @include vp-767 {
+    max-width: size(600px);
+    font-size: size(13px);
+    line-height: size(18px);
+    border-radius: size(16px);
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: size(24px);
+    padding-bottom: size(16px);
+    font-weight: 300;
+    color: rgba($color-coffee-bean, 0.7);
+
+    @include vp-1679 {
+      padding: 24px;
+      padding-bottom: 16px;
+    }
+
+    @include vp-767 {
+      padding: size(24px);
+      padding-bottom: size(2px);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: size(16px);
+    font-style: normal;
+    font-weight: 500;
+    font-size: size(17px);
+    line-height: size(24px);
+    color: $color-coffee-bean;
+
+    @include vp-1679 {
+      margin-bottom: 16px;
+      font-size: 17px;
+      line-height: 24px;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(32px);
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+  }
+
+  &__table {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: size(-56px);
+    margin-bottom: size(32px);
+
+    @include vp-1679 {
+      margin-left: -56px;
+      margin-bottom: 32px;
+    }
+
+    @include vp-767 {
+      justify-content: space-between;
+      margin-top: size(-24px);
+      margin-bottom: size(57px);
+      margin-left: 0;
+    }
+  }
+
+  &__col {
+    margin-left: size(56px);
+
+    @include vp-1679 {
+      margin-left: 56px;
+    }
+
+    @include vp-767 {
+      width: calc(50% - #{size(19px)});
+      margin-top: size(24px);
+      margin-left: 0;
+
+      &:nth-child(2n) {
+        order: 1;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 500;
+    font-size: size(15px);
+    line-height: size(22px);
+    color: $color-coffee-bean;
+    text-align: left;
+    border: none;
+
+    &:last-child {
+      padding-right: 0;
+    }
+
+    @include vp-1679 {
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &__text--header {
+    margin-bottom: size(4px);
+    font-weight: 300;
+    font-size: size(13px);
+    line-height: size(18px);
+    color: rgba($color-coffee-bean, 0.7);
+
+    @include vp-1679 {
+      margin-bottom: 4px;
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(4px);
+      font-size: size(13px);
+      line-height: size(18px);
+    }
+  }
+
+  &__footer {
+    display: flex;
+
+    @include vp-767 {
+      flex-direction: column;
+    }
+  }
+
+  &__block {
+    flex-grow: 1;
+    display: flex;
+    border-top: size(1px) solid rgba($color-coffee-bean, 0.12);
+
+    @include vp-1679 {
+      border-width: 1px;
+    }
+
+    @include vp-767 {
+      padding: 0 size(24px) size(16px);
+      border: none;
+    }
+  }
+
+  &__phone-link {
+    align-self: center;
+    margin: 0 size(24px);
+    font-weight: 500;
+
+    @include vp-1679 {
+      margin: 0 24px;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      font-size: size(14px);
+      line-height: size(16px);
+      letter-spacing: 0.02em;
+    }
+  }
+
+  &__socials {
+    margin-left: auto;
+
+    .socials__list {
+      height: 100%;
+    }
+
+    .socials__item {
+      width: size(66px);
+      height: 100%;
+      border-left: size(1px) solid rgba($color-coffee-bean, 0.12);
+    }
+
+    @include vp-1679 {
+      .socials__item {
+        width: 66px;
+        border-width: 1px;
+      }
+    }
+
+    @include vp-767 {
+      position: relative;
+
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      margin-left: size(12px);
+
+      &::before {
+        content: "";
+
+        flex-grow: 1;
+        height: size(1px);
+        margin-right: size(12px);
+        background-color: rgba($color-coffee-bean, 0.2);
+      }
+
+      .socials__list {
+        height: 100%;
+      }
+
+      .socials__item {
+        border: none;
+      }
+    }
+  }
+
+  &__btn {
+    flex-shrink: 2;
+    width: 50%;
+    border-radius: 0;
+
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+}

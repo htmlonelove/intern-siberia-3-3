@@ -1,0 +1,26 @@
+.privileges {
+  @include vp-767 {
+    padding-top: size(61px);
+    padding-bottom: 0;
+  }
+
+  .subtitle {
+    br {
+      display: none;
+    }
+  }
+
+  .hidden {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  .section__heading {
+    .title {
+      @include vp-767 {
+        margin-bottom: size(16px);
+      }
+    }
+  }
+}

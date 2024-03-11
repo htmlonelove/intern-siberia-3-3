@@ -1,0 +1,6 @@
+mixin time-slot(options={})
+  - const time = options.time;
+  - const isActive = options.isActive;
+
+  button.time-slot(type="button", class=isActive ? "is-active" : false, data-time="slot")
+    span.text.text--small-caps= time

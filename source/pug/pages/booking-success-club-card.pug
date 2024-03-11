@@ -1,0 +1,17 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Завершение бронирования - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content(data-animate)
+      +booking-final({title: "Вы забронировали баню знахаря, ждём&nbsp;вас в&nbsp;гости", subtitle: "Бронирование завершено", accent: " 15&nbsp;сентября в&nbsp;10:00", balanceText: "Баланс вашей клубной карты", balance: "300 000", btnText: "перейти на главную", href: "index.html", img: "success-error"}).fib
+
+block modals

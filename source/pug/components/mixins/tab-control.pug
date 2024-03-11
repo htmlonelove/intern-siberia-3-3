@@ -1,0 +1,5 @@
+mixin tab-control(text)
+  button.tab-control(type="button")&attributes(attributes)
+    span.text.text--body-l= text
+    span.tab-control__icon
+      +icon("icon-check", 20, 20)

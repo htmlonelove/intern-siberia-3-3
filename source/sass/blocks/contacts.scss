@@ -1,0 +1,372 @@
+.contacts {
+  padding: size(96px) 0 size(56px) 0;
+
+  @include vp-1023 {
+    padding: 80px 0;
+  }
+
+  @include vp-767 {
+    padding: size(64px) 0 size(80px) 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+
+    @include vp-1023 {
+      display: block;
+    }
+  }
+
+  .subtitle {
+    padding: size(13px) 0 0 0;
+    margin: 0 size(174px) 0 0;
+
+    @include vp-1023 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__heading {
+    max-width: size(520px);
+    margin: 0 0 size(62px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(48px) 0;
+    }
+  }
+
+  .title--s {
+    max-width: size(400px);
+    margin: 0 0 size(24px) 0;
+
+    @include vp-767 {
+      max-width: size(230px);
+      margin: 0 0 size(16px) 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @include vp-767 {
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    flex-shrink: 0;
+    max-width: size(160px);
+    padding: size(17px) 0 0 0;
+    margin: 0 size(140px) 0 0;
+
+    @include vp-767 {
+      max-width: 100%;
+      margin: 0;
+      order: 1;
+    }
+  }
+
+  &__address.text {
+    margin: 0 0 size(40px) 0;
+
+    @include vp-767 {
+      margin: 0;
+    }
+  }
+
+  &__phone-block {
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+
+    .text {
+      @include vp-767 {
+        max-width: size(230px);
+        margin: 0 0 size(16px) 0;
+      }
+    }
+  }
+
+  .socials__item {
+    @include vp-767 {
+      margin: 0 size(8px) 0 0;
+    }
+  }
+
+  &__socials {
+    @include vp-767 {
+      margin: 0 size(-8px) 0 0;
+    }
+  }
+
+  &__number {
+    display: flex;
+    align-items: center;
+
+    .title {
+      margin: 0 auto 0 0;
+    }
+  }
+
+  &__button {
+    position: relative;
+    margin: size(16px) 0 0 0;
+    padding: 0;
+    color: $color-coffee-bean;
+    background-color: $color-transparent;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color $trans-default;
+
+    @include vp-767 {
+      display: flex;
+      align-items: center;
+    }
+
+    &.is-active {
+      .contacts__button-icon {
+        background-color: $color-tints-of-brass;
+      }
+
+      .contacts__marker {
+        opacity: 0;
+      }
+
+      .contacts__close {
+        opacity: 1;
+        color: $color-default-white;
+      }
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover {
+          .contacts__button-icon {
+            background-color: $color-mongoose;
+          }
+
+          .contacts__close {
+            color: $color-default-white;
+          }
+        }
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        .contacts__button-icon {
+          background-color: $color-tints-of-brass;
+        }
+      }
+    }
+  }
+
+  &__button-icon {
+    position: absolute;
+    right: size(-21px);
+    top: size(-6px);
+    width: size(36px);
+    height: size(36px);
+    border-radius: 50%;
+    background-color: $color-mongoose;
+    transition: background-color $trans-default;
+
+    @include vp-767 {
+      position: relative;
+      top: unset;
+      right: unset;
+      flex-shrink: 0;
+      order: -1;
+      margin: 0 size(16px) 0 0;
+    }
+
+    svg {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: size(16px);
+      height: size(16px);
+      transform: translate(-50%, -50%);
+      transition: opacity $trans-default, color $trans-default;
+    }
+  }
+
+  .contacts__marker {
+    opacity: 1;
+    color: $color-default-white;
+  }
+
+  .contacts__close {
+    opacity: 0;
+    color: $color-coffee-bean;
+  }
+
+  &__open.text {
+    margin-bottom: size(32px);
+
+    @include vp-767 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__open,
+  &__phone {
+    .text--small {
+      display: block;
+      margin: 0 0 size(12px) 0;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__phone {
+    .link {
+      font-family: $ff-euclidsquare;
+      font-weight: 500;
+      font-size: size(17px);
+      line-height: size(24px);
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__content-wrapper {
+    position: relative;
+    flex-grow: 1;
+    border-radius: size(16px);
+    overflow: hidden;
+    transform: translateZ(0);
+
+    @include vp-767 {
+      position: static;
+      width: 100%;
+      max-width: unset;
+      overflow: visible;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+
+    @include vp-767 {
+      position: static;
+    }
+
+    &.is-active {
+      z-index: 2;
+      animation: slide-next $trans-eio-700 both;
+
+      @include vp-767 {
+        animation: none;
+      }
+    }
+
+    &.is-active .contacts__navigation {
+      animation: fade-in-bottom $trans-eio-700 0.6s both;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    bottom: size(24px);
+    left: size(24px);
+    z-index: 4;
+    // display: flex;
+    display: none;
+
+    .btn-tab {
+      margin: 0 size(8px) 0 0;
+    }
+  }
+
+  &__map {
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  .map {
+    position: absolute;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 24.5vw;
+    z-index: 0;
+
+    @include vp-1023 {
+      min-height: 240px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+
+    img,
+    video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  }
+
+  .swiper-slide {
+    z-index: 0;
+
+    &.swiper-slide-active {
+      z-index: 2;
+      animation: slide-next $trans-eio-700 both;
+    }
+  }
+
+  // -----------
+
+  &--main {
+    .contacts__phone-block {
+      display: none;
+
+      @include vp-767 {
+        display: block;
+      }
+    }
+  }
+
+  &__call {
+    color: $color-default-white;
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__call-mobile {
+    display: none;
+    color: $color-default-white;
+
+    @include vp-767 {
+      margin-top: size(24px);
+      display: block;
+    }
+  }
+}

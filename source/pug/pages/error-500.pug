@@ -1,0 +1,26 @@
+extends ../components/base/layout
+
+block variables
+  - const title = 'Ошибка сервера' //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content(data-animate)
+      section.error-404.fib
+        .container
+          h2.subtitle ошибка сервера
+          h1.title.error-404__title
+            span.accent.error-404__accent Ошибка 500 —
+            | внутренняя ошибка сервера
+          p.text.text--body.error-404__text Пожалуйста, подождите, вскоре, ошибка&nbsp;будет исправлена. Попробуйте&nbsp;вернуться на&nbsp;главную страницу.
+          +btn({text: "перейти на главную", href: "index.html"}).error-404__btn
+
+block modals
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

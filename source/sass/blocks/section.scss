@@ -1,0 +1,207 @@
+.section {
+  padding: size(120px) 0;
+
+  @include vp-1679 {
+    padding: 120px 0;
+  }
+
+  @include vp-767 {
+    padding: size(80px) 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+
+    @include vp-1023 {
+      display: block;
+    }
+
+    .title {
+      margin: 0 0 size(20px) 0;
+
+      @include vp-767 {
+        margin: 0 0 size(15px) 0;
+      }
+    }
+  }
+
+  .subtitle {
+    padding: size(13px) 0 0 0;
+    margin: 0 size(139px) 0 0;
+
+    @include vp-1023 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__heading {
+    max-width: size(500px);
+    margin: 0 0 size(64px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(49px) 0;
+    }
+  }
+
+  &--bg-white {
+    padding-left: size(304px);
+    margin-left: size(-304px);
+    background-color: $color-default-white;
+
+    @include vp-1679 {
+      padding-left: 304px;
+    }
+
+    @include vp-1023 {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  &--padding-top-low {
+    padding-top: size(74px) 0;
+
+    @include vp-1679 {
+      padding-top: 74px;
+    }
+  }
+
+  &--padding-very-low {
+    padding-top: size(30px) 0;
+
+    @include vp-1679 {
+      padding: 30px 0;
+    }
+
+    @include vp-767 {
+      padding: size(42px) 0 0;
+    }
+  }
+
+  &--padding-narrow {
+    padding: size(50px) 0 size(18px);
+
+    @include vp-1679 {
+      padding: 50px 0 18px;
+    }
+
+    @include vp-767 {
+      padding-top: 48px;
+      padding-bottom: 0;
+
+      .quote--light {
+        max-width: 97%;
+
+        .title {
+          line-height: size(28px);
+        }
+
+        .accent {
+          line-height: size(28px);
+        }
+      }
+    }
+  }
+
+  &--padding-middle {
+    padding-top: size(75px);
+    padding-bottom: size(80px);
+
+    @include vp-1679 {
+      padding-top: 75px;
+      padding-bottom: 80px;
+    }
+
+    .subtitle {
+      margin-right: size(104px);
+
+      @include vp-1679 {
+        margin-right: 104px;
+      }
+    }
+  }
+
+  &--padding-equal {
+    padding: size(60px) 0;
+
+    @include vp-1679 {
+      padding: 60px 0;
+    }
+
+    @include vp-767 {
+      padding: size(27px) 0 size(40px) 0;
+    }
+  }
+
+  &--padding-equal-2 {
+    padding: size(56px) 0;
+
+    @include vp-1679 {
+      padding: 56px 0;
+    }
+
+    @include vp-767 {
+      padding: size(80px) 0;
+    }
+  }
+
+  &--padding-dif {
+    padding: size(93px) 0 size(84px) 0;
+
+    @include vp-1679 {
+      padding: 93px 0 84px 0;
+    }
+
+    @include vp-767 {
+      padding: size(66px) 0 size(10px) 0;
+    }
+  }
+
+  &--wide {
+    .section__heading {
+      max-width: initial;
+
+      .title {
+        margin-bottom: size(24px);
+
+        @include vp-1679 {
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    .subtitle {
+      margin-right: size(117px);
+
+      @include vp-1679 {
+        margin-right: 117px;
+      }
+    }
+  }
+
+  &--padding-bottom-low {
+    padding-bottom: size(80px);
+
+    @include vp-1679 {
+      padding-bottom: 80px;
+    }
+  }
+
+  &--mob-padding-low {
+    @include vp-767 {
+      padding-top: size(30px);
+      padding-bottom: size(64px);
+    }
+  }
+
+  &--dark {
+    .subtitle {
+      color: $color-default-white;
+    }
+  }
+}

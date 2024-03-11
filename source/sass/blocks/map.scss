@@ -1,0 +1,29 @@
+.map {
+  position: relative;
+  height: 100%;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    width: 100%;
+    height: size(352px);
+    height: 28.8vw;
+
+    @include vp-767 {
+      height: calc(100 * var(--vh, 1vh));
+    }
+  }
+
+  &.is-active {
+    display: block;
+    z-index: 1000;
+    animation: slide-back $trans-eio-700 both;
+  }
+}

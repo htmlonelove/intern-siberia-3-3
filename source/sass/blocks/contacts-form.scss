@@ -1,0 +1,34 @@
+.contacts-form {
+  &.section {
+    padding-bottom: size(80px);
+
+    @include vp-767 {
+      padding-bottom: size(80px);
+    }
+  }
+
+  .section__heading {
+    margin: 0 0 size(62px) 0;
+    max-width: size(620px);
+
+    @include vp-767 {
+      margin: 0 0 size(36px) 0;
+    }
+
+    .text {
+      max-width: size(363px);
+    }
+  }
+
+  .subtitle {
+    margin: 0 size(119px) 0 0;
+  }
+
+  .bottom-block {
+    padding: 0 0 0 size(300px);
+
+    @include vp-1023 {
+      padding: 0;
+    }
+  }
+}

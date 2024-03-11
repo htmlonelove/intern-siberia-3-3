@@ -1,0 +1,174 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Мероприятия - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const bath = "taiga"
+  - const currentUrl = "events.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  -
+    const scheduleData = [
+      {
+        date: "12.01",
+        href: "#event-1"
+      },
+      {
+        date: "23.01 — 26.02",
+        href: "#event-2"
+      },
+      {
+        date: "08.03",
+        href: "#event-3"
+      },
+      {
+        date: "03.04",
+        href: "#event-4"
+      },
+      {
+        date: "22.04",
+        href: "#event-5"
+      },
+    ]
+  -
+    const sliderData = [
+      {
+        path: "tayga-slider/",
+        name: "1",
+        alt: "Слайд 1"
+      },
+      {
+        path: "tayga-slider/",
+        name: "2",
+        alt: "Слайд 2"
+      },
+      {
+        path: "tayga-slider/",
+        name: "3",
+        alt: "Слайд 3"
+      },
+      {
+        path: "tayga-slider/",
+        name: "4",
+        alt: "Слайд 4"
+      },
+      {
+        path: "tayga-slider/",
+        name: "5",
+        alt: "Слайд 5"
+      },
+      {
+        path: "tayga-slider/",
+        name: "6",
+        alt: "Слайд 6"
+      },
+      {
+        path: "tayga-slider/",
+        name: "7",
+        alt: "Слайд 7"
+      },
+      {
+        path: "tayga-slider/",
+        name: "8",
+        alt: "Слайд 8"
+      },
+    ]
+  -
+    const eventData = {
+      title: "Крещение в&nbsp;бане",
+      headers: ["Дата", "Место", "Цена"],
+      cells: ["22 — 26&nbsp;декабря", "Все бани", "от 25&nbsp;000 ₽/чел"]
+    }
+  -
+    const eventData1 = {
+      title: "Пивной пар в&nbsp;бане «Таежная&nbsp;изба»",
+      headers: ["Дата", "Место", "Цена"],
+      cells: ["26&nbsp;февраля — 04&nbsp;марта", "Все бани", "от 25&nbsp;000 ₽/чел"]
+    }
+
+block main
+  .page-content
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          .inner-intro__heading
+            h2.subtitle Мероприятия
+            h2.subtitle.hidden-tablet Выберите дату
+        .container.container--tab-np
+          +schedule(scheduleData)
+        .container
+          h1.inner-intro__title.title.title--xl(id="event-1") Крещение в&nbsp;бане
+          p.inner-intro__description.text.text--body Один из&nbsp;основных праздников в&nbsp;христианской религии в&nbsp;память крещения Иисуса&nbsp;Христа в&nbsp;водах Иордана Иоанном Крестителем и&nbsp;Богоявлении.
+        .container
+          +simple-slider(sliderData)
+          p.inner-intro__description.text.text--body Мы&nbsp;чтим традиции и&nbsp;подготовили клубный банный день, где резиденты смогут перед банными процедурами окунуться в&nbsp;священную купель. Приглашенный Отец&nbsp;Павел, из&nbsp;Храма Рождества Пресвятой Богородицы, прочитает молитвы, освятит воду в&nbsp;купели и&nbsp;поможет пройти путь по&nbsp;всем церковным канонам.
+          p.inner-intro__description.text.text--body Далее гостей ждёт авторская программа парения с&nbsp;ароматами ладана, хвойных, иссопа и&nbsp;лекарственных трав, яркий пар свежими замороженными дубовыми вениками и&nbsp;мощный контраст в&nbsp;купели с&nbsp;250кг льда.
+          p.inner-intro__description.text.text--body На&nbsp;праздничном столе резидентов будут ждать: настоящие русские блюда, сибирские деликатесы, домашние соленья, закуски. Главное блюдо&nbsp;&mdash; молочный поросенок на&nbsp;вертеле запечённый в&nbsp;русской печи.
+          +event-info(eventData)
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          h1.inner-intro__title.title.title--xl(id="event-2") Пивной пар в&nbsp;бане «Таежная&nbsp;изба»
+          p.inner-intro__description.text.text--body Крещение&nbsp;&mdash; один из&nbsp;основных праздников в&nbsp;христианской религии в&nbsp;память крещения Иисуса Христа в&nbsp;водах Иордана Иоанном Крестителем и&nbsp;Богоявлении.
+        .container
+          +simple-slider(sliderData)
+          p.inner-intro__description.text.text--body Мы&nbsp;чтим традиции и&nbsp;подготовили клубный банный день, где резиденты смогут перед банными процедурами окунуться в&nbsp;священную купель. Приглашенный Отец&nbsp;Павел, из&nbsp;Храма Рождества Пресвятой Богородицы, прочитает молитвы, освятит воду в&nbsp;купели и&nbsp;поможет пройти путь по&nbsp;всем церковным канонам.
+          p.inner-intro__description.text.text--body Далее гостей ждёт авторская программа парения с&nbsp;ароматами ладана, хвойных, иссопа и&nbsp;лекарственных трав, яркий пар свежими замороженными дубовыми вениками и&nbsp;мощный контраст в&nbsp;купели с&nbsp;250кг льда.
+          p.inner-intro__description.text.text--body На&nbsp;праздничном столе резидентов будут ждать: настоящие русские блюда, сибирские деликатесы, домашние соленья, закуски. Главное блюдо&nbsp;&mdash; молочный поросенок на&nbsp;вертеле запечённый в&nbsp;русской печи.
+          +event-info(eventData1)
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          h1.inner-intro__title.title.title--xl(id="event-3") Крещение в&nbsp;бане
+          p.inner-intro__description.text.text--body Один из&nbsp;основных праздников в&nbsp;христианской религии в&nbsp;память крещения Иисуса&nbsp;Христа в&nbsp;водах Иордана Иоанном Крестителем и&nbsp;Богоявлении.
+        .container
+          +simple-slider(sliderData)
+          p.inner-intro__description.text.text--body Мы&nbsp;чтим традиции и&nbsp;подготовили клубный банный день, где резиденты смогут перед банными процедурами окунуться в&nbsp;священную купель. Приглашенный Отец&nbsp;Павел, из&nbsp;Храма Рождества Пресвятой Богородицы, прочитает молитвы, освятит воду в&nbsp;купели и&nbsp;поможет пройти путь по&nbsp;всем церковным канонам.
+          p.inner-intro__description.text.text--body Далее гостей ждёт авторская программа парения с&nbsp;ароматами ладана, хвойных, иссопа и&nbsp;лекарственных трав, яркий пар свежими замороженными дубовыми вениками и&nbsp;мощный контраст в&nbsp;купели с&nbsp;250кг льда.
+          p.inner-intro__description.text.text--body На&nbsp;праздничном столе резидентов будут ждать: настоящие русские блюда, сибирские деликатесы, домашние соленья, закуски. Главное блюдо&nbsp;&mdash; молочный поросенок на&nbsp;вертеле запечённый в&nbsp;русской печи.
+          +event-info(eventData)
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          h1.inner-intro__title.title.title--xl(id="event-4") Пивной пар в&nbsp;бане «Таежная&nbsp;изба»
+          p.inner-intro__description.text.text--body Крещение&nbsp;&mdash; один из&nbsp;основных праздников в&nbsp;христианской религии в&nbsp;память крещения Иисуса Христа в&nbsp;водах Иордана Иоанном Крестителем и&nbsp;Богоявлении.
+        .container
+          +simple-slider(sliderData)
+          p.inner-intro__description.text.text--body Мы&nbsp;чтим традиции и&nbsp;подготовили клубный банный день, где резиденты смогут перед банными процедурами окунуться в&nbsp;священную купель. Приглашенный Отец&nbsp;Павел, из&nbsp;Храма Рождества Пресвятой Богородицы, прочитает молитвы, освятит воду в&nbsp;купели и&nbsp;поможет пройти путь по&nbsp;всем церковным канонам.
+          p.inner-intro__description.text.text--body Далее гостей ждёт авторская программа парения с&nbsp;ароматами ладана, хвойных, иссопа и&nbsp;лекарственных трав, яркий пар свежими замороженными дубовыми вениками и&nbsp;мощный контраст в&nbsp;купели с&nbsp;250кг льда.
+          p.inner-intro__description.text.text--body На&nbsp;праздничном столе резидентов будут ждать: настоящие русские блюда, сибирские деликатесы, домашние соленья, закуски. Главное блюдо&nbsp;&mdash; молочный поросенок на&nbsp;вертеле запечённый в&nbsp;русской печи.
+          +event-info(eventData1)
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          h1.inner-intro__title.title.title--xl(id="event-5") Крещение в&nbsp;бане
+          p.inner-intro__description.text.text--body Один из&nbsp;основных праздников в&nbsp;христианской религии в&nbsp;память крещения Иисуса&nbsp;Христа в&nbsp;водах Иордана Иоанном Крестителем и&nbsp;Богоявлении.
+        .container
+          .bath-card.bath-card--image
+            .bath-card__img
+              +picture("slides/tayga-slider/desktop", "8", "slides/tayga-slider/mobile", "8", "jpg", 800, 449, "Слайд 8")
+          p.inner-intro__description.text.text--body Мы&nbsp;чтим традиции и&nbsp;подготовили клубный банный день, где резиденты смогут перед банными процедурами окунуться в&nbsp;священную купель. Приглашенный Отец&nbsp;Павел, из&nbsp;Храма Рождества Пресвятой Богородицы, прочитает молитвы, освятит воду в&nbsp;купели и&nbsp;поможет пройти путь по&nbsp;всем церковным канонам.
+          p.inner-intro__description.text.text--body Далее гостей ждёт авторская программа парения с&nbsp;ароматами ладана, хвойных, иссопа и&nbsp;лекарственных трав, яркий пар свежими замороженными дубовыми вениками и&nbsp;мощный контраст в&nbsp;купели с&nbsp;250кг льда.
+          p.inner-intro__description.text.text--body На&nbsp;праздничном столе резидентов будут ждать: настоящие русские блюда, сибирские деликатесы, домашние соленья, закуски. Главное блюдо&nbsp;&mdash; молочный поросенок на&nbsp;вертеле запечённый в&nbsp;русской печи.
+          +event-info(eventData)
+    div(data-animate)
+      section.section.section--padding-top-low.section--padding-bottom-low.inner-contacts-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle контакты
+            .section__heading
+              p.title.title--s Добавьте
+                span.accent   Siberia
+                br
+                |  в&nbsp;своё расписание
+              p.text.text--body Удачное расположение Siberia позволит вам&nbsp;проще найти место в&nbsp;насыщенном графике для комфортного отдыха.
+          +inner-contacts("Забронировать баню «Кочевник»", "booking.html?taiga")
+
+
+block modals
+  +modal("modal--no-scale modal--preload modal--map", false)(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

@@ -1,0 +1,66 @@
+-
+  const dataBg = [
+    {
+      main: 'img/content/intro/desktop/intro-bg-1.jpg',
+      big: 'img/content/intro/desktop/intro-bg-1@2x.jpg 2x',
+      sourceWidth: 'img/content/intro/mobile/intro-bg-1.jpg, img/content/intro/mobile/intro-bg-1@2x.jpg 2x',
+      sourceWebp: 'img/content/intro/desktop/intro-bg-1.webp, img/content/intro/desktop/intro-bg-1@2x.webp 2x'
+    },
+    {
+      main: 'img/content/intro/desktop/intro-bg-2.jpg',
+      big: 'img/content/intro/desktop/intro-bg-2@2x.jpg 2x',
+      sourceWidth: 'img/content/intro/mobile/intro-bg-2.jpg, img/content/intro/mobile/intro-bg-2@2x.jpg 2x',
+      sourceWebp: 'img/content/intro/desktop/intro-bg-2.webp, img/content/intro/desktop/intro-bg-2@2x.webp 2x'
+    },
+    {
+      main: 'img/content/intro/desktop/intro-bg-3.jpg',
+      big: 'img/content/intro/desktop/intro-bg-3@2x.jpg 2x',
+      sourceWidth: 'img/content/intro/mobile/intro-bg-3.jpg, img/content/intro/mobile/intro-bg-3@2x.jpg 2x',
+      sourceWebp: 'img/content/intro/desktop/intro-bg-3.webp, img/content/intro/desktop/intro-bg-3@2x.webp 2x'
+    },
+    {
+      main: 'img/content/intro/desktop/intro-bg-4.jpg',
+      big: 'img/content/intro/desktop/intro-bg-4@2x.jpg 2x',
+      sourceWidth: 'img/content/intro/mobile/intro-bg-4.jpg , img/content/intro/mobile/intro-bg-4@2x.jpg 2x',
+      sourceWebp: 'img/content/intro/desktop/intro-bg-4.webp, img/content/intro/desktop/intro-bg-4@2x.webp 2x'
+    },
+    {
+      main: 'img/content/intro/desktop/intro-bg-5.jpg',
+      big: 'img/content/intro/desktop/intro-bg-5@2x.jpg 2x',
+      sourceWidth: 'img/content/intro/mobile/intro-bg-5.jpg, img/content/intro/mobile/intro-bg-5@2x.jpg 2x',
+      sourceWebp: 'img/content/intro/desktop/intro-bg-5.webp, img/content/intro/desktop/intro-bg-5@2x.webp 2x'
+    },
+    {
+      main: 'img/content/intro/desktop/intro-bg-6.jpg',
+      big: 'img/content/intro/desktop/intro-bg-6@2x.jpg 2x',
+      sourceWidth: 'img/content/intro/mobile/intro-bg-6.jpg, img/content/intro/mobile/intro-bg-6@2x.jpg 2x',
+      sourceWebp: 'img/content/intro/desktop/intro-bg-6.webp, img/content/intro/desktop/intro-bg-6@2x.webp 2x'
+    },
+  ]
+
+mixin intro()
+  section.intro(data-animate)
+    .intro__bg(data-bg=dataBg)
+      picture
+        source(media="(max-width: 767px)")
+        source(type='image/webp')
+        img(width="1628", height="1086", alt="Siberia")
+    .container
+      .intro__heading.fit
+        p.subtitle добро пожаловать в Siberia
+        +opening-hours()
+      .intro__content.fib
+        h1.title.title--white
+          | Традиционная
+          span.accent  сибирская&nbsp;баня на&nbsp;дровах
+          |  в&nbsp;центре Москвы
+        a(href="#", data-open-modal="map", data-modal-trigger="map").intro__address
+          .intro__address-icon(data-modal-animated, data-fix-block)
+            +icon("icon-marker", 20, 20)
+          .intro__address-text
+            span Всегда рады принять&nbsp;гостей&nbsp;по&nbsp;адресу:
+            span.intro__address-accent  Образцова 31, строение 3
+        +video()
+        //- +btn({text: "Забронировать баню", href: "booking.html"}).btn--square.fit
+        +btn({text: "Забронировать баню"})(data-open-modal="call").btn--square.fit
+      +scroll-btn("advantages").fib

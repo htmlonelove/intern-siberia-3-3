@@ -1,0 +1,93 @@
+-
+  const bathOptions = [
+    {
+      title: "Баня кочевника",
+      value: "nomad",
+      id: "nomad",
+      guests: "2 — 4",
+      price: "30 000 — 26 667",
+      img: {
+        name: "img-1",
+        format: "jpg",
+        width: "818",
+        height: "513",
+      },
+      modal: "bath",
+      min: "2",
+      max: "4"
+    },
+    {
+      title: "Курная изба",
+      value: "kurnaya-izba",
+      id: "kurnaya-izba",
+      guests: "2 — 4",
+      price: "30 000 — 26 667",
+      img: {
+        name: "img-1",
+        format: "jpg",
+        width: "818",
+        height: "513",
+      },
+      modal: "bath"
+      ,
+      min: "2",
+      max: "4"
+    },
+    {
+      title: "Баня знахаря",
+      value: "healer",
+      id: "healer",
+      guests: "3 — 6",
+      price: "30 000 — 26 667",
+      img: {
+        name: "img-1",
+        format: "jpg",
+        width: "818",
+        height: "513",
+      },
+      modal: "bath"
+      ,
+      min: "3",
+      max: "6"
+    },
+    {
+      title: "Ольхон",
+      value: "olkhon",
+      id: "olkhon",
+      guests: "3 — 6",
+      price: "30 000 — 26 667",
+      img: {
+        name: "img-1",
+        format: "jpg",
+        width: "818",
+        height: "513",
+      },
+      modal: "bath"
+      ,
+      min: "3",
+      max: "6"
+    },
+    {
+      title: "Таежная изба",
+      value: "taiga",
+      id: "taiga",
+      guests: "5 — 10",
+      price: "30 000 — 26 667",
+      img: {
+        name: "img-1",
+        format: "jpg",
+        width: "818",
+        height: "513",
+      },
+      modal: "bath"
+      ,
+      min: "5",
+      max: "10"
+    },
+  ]
+
+
+mixin select-bath(data)
+  .select-bath&attributes(attributes)
+    h2.subtitle Выберите баню
+    .select-bath__wrapper

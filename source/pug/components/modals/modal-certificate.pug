@@ -1,0 +1,28 @@
+mixin modal-certificate()
+  .modal-certificate.is-vertical
+    .modal-certificate__icons
+      +icon("icon-mountains", 34, 26)
+      +icon("icon-spruce", 34, 26)
+      +icon("icon-waves", 34, 26)
+      +icon("icon-figure", 34, 26)
+      +icon("icon-figure-2", 34, 26)
+    .modal-certificate__content
+      .modal-certificate__logo
+        +icon("logo-text", 162, 15)
+      h2.modal-certificate__title ПОДАРОЧНЫЙ СЕРТИФИКАТ
+      p.modal-certificate__message(data-certificate="message") Дорогой Дмитрий Сергеевич, поздравляем вас с днем рождения и желаем всегда оставаться энергичным и жизнерадостным
+      p.modal-certificate__name(data-certificate="name")
+      p.modal-certificate__deposit Депозит на&nbsp;посещение банного комплекса SIBERIA
+      p.modal-certificate__price(data-certificate="deposit") 50 000
+        span.modal-certificate__rouble
+          +icon("icon-rubl", 15, 46)
+      .modal-certificate__info
+        p.modal-certificate__contact Забронировать, отменить или&nbsp;перенести посещение банного комплекса вы&nbsp;можете по&nbsp;телефону:
+          a(href="tel:+79779917777") + 7 (977) 991 77 77
+        p.modal-certificate__address Ждем вас&nbsp;по&nbsp;адресу: г.&nbsp;Москва,&nbsp;ул.&nbsp;Образцова&nbsp;31, стр.&nbsp;3
+    .modal-certificate__icons
+      +icon("icon-mountains", 34, 26)
+      +icon("icon-spruce", 34, 26)
+      +icon("icon-waves", 34, 26)
+      +icon("icon-figure", 34, 26)
+      +icon("icon-figure-2", 34, 26)

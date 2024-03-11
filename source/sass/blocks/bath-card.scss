@@ -1,0 +1,681 @@
+.bath-card {
+  position: relative;
+  display: flex;
+  border-radius: size(16px);
+  width: 100%;
+  overflow: hidden;
+  transform: translateZ(0);
+
+  @include vp-767 {
+    height: 100%;
+  }
+
+  &__img-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    width: 50%;
+    // height: 500px;
+    min-height: 33.2vw;
+    height: auto;
+    background-color: $color-default-black;
+    z-index: 0;
+
+    @include vp-1679 {
+      min-height: 34.7vw;
+    }
+
+    @include vp-1023 {
+      height: 380px;
+    }
+
+    @include vp-767 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $color-default-black;
+      z-index: -1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__slider {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__slider-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    @include vp-767 {
+      opacity: 0.5;
+    }
+
+    &.back {
+      .swiper-slide-active {
+        animation: slide-back 0.8s ease;
+
+        @include vp-767 {
+          animation: unset;
+        }
+      }
+
+      .swiper-slide-next,
+      .swiper-slide-duplicate-next {
+        z-index: 3;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+
+      .swiper-slide-prev,
+      .swiper-slide-duplicate-prev {
+        z-index: -1;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+    }
+
+    &.next {
+      .swiper-slide-active {
+        animation: slide-next 0.8s ease;
+
+        @include vp-767 {
+          animation: unset;
+        }
+      }
+
+      .swiper-slide-next {
+        z-index: -1;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+
+      .swiper-slide-prev {
+        z-index: 3;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+    }
+  }
+
+  &__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    position: absolute;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: size(30px);
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 6;
+
+    .swiper-pagination-bullet {
+      position: relative;
+      width: size(5px);
+      height: size(5px);
+      flex-shrink: 0;
+      margin: 0 size(14px) 0 0;
+      background-color: $color-default-white;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0.3;
+
+      &::after {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        content: "";
+        width: size(17px);
+        height: size(17px);
+        border-radius: 50%;
+        background-color: rgba($color-default-white, 0.2);
+        transition: transform $trans-default;
+      }
+
+      &-active {
+        opacity: 1;
+
+        &::after {
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+
+  &__nav-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    border: none;
+    cursor: none;
+    z-index: 5;
+    background-color: $color-transparent;
+
+    transform: translateZ(0);
+
+    @include vp-767 {
+      display: none;
+    }
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+      color: $color-coffee-bean;
+    }
+
+    &--prev {
+      left: 0;
+    }
+
+    &--next {
+      right: 0;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        & ~ .bath-card__nav-icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__nav-icon {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: size(56px);
+    height: size(56px);
+    border-radius: 50%;
+    background-color: $color-default-white;
+    opacity: 0;
+    z-index: 7;
+    pointer-events: none;
+    will-change: transform;
+    // transform: rotateY(var(--rotate));
+    // -webkit-transform: rotateY(var(--rotate));
+    transition: transform $trans-default,
+      opacity $trans-default;
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__slide {
+    position: relative;
+    z-index: 2;
+
+    @include vp-767 {
+      z-index: unset;
+    }
+
+    &.swiper-slide-active {
+      z-index: 3;
+
+      @include vp-767 {
+        z-index: unset;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding: 32px 32px 0 32px;
+    width: 50%;
+    background-color: $color-default-white;
+
+    @include vp-1279 {
+      padding: 24px 24px 0 24px;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      min-height: size(480px);
+      padding: size(76px) size(24px) 0 size(24px);
+      background-color: $color-transparent;
+    }
+  }
+
+  &__top {
+    width: 100%;
+    margin: 0 0 size(111px) 0;
+    display: flex;
+    justify-content: space-between;
+
+    @include vp-1439 {
+      margin: 0 0 72px 0;
+    }
+
+    @include vp-1279 {
+      margin: 0 0 42px 0;
+    }
+
+    @include vp-767 {
+      display: none;
+      margin: 0 0 size(79px) 0;
+    }
+
+    .text {
+      margin: 0;
+    }
+
+    .text--small-2 {
+      @include vp-767 {
+        margin: 0;
+      }
+    }
+  }
+
+  &__info {
+    margin: 0;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  &__info-block {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      width: 100%;
+      padding: 0 size(24px);
+      margin-bottom: size(33px);
+    }
+
+    .bath-card__info {
+      display: flex;
+      align-items: center;
+      margin-bottom: size(12px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &::after {
+        flex-grow: 1;
+        order: -1;
+        content: '';
+        display: block;
+        margin: 0 size(8px);
+        height: size(1px);
+        background-color: rgba($color-default-white, 0.3);
+      }
+    }
+
+    .text--small-caps {
+      color: $color-default-white;
+
+      &:first-child {
+        order: -1;
+      }
+    }
+  }
+
+  .title--md-2 {
+    margin: 0 0 size(16px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(16px) 0;
+      color: $color-default-white;
+    }
+  }
+
+  .title--xxs-2 {
+    margin: 0 0 size(2px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(2px) 0;
+      color: $color-default-white;
+    }
+  }
+
+  &__text-desktop {
+    max-width: size(347px);
+
+    @include vp-1279 {
+      display: none;
+    }
+  }
+
+  &__text-mobil {
+    display: none;
+
+    @include vp-1279 {
+      display: block;
+    }
+  }
+
+  .text--small-2 {
+    margin: 0 0 auto 0;
+    text-align: center;
+    max-width: size(347px);
+
+    @include vp-767 {
+      // max-width: size(277px);
+      margin: 0 0 size(24px) 0;
+      color: $color-default-white;
+    }
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    width: calc(100% + #{size(64px)});
+    margin: size(24px) size(-32px) 0 size(-32px);
+
+    @include vp-767 {
+      flex-direction: column;
+      align-self: flex-end;
+      flex-grow: 1;
+      width: calc(100% + #{size(48px)});
+      margin: 0 size(-24px) 0 size(-24px);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: size(19px) size(19px) size(20px) size(19px);
+    text-align: center;
+    border-top: 1px solid rgba($color-coffee-bean, 0.12);
+    background-color: $color-coffee-bean;
+    transition: background-color $trans-default;
+
+    @include vp-1279 {
+      padding: 19px 0;
+      border: none;
+    }
+
+    @include vp-1023 {
+      padding: 20px 0;
+    }
+
+    @include vp-767 {
+      padding: size(6px) size(12px) size(7px);
+      margin: 0 0 size(76px) 0;
+      width: initial;
+      color: $color-default-white;
+      background-color: $color-transparent;
+      border: size(1px) solid rgba($color-default-white, 0.5);
+      border-radius: size(8px);
+    }
+
+    &::after {
+      @include vp-767 {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-mongoose;
+      }
+    }
+
+    &.text {
+      color: $color-default-white;
+    }
+  }
+
+  .btn {
+    width: 50%;
+    position: relative;
+    z-index: 99;
+
+    @include vp-767 {
+      width: 100%;
+      margin: auto 0 0 0;
+    }
+  }
+
+  &__specifications {
+    list-style: none;
+    padding: 0 size(56px) 0 0;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: visible;
+
+    @include vp-1279 {
+      padding: 0;
+    }
+
+    @include vp-767 {
+      padding: 0;
+      overflow-y: visible;
+    }
+  }
+
+  &__specifications-item {
+    display: flex;
+    align-items: baseline;
+    margin: 0 0 size(24px) 0;
+
+    @include vp-1279 {
+      margin: 0 0 16px 0;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: size(16px) 0;
+      border-bottom: 1px solid rgba($color-coffee-bean, 0.12);
+    }
+
+    &:last-of-type {
+      @include vp-767 {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__specifications-title {
+    width: size(107px);
+    flex-shrink: 0;
+
+    @include vp-1279 {
+      width: 80px;
+      font-size: 13px;
+    }
+
+    @include vp-767 {
+      width: size(103px);
+    }
+  }
+
+  &__specifications-text {
+    max-width: size(245px);
+    flex-shrink: 0;
+
+    @include vp-1279 {
+      font-size: 13px;
+      max-width: 200px;
+    }
+
+    @include vp-767 {
+      max-width: unset;
+      flex-shrink: unset;
+    }
+  }
+
+  &--modal {
+    @include vp-767 {
+      border-radius: 0;
+    }
+
+    .bath-card__img-wrapper {
+      height: 100%;
+
+      @include vp-767 {
+        // display: none;
+        height: size(190px);
+        z-index: 1;
+        top: 168px;
+        background-color: $color-transparent;
+        opacity: 1;
+      }
+    }
+
+    .bath-card__slider-wrapper {
+      @include vp-767 {
+        opacity: 1;
+      }
+    }
+
+    .bath-card__slide {
+      @include vp-767 {
+        border-radius: size(16px);
+        width: calc(100% - #{size(56px)});
+        overflow: hidden;
+      }
+    }
+
+    .bath-card__content {
+      padding: size(35px) size(44px);
+      align-items: flex-start;
+
+      @include vp-1279 {
+        padding: 24px;
+      }
+
+      @include vp-767 {
+        padding: size(24px);
+        background-color: $color-default-white;
+      }
+    }
+
+    .title {
+      margin: 0 0 size(16px) 0;
+    }
+
+    .bath-card__text {
+      text-align: left;
+      margin: 0 0 size(48px) 0;
+
+      @include vp-1279 {
+        font-size: 13px;
+        margin: 0 0 24px 0;
+      }
+
+      @include vp-767 {
+        margin: 0 0 size(278px) 0;
+        font-size: size(14px);
+        color: rgba($color-coffee-bean, 0.7);
+      }
+    }
+  }
+
+  &--simple,
+  &--image {
+    width: 100%;
+    max-width: size(800px);
+    height: size(449px);
+    margin-bottom: size(64px);
+
+    .btn-play-with-text {
+      top: 50%;
+      left: 50%;
+
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    @include vp-1679 {
+      max-width: 800px;
+      height: 449px;
+      margin-bottom: 64px;
+    }
+
+    @include vp-767 {
+      height: size(208px);
+      margin-bottom: size(40px);
+      padding-bottom: size(25px);
+      border-radius: 0;
+      overflow: hidden;
+
+      &.bath-card--image {
+        height: size(183px);
+        padding-bottom: 0;
+      }
+
+      .bath-card__img {
+        opacity: 1;
+        border-radius: size(16px);
+        overflow: hidden;
+      }
+
+      .bath-card__slider-wrapper {
+        height: calc(100% - #{size(25px)});
+        opacity: 1;
+        overflow: initial;
+      }
+
+      .bath-card__slider {
+        border-radius: size(16px);
+        overflow: hidden;
+      }
+
+      .bath-card__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+        padding: 0;
+        bottom: size(-19px);
+
+        .swiper-pagination-bullet {
+          background-color: rgba($color-coffee-bean, 0.5);
+
+          &::after {
+            background-color: rgba($color-coffee-bean, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

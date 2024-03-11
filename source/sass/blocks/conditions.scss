@@ -1,0 +1,44 @@
+.conditions {
+  padding-top: 57px;
+
+  @include vp-1023 {
+    padding-top: 115px;
+  }
+
+  @include vp-767 {
+    padding-top: size(116px);
+  }
+
+  &__description {
+    padding: 64px 207px 54px 200px;
+
+    @include vp-1279 {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+
+    @include vp-767 {
+      padding: size(24px) 0 size(79px) 0;
+    }
+  }
+
+  &__description .btn {
+    user-select: none;
+  }
+
+  &__title {
+    margin-bottom: 45px;
+
+    @include vp-1279 {
+      width: 301px;
+    }
+
+    @include vp-767 {
+      width: size(270px);
+      margin-bottom: size(24px);
+      font-size: size(30px);
+      line-height: size(36px);
+    }
+  }
+}
+

@@ -1,0 +1,6 @@
+mixin bath-advantages(data)
+  .bath-advantages&attributes(attributes)
+    ul.bath-advantages__list
+      each item in data
+        li.bath-advantages__item
+          +advantages-card(item.name, item.description, item.path, item.img, item.imgWidth, item.imgHeight, item.alt)

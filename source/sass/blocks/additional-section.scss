@@ -1,0 +1,19 @@
+.additional-section {
+  @include vp-767 {
+    padding-bottom: 0;
+  }
+
+  .section__heading {
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  .subtitle {
+    margin-right: size(126px);
+
+    @include vp-767 {
+      padding-top: 0;
+    }
+  }
+}

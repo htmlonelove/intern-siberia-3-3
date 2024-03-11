@@ -1,0 +1,329 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Баня Знахарь - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const bath = "healer"
+  - const currentUrl = "bath-healer.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const tags = ["#Комната звукотерапии", "#Пространство для застолья", "#Оптимальна для семьи"]
+  -
+    const bathAdvantagesList = [
+    {
+      name: "Пар",
+      description: "Прополисный положок, донник, таволга, мята лесная",
+      path: "content/bath-healer/speciality",
+      img: "par",
+      imgWidth: "464",
+      imgHeight: "516",
+      alt: "Пар"
+    },
+    {
+      name: "Скрабы",
+      description: "Медовый, анисовый, пихтовый",
+      path: "content/bath-healer/speciality",
+      img: "scr",
+      imgWidth: "464",
+      imgHeight: "516",
+      alt: "Скрабы"
+    },
+    {
+      name: "Веники",
+      description: "Дуб, береза, можжевельник",
+      path: "content/bath-healer/speciality",
+      img: "ven",
+      imgWidth: "464",
+      imgHeight: "516",
+      alt: "Веники"
+    },
+    {
+      name: "Звуки",
+      description: "Шум ручья, валдайские колокольчики",
+      path: "content/bath-healer/speciality",
+      img: "sound",
+      imgWidth: "464",
+      imgHeight: "516",
+      alt: "Звуки"
+    },
+    ]
+  -
+    const sliderData = [
+      {
+        video: true,
+        srcDesktop: "video/baths/healer/healer.mp4",
+        srcMobile: "video/baths/healer/healer-m.mp4",
+        srcDesktopPrev: "video/baths/healer/healer-prev.mp4",
+        srcMobilePrev: "video/baths/healer/healer-prev-m.mp4",
+        buttonText: "Смотрите видео о бане знахарь",
+        videoCaption: "Смотрите видео о бане «Знахарь»",
+        videoTime: "0:53",
+        id: "4xtgRfFaqLw"
+      },
+      {
+        path: "healer-slider/",
+        name: "1",
+        alt: "Слайд 1"
+      },
+      {
+        path: "healer-slider/",
+        name: "2",
+        alt: "Слайд 2"
+      },
+      {
+        path: "healer-slider/",
+        name: "3",
+        alt: "Слайд 3"
+      },
+      {
+        path: "healer-slider/",
+        name: "4",
+        alt: "Слайд 4"
+      },
+      {
+        path: "healer-slider/",
+        name: "5",
+        alt: "Слайд 5"
+      },
+      {
+        path: "healer-slider/",
+        name: "6",
+        alt: "Слайд 6"
+      },
+      {
+        path: "healer-slider/",
+        name: "7",
+        alt: "Слайд 7"
+      },
+      {
+        path: "healer-slider/",
+        name: "8",
+        alt: "Слайд 8"
+      },
+      {
+        path: "healer-slider/",
+        name: "9",
+        alt: "Слайд 9"
+      },
+      {
+        path: "healer-slider/",
+        name: "10",
+        alt: "Слайд 10"
+      },
+      {
+        path: "healer-slider/",
+        name: "11",
+        alt: "Слайд 11"
+      },
+    ]
+  -
+    var dataAccordion = [
+      {
+        stage: "Первый заход",
+        name: "Пар «Знахаря»",
+        time: "?? мин",
+        text: [
+          "Особым моментом первого пара будет дыхание через ледяную пихту, где пряный аромат сибирского дерева погрузит гостей в настоящую атмосферу знахарской бани.",
+        ],
+        path: "content/bath-healer/program",
+        imgName: "1",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Второй заход",
+        name: "Очищение",
+        time: "?? мин",
+        text: [
+          "Процедура очищения различными составами на выбор гостя: скраб на основе молотой таволги, доника и меда, пихтово-медовый скраб на основе молотой таежной шишки, скорлупы кедровых орехов, с использованием кедрово – живичного масла и молотой пихты, а также снадобье знахаря - скраб на основе березового листа, таволги, липового цвета и ромашки.",
+          "Растир тела гостя горячим пихтовым веником.",
+        ],
+        path: "content/bath-healer/program",
+        imgName: "2",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Третий заход",
+        name: "Парение",
+        time: "?? мин",
+        text: [
+          "Начинается с растирания меховыми рукавицами. Дыхание через ледяную пихту обеспечит комфортное принятие пара. Отдельное внимание уделяется ногам гостя – работаем можжевельником и деревянными молоточками по ступням.",
+          "Ледяные шайбы с прополисом и можжевельником придадут особенные ощущения на теле гостя, а последующий растир горячей сибирской пихтой обязательно доставит истинное наслаждение «до мурашек». Также в парении используется контраст живым прохладным квасом.",
+          "После контраста в холодной купели, гость погружается в ароматную горячую купель с травами, где его не оставит равнодушным массаж головы можжевеловыми вениками.",
+        ],
+        path: "content/bath-healer/program",
+        imgName: "3",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Четвертый заход",
+        name: "Догрев",
+        time: "?? мин",
+        text: [
+          "Возвращаем гостя в парную. Сначала проливаем тело тонкими струйками горячего отвара донника, после — догреваем дубовыми вениками.",
+        ],
+        path: "content/bath-healer/program",
+        imgName: "4",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Пятый заход",
+        name: "Финальный пар",
+        time: "?? мин",
+        text: [
+          "Особо ароматный и пробуждающий аппетит, исключительно полезный пар на хрене с чесноком и семенами укропа. Специально для гурманов.",
+        ],
+        path: "content/bath-healer/program",
+        imgName: "5",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+    ];
+
+block main
+  .page-content
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          .inner-intro__heading
+            h2.subtitle восстановление здоровья
+            +specifications([{name: "Вмещает баня", value: "До 6 человек"},{name: "длится программа", value: "4 часа"},{name: "площадь бани", value: "98 м<sup>2</sup>"}]).inner-intro__specifications.text.text--small-caps-2.text--color-not-opacity
+          h1.inner-intro__title.title.title.title--xl Баня &laquo;Знахарь&raquo;
+          .inner-intro__info-block
+            p.inner-intro__info
+              span.text.text--small-caps вместимость
+              span.text.text--small-caps до 6 человек
+            p.inner-intro__info
+              span.text.text--small-caps длительность программы
+              span.text.text--small-caps 4 часа
+            p.inner-intro__info
+              span.text.text--small-caps площадь
+              span.text.text--small-caps 98 м#[sup 2]
+          p.inner-intro__description.text.text--body.text--desktop Дубовая парная с&nbsp;ароматами сибирского разнотравья и&nbsp;звукотерапия в&nbsp;специальной фито-комнате.
+          p.inner-intro__description.text.text--body.text--mobile Дубовая парная с&nbsp;ароматами сибирского разнотравья и&nbsp;звукотерапия в&nbsp;специальной фито-комнате.
+          +tags(tags)
+        //- .container.container--npr.container--tab-np
+        .container
+          +bath-slider(sliderData, "Галерея бани «Знахарь»")
+          +btn({text: "Забронировать баню"})(data-open-modal="call").inner-intro__btn-reserve
+          //- +btn({tag: "a", href: "booking.html?healer", text: "Забронировать баню"}).inner-intro__btn-reserve
+    div(data-animate)
+      section.quote-section.section.section--padding-narrow.fib.d-200
+        .container
+          h2.subtitle Прямая речь
+          +quote("Сергей Нестеров", "Идеолог Siberia", true, "content", "sergey-nesterov")
+            p.title.title--s Мы&nbsp;нашли и&nbsp;восстановили
+              span.accent  знахарские рецепты создания пара
+              |  и&nbsp;лечебных ароматов на&nbsp;прополисных положках, доннике, таволге и&nbsp;лесной мяте. А&nbsp;для комплексного воздействия на&nbsp;все органы чувств в&nbsp;бане &laquo;Знахарь&raquo;
+              span.accent  мастера проводят звукотерапию
+              |  в&nbsp;специально отведенной для этого фито-комнате.
+    div(data-animate)
+      section.section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle особенности
+            .section__heading
+              p.title.title--s В&nbsp;бане &laquo;Знахарь&raquo;&nbsp;&mdash; уникальная атмосфера
+              p.text.text--body Мы&nbsp;создаем ее&nbsp;с&nbsp;помощью авторских приемов и&nbsp;методов парения.
+        .container.container--tab-np
+          +bath-advantages(bathAdvantagesList)
+    div(data-animate)
+      section.section.section--bg-white.section--padding-middle.fib.d-200
+        .container
+          .section__top
+            h2.subtitle программа парения
+            .section__heading
+              p.title.title--s Каждое парение &mdash; это
+                span.accent  отдельный ритуал
+              p.text.text--body.text--desktop Мастер по&nbsp;пару рассказывает вам о&nbsp;традициях, особенностях каждого ритуала и&nbsp;помогает комфортно пройти этот путь. Программа парения может меняться в&nbsp;зависимости от&nbsp;количества людей.
+              p.text.text--body.text--mobile Мастер по&nbsp;пару рассказывает вам о&nbsp;традициях, особенностях каждого ритуала и&nbsp;помогает комфортно пройти этот путь. Программа парения может меняться в&nbsp;зависимости от&nbsp;количества людей.
+        .container.container--mob-np
+          +accordion(dataAccordion)
+        .container
+          +price()
+          +btn({tag: "a", href: "booking.html?healer", text: "забронировать баню"}).program-section__button
+          +btn({type: "button", text: "Получить консультацию"})(data-open-modal="call").program-section__button-call
+    div(data-animate)
+      section.section.section--padding-bottom-low.additional-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle дополнительно
+            .section__heading
+              p.title.title--s В&nbsp;бане &laquo;Знахарь&raquo; вы&nbsp;можете приобрести:
+          .additional-products
+          .additional-products
+            ul.additional-products__list
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Пихтовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Березовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Дубовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Можжевеловая полка
+                p.additional-products__price.text.text--body 20 000 ₽
+              li.additional-products__item.additional-products__item--other
+                p.additional-products__name.title.title--xxs-2 Байкальская прорубь
+                p.additional-products__price.text.text--body 30 000 ₽
+              li.additional-products__item.additional-products__item--other
+                p.additional-products__name.title.title--xxs-2 Ведро льда
+                p.additional-products__price.text.text--body 1 000 ₽
+              li.additional-products__item.additional-products__item--steam
+                p.additional-products__name.title.title--xxs-2 Авторское парение от&nbsp;идеолога Siberia Сергея Нестерова
+                p.additional-products__price.text.text--body 30 000 ₽
+
+            ul.additional-products__list
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 4 руки
+                p.additional-products__price.text.text--body 3 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 6 рук
+                p.additional-products__price.text.text--body 5 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 8 рук
+                p.additional-products__price.text.text--body 8 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Массаж 30 мин
+                p.additional-products__price.text.text--body 5 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Массаж 45 мин
+                p.additional-products__price.text.text--body 8 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Массаж 60 мин
+                p.additional-products__price.text.text--body 10 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Мыльный массаж (помывка)
+                p.additional-products__price.text.text--body 5 000 ₽
+
+    div(data-animate)
+      section.section.section--padding-top-low.section--padding-bottom-low.inner-contacts-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle контакты
+            .section__heading
+              p.title.title--s Добавьте
+                span.accent   Siberia
+                br
+                |  в&nbsp;своё расписание
+              p.text.text--body Удачное расположение Siberia позволит вам проще найти место в&nbsp;насыщенном графике для комфортного отдыха.
+          +inner-contacts("Забронировать баню «Знахарь»", "booking.html?healer")
+
+
+block modals
+  +modal("modal--no-scale modal--preload modal--map", false)(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

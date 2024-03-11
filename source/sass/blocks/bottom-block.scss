@@ -1,0 +1,219 @@
+.bottom-block {
+  display: flex;
+  align-items: flex-start;
+
+  &__manager {
+    position: relative;
+    max-width: size(187px);
+    margin: 0 size(169px) 0 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: size(-153px);
+      top: size(40px);
+      width: size(188px);
+      height: size(1px);
+      background-color: rgba($color-coffee-bean, 0.2);
+    }
+
+    @include vp-1279 {
+      display: none;
+    }
+  }
+
+  &__manager-img {
+    position: relative;
+    width: size(80px);
+    height: size(80px);
+    margin: 0 0 size(16px) 0;
+    border-radius: 50%;
+    background-color: $color-default-black;
+    overflow: hidden;
+    transform: translateZ(0);
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__manager-name {
+    margin: 0 0 size(4px) 0;
+  }
+
+  &__wrapper {
+    position: relative;
+    flex-grow: 1;
+
+    &.is-active {
+      .form ~ .bottom-block__card {
+        opacity: 1;
+        transform: translateY(0);
+        z-index: 1;
+        transition-delay: 0.7s;
+      }
+
+      .form {
+        opacity: 0;
+        transform: translateY(#{size(10px)});
+        z-index: -1;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: size(270px);
+    padding: size(24px) size(32px) size(32px) size(32px);
+    color: $color-default-white;
+    background-color: $color-default-black;
+    border-radius: size(16px);
+    overflow: hidden;
+    z-index: 1;
+
+    @include vp-767 {
+      padding: size(24px);
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 0 54%;
+      z-index: -1;
+      opacity: 0.5;
+    }
+  }
+
+  &__title {
+    margin: 0 0 size(16px) 0;
+  }
+
+  &__text {
+    // max-width: size(370px);
+    max-width: size(420px);
+    margin: 0 0 auto 0;
+  }
+
+  .form ~ .bottom-block__card {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + #{size(6px)});
+    opacity: 0;
+    transform: translateY(#{size(10px)});
+    padding: size(35px) size(32px) size(32px) size(44px);
+    z-index: -1;
+    transition: transform $trans-eio-700, opacity $trans-eio-700;
+
+    @include vp-767 {
+      padding: size(24px);
+      bottom: unset;
+      top: size(2px);
+      height: calc(100% - #{size(3px)});
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    right: size(24px);
+    top: size(24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: size(56px);
+    height: size(56px);
+    padding: 0;
+
+    background: $color-default-white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color $trans-default;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-kournikova;
+
+        svg {
+          color: $color-coffee-bean;
+        }
+      }
+    }
+
+    @include vp-767 {
+      position: static;
+      width: 100%;
+      height: auto;
+      border-radius: inherit;
+      background-color: $color-kournikova;
+    }
+
+    span {
+      display: none;
+
+      @include vp-767 {
+        display: block;
+      }
+    }
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+  }
+
+  .btn {
+    align-self: flex-start;
+
+    @include vp-767 {
+      align-self: stretch;
+    }
+  }
+
+  &--dark {
+    .bottom-block__manager-name {
+      color: $color-default-white;
+    }
+
+    .bottom-block-manager-position {
+      color: rgba($color-default-white, 0.5);
+    }
+
+    .bottom-block__close-btn {
+      color: $color-coffee-bean;
+    }
+  }
+
+  &--wrapper-np {
+    .bottom-block__wrapper {
+      padding-top: 0;
+    }
+  }
+
+  &--not-manager {
+    .bottom-block__manager {
+      visibility: hidden;
+      max-width: size(127px);
+    }
+  }
+}

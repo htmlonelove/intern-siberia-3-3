@@ -1,0 +1,167 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Список страниц"
+  - const sitemap = true
+
+block main
+  style.
+    .container {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    a {
+      color: rgb(10, 10, 175);
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 7px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+
+      ol {
+        padding-left: 20px;
+      }
+
+      ol li {
+        margin-bottom: 15px;
+      }
+    }
+
+  -
+    const pages = [
+      {
+        name: "UI-kit — ui-kit.html",
+        src: "ui-kit.html"
+      },
+      {
+        name: "Главная — index.html",
+        src: "index.html"
+      },
+      {
+        name: "О siberia — about.html",
+        src: "about.html"
+      },
+      {
+        name: "Баня Кочевник — bath-nomad.html",
+        src: "bath-nomad.html"
+      },
+      {
+        name: "Баня Знахарь — bath-healer.html",
+        src: "bath-healer.html"
+      },
+      {
+        name: "Баня Ольхон — bath-olkhon.html",
+        src: "bath-olkhon.html"
+      },
+      {
+        name: "Баня Тайга — bath-taiga.html",
+        src: "bath-taiga.html"
+      },
+      {
+        name: "Баня Курная Изба — bath-kyrnaia-izba.html",
+        src: "bath-kyrnaia-izba.html"
+      },
+      {
+        name: "Контакты — contacts.html",
+        src: "contacts.html"
+      },
+      {
+        name: "Siberia Club — siberia-club.html",
+        src: "siberia-club.html"
+      },
+      {
+        name: "Кухня — cuisine.html",
+        src: "cuisine.html"
+      },
+      {
+        name: "Пользовательское соглашение — conditions.html",
+        src: "conditions.html"
+      },
+      {
+        name: "Страницы не существует — error-404.html",
+        src: "error-404.html"
+      },
+      {
+        name: "Доступ запрещен — error-403.html",
+        src: "error-403.html"
+      },
+      {
+        name: "Внутренняя ошибка сервера — error-500.html",
+        src: "error-500.html"
+      },
+      {
+        name: "Бронирование — booking.html",
+        src: "booking.html"
+      },
+      {
+        name: "Бронирование - 2 этап (демонстрация) — booking-stage-2.html",
+        src: "booking-stage-2.html"
+      },
+      {
+        name: "Завершение бронирования — booking-success.html",
+        src: "booking-success.html"
+      },
+      {
+        name: "Бронирование - ошибка при оплате картой — booking-payment-error.html",
+        src: "booking-payment-error.html"
+      },
+      {
+        name: "Завершение бронирования (оплата клубной картой) — booking-success-club-card.html",
+        src: "booking-success-club-card.html"
+      },
+      {
+        name: "Сертификаты — certificates.html",
+        src: "certificates.html"
+      },
+      {
+        name: "Сертификаты - успех — certificates-success.html",
+        src: "certificates-success.html"
+      },
+      {
+        name: "Сертификаты - оплата не удалась — certificates-error.html",
+        src: "certificates-error.html"
+      },
+      {
+        name: "E-mail — email/index.html",
+        src: "email/index.html"
+      },
+      {
+        name: "Мероприятия — events.html",
+        src: "events.html"
+      },
+      {
+        name: "Оферта — oferta.html",
+        src: "oferta.html"
+      },
+    ]
+
+  main
+    .container
+      +icon("logo", 244, 140)
+      h1 Список страниц
+      ol
+        each page in pages
+          li
+            a(href= page.src)= page.name

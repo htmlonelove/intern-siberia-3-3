@@ -1,0 +1,96 @@
+doctype html
+include ../components
+block variables
+html(lang="ru")
+  head
+    if !sitemap
+      script.
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NNCNWGW');
+    title= title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content="Siberia — Традиционная сибирская баня на дровах в центре Москвы")
+    if currentUrl === "index.html"
+      meta(name="yandex-verification" content="1c80949310e430e7")
+    link(rel='apple-touch-icon', sizes='180x180', href='favicon/apple-touch-icon.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='favicon/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='favicon/favicon-16x16.png')
+    link(rel='manifest', href='favicon/site.webmanifest', crossorigin="use-credentials")
+    link(rel="mask-icon", href="favicon/safari-pinned-tab.svg", color="#5bbad5")
+    meta(name='msapplication-config', content='favicon/browserconfig.xml')
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='theme-color', content='#ffffff')
+
+    //- используйте только для шрифта находящегося на первом экране
+    link(rel="preload", href="fonts/euclidflex-regular.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/merriweather-lightItalic.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/euclidsquare-light.woff2", as="font", crossorigin="anonymous")
+    link(rel="preload", href="fonts/euclidsquare-medium.woff2", as="font", crossorigin="anonymous")
+    style.
+      .modal {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        background-color: rgba(0, 0, 0, 0.5);
+        transform: scale(1.2);
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1),
+          transform 0.6s cubic-bezier(0.55, 0, 0.1, 1),
+          visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+        pointer-events: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      .modal--map,
+      .modal--video {
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: opacity 1s ease,
+          transform 1s ease,
+          visibility 1s ease;
+        transition-delay: 1.1s;
+      }
+
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    noscript
+      iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-NNCNWGW" height="0" width="0" style="display:none;visibility:hidden")
+
+    +sprite()
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentUrl)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    +rotate-screen()
+
+    block modals
+    +cookies()
+
+    if !sitemap
+      script
+        include ../../../js/inline/roistat.js
+      script(type="bogus", class="js-whatsapp-message-container")
+        | Хочу забронировать баню. Номер визита: {roistat_visit}
+      script
+        include ../../../js/inline/roistat-whatsapp.js
+      script
+        include ../../../js/inline/wazzup.js
+
+    script(src="https://api-maps.yandex.ru/2.1/?apikey=bac9c797-f5b3-4580-939d-ff7fdca06b5a&lang=ru_RU")
+    script(src="js/vendor.min.js")
+    script(src="js/main.min.js")

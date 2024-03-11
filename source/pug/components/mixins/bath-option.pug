@@ -1,0 +1,35 @@
+mixin bath-option(options={})
+  - const title = options.title;
+  - const isDisabled = options.isDisabled;
+  - const value = options.value;
+  - const id = options.id;
+  - const guests = options.guests;
+  - const price = options.price;
+  - const img = options.img;
+  - const modal = options.modal;
+  - const min = options.min;
+  - const max = options.max;
+
+  .bath-option(data-min= min, data-max= max)&attributes(attributes)
+    input(type="radio", value= value, id= id, name="bath-choice", disabled= isDisabled ? true : false).visually-hidden
+    label(for= id)
+      span.bath-option__wrapper
+        span.bath-option__img
+          +picture("content/bath-options", img.name, "content/bath-options", img.name, img.format, img.width, img.height, title)
+        span.bath-option__icon
+          +icon("icon-check", 20, 20)
+        span.bath-option__title.title.title--xxs-3= title
+        span.bath-option__row
+          span.bath-option__info
+            span.text.text--small Количество гостей
+            span.text.text--body-medium-1.text--color-not-opacity= guests
+          span.bath-option__info
+            span.text.text--small Стоимость
+            span.text.text--body-medium-1.text--color-not-opacity
+              span= price
+              |  ₽ / Человек
+        span.bath-option__message
+          span.bath-option__message-date.text.text--small Баня недоступна для&nbsp;бронирования
+            span  15 сентября
+          span.bath-option__message-guests.text.text--small Баня недоступна для&nbsp;бронирования при&nbsp;указанном количестве гостей
+      +link("#", "Подробнее о бане")(data-open-modal=modal).text.text--small-caps-3

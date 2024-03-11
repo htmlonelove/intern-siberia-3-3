@@ -1,0 +1,281 @@
+.content {
+  font-family: $ff-euclidsquare;
+
+  @include vp-767 {
+    padding-bottom: 48px;
+  }
+
+  &--wide.content {
+    @include vp-767 {
+      padding-bottom: 0;
+    }
+
+    p:nth-child(2) {
+      @include vp-767 {
+        width: 100%;
+      }
+    }
+
+    .content__info {
+      margin-top: size(24px);
+      margin-bottom: size(48px);
+
+      p {
+        margin-bottom: 0;
+        margin-top: size(48px);
+        padding-right: size(40px);
+
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @include vp-767 {
+          width: 100%;
+          padding-right: 0;
+          margin-top: size(25px);
+        }
+
+        &:nth-child(2) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &--ul-dash.content {
+    ul {
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        margin-bottom: 0;
+      }
+
+      li:nth-child(3) {
+        width: unset;
+      }
+
+      li::before {
+        content: '– ';
+      }
+    }
+
+    ol ul li {
+      font-size: size(15px);
+      line-height: size(22px);
+      font-weight: 300;
+
+      @include vp-767 {
+        font-size: size(14px);
+        line-height: size(20px);
+      }
+    }
+  }
+}
+
+.content h2 {
+  margin-top: size(35px);
+  margin-bottom: size(15px);
+  font-family: $ff-euclidflex;
+  font-size: size(38px);
+  line-height: size(44px);
+  font-weight: 300;
+  color: rgba($color-coffee-bean, 0.7);
+
+  @include vp-767 {
+    margin-top: size(32px);
+    margin-bottom: size(22px);
+    font-family: $ff-euclidsquare;
+    font-weight: 500;
+    font-size: size(20px);
+    line-height: size(26px);
+  }
+}
+
+.content {
+  ol {
+    margin: 0;
+    padding: 0 size(30px) 0 0;
+
+    list-style-type: none;
+    counter-reset: item;
+    color: rgba($color-coffee-bean, 0.7);
+
+
+    @include vp-767 {
+      padding-right: 0;
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+
+    li {
+      width: 100%;
+    }
+
+    p {
+      margin-top: size(25px);
+      margin-bottom: 0;
+
+      &:first-child {
+        @include vp-767 {
+          margin-top: size(25px);
+        }
+      }
+
+      @include vp-767 {
+        margin-top: size(20px);
+      }
+    }
+  }
+
+  ol > li {
+    width: 100%;
+    font-size: size(20px);
+    line-height: size(26px);
+    font-weight: 500;
+    counter-increment: item;
+    margin-bottom: size(48px);
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+
+    &:last-of-type{
+      margin-bottom: 0;
+    }
+  }
+
+  ol > li:before {
+    content: counters(item, ".") ". ";
+    padding-right: size(1px);
+  }
+
+  li ol > li {
+    width: 100%;
+    margin: 0;
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+    margin-bottom: size(22px);
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+      margin-bottom: size(20px);
+    }
+  }
+
+  li ol > li:before {
+    content: counters(item, ".") ". ";
+  }
+
+  li ol {
+    margin-top: size(23px);
+  }
+}
+
+.content p {
+  font-family: $ff-euclidsquare;
+  color: rgba($color-coffee-bean, 0.7);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 22px;
+
+  @include vp-767 {
+    font-size: size(14px);
+    line-height: size(20px);
+
+    &:nth-child(2) {
+      width: size(300px);
+    }
+
+    &:nth-child(7) {
+      width: size(280px);
+    }
+  }
+}
+
+.content ul {
+  padding-left: 15px;
+
+  @include vp-767 {
+    &:nth-of-type(3) > p {
+      display: none;
+    }
+  }
+}
+
+.content__info {
+  margin-top: 32px;
+  margin-bottom: 32px;
+
+  &:nth-of-type(2) {
+    margin-top: 47px;
+  }
+
+  &:nth-of-type(3) {
+    margin-top: 43px;
+  }
+
+  @include vp-767 {
+    margin-top: 24px;
+    margin-bottom: 29px;
+
+    &:nth-of-type(3) {
+      margin-top: 48px;
+    }
+  }
+}
+
+.content__header {
+  p {
+    margin-bottom: 0;
+    margin-top: size(120px);
+
+    @include vp-767 {
+      margin-top: size(93px);
+    }
+  }
+}
+
+.content ul li {
+  margin-bottom: 15px;
+
+  &:nth-child(3) {
+    width: 471px;
+  }
+
+  @include vp-767 {
+    margin-bottom: size(14px);
+
+    &:nth-child(3) {
+      width: 280px;
+    }
+  }
+}
+
+.content ul:last-of-type + p {
+  margin-top: 46px;
+  margin-bottom: 66px;
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.content__subtitle {
+  p {
+    margin-top: 0;
+    margin-bottom: size(48px);
+  }
+}
+
+.content .link {
+  color: $color-coffee-bean;
+  font-weight: 500;
+
+  @include vp-767 {
+    font-weight: 500;
+  }
+}

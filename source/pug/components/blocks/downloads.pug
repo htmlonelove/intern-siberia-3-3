@@ -1,0 +1,17 @@
+mixin downloads()
+  section.downloads&attributes(attributes)
+    .container
+      .section__top
+        h2.subtitle файлы для&nbsp;скачивания
+        .section__heading
+          p.title.title--s
+            span.accent Документы,
+            |  которые могут вам&nbsp;понадобиться
+          p.text.text--body Для&nbsp;вашего&nbsp;удобства, мы&nbsp;подготовили файлы, которые часто запрашивают наши&nbsp;партнеры и&nbsp;клиенты.
+      ul.downloads__list
+        li.downloads__item
+          +download-btn({href: "downloads/siberia-rekvizit.pdf", name: "реквизиты siberia", info: "pdf, 41 kb"})
+        li.downloads__item
+          +download-btn({href: "downloads/siberia-prez.pdf", name: "Презентация компании", info: "pdf, 19.2 mb"})
+        li.downloads__item
+          +download-btn({href: "downloads/siberia-logo.ai", name: "логотип в векторе", info: "ai, 1.28 mb"})

@@ -1,0 +1,15 @@
+mixin event-info(data)
+  .event-info&attributes(attributes)
+    .event-info__main
+      h3.event-info__title!= data.title
+      .event-info__table
+        each header, i in data.headers
+          .event-info__col
+            p.event-info__text.event-info__text--header!= header
+            p.event-info__text!= data.cells[i]
+      span Забронировать
+    .event-info__footer
+      .event-info__block
+        +link("tel:+79779917777", "+7 977 991 77 77").event-info__phone-link
+        +socials().socials--hover.socials--rounded-mobile.event-info__socials
+      +btn({type: "button", text: "Заказать звонок"}).event-info__btn(data-open-modal="call")

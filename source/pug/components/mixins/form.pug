@@ -1,0 +1,45 @@
+mixin form(options = {})
+  - const name = options.name
+  - const action = options.action
+  - const position = options.position
+  - const img = options.img
+  - const buttonClass = options.buttonClass
+  - const linkClass = options.linkClass
+  - const btnText = options.btnText;
+  - const btnTextMob = options.btnTextMob;
+  - const id = options.id;
+  - const isCertificates = options.isCertificates
+  - const isOferta = options.isOferta
+
+  .form(data-validate)&attributes(attributes)
+    form(action=action, method="POST", id= id ? id : false)
+      block
+      if isCertificates
+        p.subtitle Оплата
+        .form__caption
+          p.text.text--small.text--color-not-opacity После оплаты мы пришлем виртуальный сертификат на&nbsp;ваш&nbsp;email.
+            br
+            |  Если вы хотите получить/подарить
+            span  физический&nbsp;сертификат
+            span.form__preview
+              +picture("content", "certificate", "content", "certificate-mob", "jpg", 1000, 676, "Сертификат")
+            |   &mdash;&nbsp;нажмите «Хочу физический сертификат». После оплаты наш&nbsp;менеджер свяжется с&nbsp;вами и&nbsp;мы&nbsp;доставим сертификат в&nbsp;удобное для&nbsp;вас&nbsp;время и&nbsp;место.
+
+        .form__wrapper
+          p.form__price.title.title--xxs-1
+            span(data-price-value) 50 000 ₽
+          +btn({type: "submit", text: btnText})(class=buttonClass).form__desktop
+          +btn({type: "submit", text: btnTextMob})(class=buttonClass).form__mobile
+          p.form__confidential.text.text--small Нажимая кнопку «
+            span.form__desktop !{btnText}
+            span.form__mobile !{btnTextMob}
+            | », вы&nbsp;принимаете
+            +link("conditions.html", " условия обработки персональных данных")(class=linkClass)
+      else
+        +btn({type: "submit", text: "Оставить заявку"})(class=buttonClass).btn--large
+        p.form__confidential.text.text--small Нажимая кнопку «Оставить заявку», вы&nbsp;принимаете
+          | <br>
+          +link("conditions.html", " условия обработки пользовательских данных")(class=linkClass)
+          if isOferta
+            |  и&nbsp;
+            +link("oferta.html", "договор оферту")(class=linkClass)

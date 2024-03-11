@@ -1,0 +1,19 @@
+.opening-hours {
+  display: flex;
+  align-items: center;
+  color: $color-default-white;
+
+  p {
+    color: inherit;
+  }
+
+  svg {
+    margin: 0 size(8px) 0 0;
+    width: size(20px);
+    height: size(20px);
+  }
+
+  &--dark {
+    color: $color-coffee-bean;
+  }
+}

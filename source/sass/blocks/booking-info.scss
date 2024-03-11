@@ -1,0 +1,160 @@
+.booking-info {
+  @include vp-767 {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 size(32px) 0;
+  }
+
+  .subtitle {
+    @include vp-767 {
+      order: -1;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin: 0 0 size(24px) 0;
+    max-width: size(762px);
+
+    @include vp-767 {
+      margin: 0 0 size(16px) 0;
+    }
+
+    &--desktop {
+      @include vp-767 {
+        order: -1;
+        margin: 0 0 size(32px) 0;
+      }
+
+      .booking-info__divider,
+      .booking-info__total-price {
+        @include vp-767 {
+          display: none;
+        }
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include vp-767 {
+        display: flex;
+      }
+    }
+
+    &--balance {
+      display: none;
+      flex-wrap: wrap;
+      color: $color-coffee-bean;
+
+      @include vp-767 {
+        order: -1;
+      }
+
+      .text,
+      .title {
+        color: inherit;
+      }
+    }
+  }
+
+  &__divider {
+    flex-grow: 1;
+    height: 1px;
+    margin: 0 size(16px);
+    background-color: rgba($color-coffee-bean, 0.2);
+  }
+
+  &__summary {
+    display: flex;
+
+    @include vp-767 {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__bath,
+  &__time-slot {
+    margin: 0 size(48px) 0 0;
+
+    @include vp-767 {
+      margin: 0 0 size(8px) 0;
+    }
+  }
+
+  &__guests,
+  &__time-slot {
+    display: flex;
+    flex-direction: column;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+    }
+  }
+
+  &__total-price {
+    display: flex;
+    align-items: center;
+  }
+
+  &__discount {
+    margin: 0 0 0 size(8px);
+    padding: size(3px) size(12px);
+    color: $color-default-white;
+    background-color: $color-la-palma;
+    border-radius: size(14px);
+    display: none;
+  }
+
+  &__desktop {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__balance-error {
+    max-height: 0;
+    opacity: 0;
+    width: 100%;
+    text-align: right;
+    transition: max-height $trans-default, opacity $trans-default;
+
+    @include vp-767 {
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  &.is-error {
+    .booking-info__row--balance {
+      color: $color-persian-red;
+
+      .booking-info__balance-error {
+        max-height: size(36px);
+        opacity: 1;
+
+        @include vp-767 {
+          max-height: size(54px);
+          margin: size(11px) 0 0 0;
+          text-align: left;
+        }
+      }
+    }
+  }
+
+  &.has-balance {
+    .booking-info__row--balance {
+      display: flex;
+    }
+  }
+}

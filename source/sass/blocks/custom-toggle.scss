@@ -1,0 +1,196 @@
+.custom-toggle {
+  position: relative;
+
+  display: flex;
+
+  &__error {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    color: $color-persian-red;
+
+    opacity: 0;
+
+    transition: opacity $trans-default;
+  }
+
+  input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0 0 0 0);
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    user-select: none;
+    cursor: pointer;
+
+    span {
+      margin-bottom: 0;
+      margin-left: 0;
+    }
+  }
+
+  &__label {
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+    color: rgba($color-coffee-bean, 0.5);
+    transition: color $trans-default;
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &--checkbox {
+    .custom-toggle__icon {
+      position: relative;
+      flex-shrink: 0;
+      width: size(60px);
+      height: size(32px);
+      margin: 0 size(16px) 0 0;
+      color: $color-default-white;
+      border: size(1px) solid rgba($color-coffee-bean, 0.2);
+      border-radius: size(16px);
+      background-color: $color-transparent;
+
+      transition: transform $trans-default, border-color $trans-default, background-color $trans-default;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: size(14px);
+        width: size(16px);
+        height: size(16px);
+        transform: translate(-50%, -50%);
+        fill: none;
+        opacity: 0;
+        transition: opacity $trans-default, left $trans-default;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: size(14px);
+
+        width: size(24px);
+        height: size(24px);
+
+        border-radius: 50%;
+        background-color: $color-coffee-bean;
+
+        transform: translate(-50%, -50%);
+
+        transition: background-color $trans-default, left $trans-default;
+      }
+    }
+
+    input:checked ~ .custom-toggle__label {
+      color: $color-coffee-bean;
+    }
+
+    input:checked + .custom-toggle__icon {
+      border-color: $color-coffee-bean;
+      background-color: $color-coffee-bean;
+
+      &::before {
+        background-color: $color-tints-of-brass;
+        left: calc(100% - #{size(14px)});
+      }
+
+      svg {
+        opacity: 1;
+        left: calc(100% - #{size(14px)});
+      }
+    }
+  }
+
+  &--radio {
+    label {
+      width: 100%;
+      padding: size(20px) size(32px);
+      justify-content: center;
+
+      @include vp-767 {
+        padding: size(12px) size(12px);
+      }
+    }
+
+    .custom-toggle__label {
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+      font-size: size(11px);
+      line-height: size(16px);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $color-coffee-bean;
+
+
+      &::before {
+        content: "";
+        width: size(5px);
+        height: size(5px);
+        margin: 0 size(8px) 0 0;
+        background-color: $color-mongoose;
+        border-radius: 50%;
+        transition: background-color $trans-default;
+      }
+    }
+
+    .custom-toggle__icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background-color: $color-default-white;
+      border-radius: size(12px);
+      z-index: -1;
+
+      transition: background-color $trans-default;
+    }
+
+    input:checked ~ .custom-toggle__label {
+      color: $color-default-white;
+
+      &::before {
+        background-color: $color-tints-of-brass;
+      }
+    }
+
+    input:checked + .custom-toggle__icon {
+      background-color: $color-coffee-bean;
+    }
+  }
+
+
+  // &.is-invalid {
+  //   .custom-toggle__icon {
+  //     border: 1px solid $color-persian-red;
+  //   }
+
+  //   .custom-toggle__error {
+  //     opacity: 1;
+  //   }
+  // }
+
+  /*&.is-valid {
+    label span {
+      color: $color-eucalyptus;
+    }
+  }*/
+}

@@ -1,0 +1,121 @@
+.checkout {
+  width: 100%;
+  padding: size(56px) 0 size(166px) 0;
+
+  @include vp-1279 {
+    padding: 56px 0 196px 0;
+  }
+
+  @include vp-767 {
+    padding: 0;
+  }
+
+  .subtitle {
+    margin: 0 0 size(32px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    width: calc(100% + #{size(16px)});
+    margin: 0 size(-16px) size(48px) 0;
+
+    @include vp-1279 {
+      flex-wrap: wrap;
+      margin: 0 size(-16px) size(32px) 0;
+    }
+
+    @include vp-767 {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 0 size(40px) 0;
+    }
+
+    .tab-control {
+      width: calc(33.333% - #{size(16px)});
+      margin: 0 size(16px) 0 0;
+
+      @include vp-1279 {
+        width: calc(50% - 16px);
+        margin: 0 size(16px) size(16px) 0;
+      }
+
+      @include vp-767 {
+        width: 100%;
+        margin: 0 0 size(8px) 0;
+      }
+    }
+  }
+
+  &__element {
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: calc(100% + #{size(64px)});
+    margin: 0 size(-64px) size(48px) 0;
+
+    @include vp-767 {
+      flex-direction: column;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__fieldset {
+    padding: 0;
+    width: calc(50% - #{size(64px)});
+    margin: 0 size(64px) 0 0;
+    border: none;
+
+    @include vp-767 {
+      width: 100%;
+      margin: 0 0 size(48px) 0;
+    }
+
+    .btn {
+      margin: size(16px) 0 0 0;
+      width: 100%;
+    }
+  }
+
+  &__fieldset-error {
+    max-height: 0;
+    opacity: 0;
+    color: $color-persian-red;
+    text-align: right;
+    transition: max-height $trans-default, opacity $trans-default;
+
+    a {
+      color: inherit;
+    }
+
+    &.is-active {
+      max-height: size(36px);
+      opacity: 1;
+
+      @include vp-767 {
+        max-height: size(42px);
+      }
+    }
+  }
+
+  &__verfication-btn {
+    display: none;
+
+    &.is-shown {
+      display: inline-flex;
+    }
+  }
+
+  &.is-discount {
+    .booking-info__discount {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,181 @@
+.video-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: size(16px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: $color-default-black;
+  cursor: pointer;
+  overflow: hidden;
+  object-fit: cover;
+
+  @include vp-1679 {
+    border-radius: 16px;
+  }
+
+  @include vp-1439 {
+    width: 100%;
+    height: 100%;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    height: 100%;
+    padding: size(16px);
+    border-radius: size(16px);
+    transition: none;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      .btn-play-with-text__circle {
+        color: $color-default-white;
+        background-color: $color-tints-of-brass;
+      }
+    }
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    border-radius: size(16px);
+    object-fit: cover;
+
+    // @include vp-767 {
+      // width: calc(100% + #{size(32px)});
+      // height: calc(100% + #{size(32px)});
+      // top: size(-16px);
+      // left: size(-16px);
+    // }
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .btn-play-with-text {
+    z-index: 999;
+  }
+
+  .bath-slider__video-time {
+    z-index: 999;
+  }
+
+  .bath-slider__video-caption {
+    z-index: 999;
+  }
+
+  &.is-play {
+    padding: 0;
+
+    .btn-play-with-text {
+      display: none;
+    }
+
+    .video-inner__cover {
+      display: none;
+    }
+
+    @include vp-767 {
+      .bath-slider__video-time {
+        display: none;
+      }
+
+      .bath-slider__video-caption {
+        display: none;
+      }
+    }
+  }
+}
+
+.video-inner__cover {
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color-default-black;
+  border-radius: size(16px);
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+
+    &::-webkit-media-controls-panel {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+
+    /* Old shadow dom for play button */
+
+    &::-webkit-media-controls-play-button {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+
+    /* New shadow dom for play button */
+
+    /* This one works! */
+
+    &::-webkit-media-controls-start-playback-button {
+      display: none!important;
+      -webkit-appearance: none;
+    }
+  }
+}
+
+.video-inner__block {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // display: none;
+  }
+
+  video.is-active-video {
+    display: block;
+  }
+}
+
+// .video-inner__mobile {
+//   display: none;
+//   width: 100%;
+//   height: 100%;
+
+//   @include vp-767 {
+//     display: block;
+//   }
+
+//   video {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }
+
+

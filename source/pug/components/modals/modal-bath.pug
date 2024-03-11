@@ -1,0 +1,32 @@
+mixin modal-bath()
+  .bath-card.bath-card--modal
+    .bath-card__img-wrapper
+      .bath-card__slider-wrapper.swiper(data-slider="mobile")
+        button(aria-label="Предыдущий слайд").bath-card__nav-btn.bath-card__nav-btn--prev
+        button(aria-label="Следующий слайд").bath-card__nav-btn.bath-card__nav-btn--next
+        .bath-card__nav-icon
+          +icon("icon-arrow", 20, 20)
+        .bath-card__slider.swiper-wrapper
+          .bath-card__slide.swiper-slide
+            +picture("slides/cuisine-slider/desktop", "1", "slides/cuisine-slider/mobile", "1", "jpg", 600, 480, "Слайд 1")
+          .bath-card__slide.swiper-slide
+            +picture("slides/cuisine-slider/desktop", "2", "slides/cuisine-slider/mobile", "2", "jpg", 600, 480, "Слайд 1")
+          .bath-card__slide.swiper-slide
+            +picture("slides/cuisine-slider/desktop", "3", "slides/cuisine-slider/mobile", "3", "jpg", 600, 480, "Слайд 1")
+        .bath-card__pagination
+    .bath-card__content
+      h2.title.title--xs-1 Баня знахаря
+      p.bath-card__text.text.text--body Дубовая парная с&nbsp;ароматами сибирского разнотравья и&nbsp;звукотерапия в&nbsp;специальной фито-комнате.
+      ul.bath-card__specifications
+        li.bath-card__specifications-item
+          h3.bath-card__specifications-title.text.text--color-not-opacity.text--body-medium-1 Пар
+          p.bath-card__specifications-text.text.text--body Прополисный положок, донник, таволга, мята лесная
+        li.bath-card__specifications-item
+          h3.bath-card__specifications-title.text.text--color-not-opacity.text--body-medium-1 Скрабы
+          p.bath-card__specifications-text.text.text--body Медовый, анисовый, пихтовый
+        li.bath-card__specifications-item
+          h3.bath-card__specifications-title.text.text--color-not-opacity.text--body-medium-1 Веники
+          p.bath-card__specifications-text.text.text--body Дуб, береза, можжевельник
+        li.bath-card__specifications-item
+          h3.bath-card__specifications-title.text.text--color-not-opacity.text--body-medium-1 Звуки
+          p.bath-card__specifications-text.text.text--body Шум ручья, валдайские колокольчики

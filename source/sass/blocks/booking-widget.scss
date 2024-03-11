@@ -1,0 +1,116 @@
+.booking-widget {
+  position: fixed;
+  bottom: size(24px);
+  width: calc(100% - #{size(440px)});
+  max-width: size(1000px);
+  padding: size(28px) size(24px) size(27px) size(24px);
+  display: flex;
+  align-items: center;
+  background-color: $color-coffee-bean;
+  border-radius: size(16px);
+  z-index: 10;
+
+  @include vp-1279 {
+    // width: calc(100% - 408px);
+    width: 62vw;
+    flex-wrap: wrap;
+  }
+
+  @include vp-1023 {
+    width: calc(100% - 48px);
+  }
+
+  @include vp-767 {
+    width: calc(100% + #{size(24px)});
+    margin: 0 size(-12px);
+    padding: 0;
+    // padding: 0 0 size(12px) 0;
+    position: static;
+    flex-direction: column;
+    background-color: $color-transparent;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0 0 size(4px) 0;
+
+    @include vp-1279 {
+      margin: 0 auto 16px 0;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__guests {
+    margin: 0 size(40px) 0 0;
+  }
+
+  &__time-slot {
+    display: flex;
+    flex-direction: column;
+    margin: 0 size(40px) 0 0;
+  }
+
+  &__divider {
+    flex-grow: 1;
+    height: 1px;
+    width: auto;
+    margin: 0 size(32px);
+    background-color: rgba($color-default-white, 0.2);
+
+    @include vp-1279 {
+      display: none;
+    }
+
+    @include vp-1023 {
+      display: block;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  .btn {
+    flex-shrink: 0;
+    width: size(249px);
+
+    @include vp-1279 {
+      width: 100%;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(12px) 0;
+      width: 100%;
+    }
+
+    &--transparent {
+      @include vp-1279 {
+        margin: 0 0 12px 0;
+      }
+
+      @include vp-767 {
+        order: 1;
+        margin: 0 0 size(12px) 0;
+      }
+    }
+  }
+
+  &__desktop {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include vp-767 {
+      display: inline-flex;
+    }
+  }
+}

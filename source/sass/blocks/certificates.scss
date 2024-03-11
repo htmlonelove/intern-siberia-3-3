@@ -1,0 +1,248 @@
+.certificates {
+  padding: size(56px) 0 size(56px) 0;
+
+  @include vp-767 {
+    padding: size(116px) 0 size(80px) 0;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 size(28px) 0;
+    color: $color-coffee-bean;
+
+    @include vp-767 {
+      margin: 0 0 size(23px) 0;
+    }
+
+    .opening-hours {
+      color: inherit;
+
+      @include vp-767 {
+        display: none;
+      }
+    }
+  }
+
+  .subtitle {
+    padding: 0;
+  }
+
+  &__title {
+    max-width: size(770px);
+    margin: 0 0 size(22px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(16px) 0;
+    }
+  }
+
+  &__text {
+    margin: 0 0 size(64px) 0;
+  }
+
+  &__fieldset {
+    display: block;
+    margin: 0 0 size(64px) 0;
+    padding: 0;
+    border: none;
+    width: 100%;
+
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+
+    .subtitle {
+      margin: 0 0 size(32px) 0;
+
+      @include vp-767 {
+        margin: 0 0 size(24px) 0;
+      }
+
+      span {
+        @include vp-767 {
+          display: none;
+        }
+      }
+    }
+
+    &--gift {
+      display: none;
+      flex-wrap: wrap;
+      margin: size(-32px) 0 size(48px) 0;
+
+      @include vp-767 {
+        margin: 0 0 size(56px) 0;
+      }
+
+      &.is-active {
+        display: flex;
+      }
+
+      .custom-input:last-child {
+        flex-grow: 1;
+        width: auto;
+
+        @include vp-1279 {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 size(-16px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(31px) 0;
+    }
+  }
+
+  .certificate-option,
+  .custom-input {
+    width: calc(33.333% - #{size(16px)});
+    margin: 0 size(16px) size(16px) 0;
+
+    @include vp-767 {
+      width: 100%;
+      margin: 0 0 size(8px) 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 size(16px) 0;
+
+    @include vp-1279 {
+      width: 100%;
+      margin: 0 0 16px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(16px) 0;
+    }
+
+    .custom-input__label {
+      pointer-events: none;
+    }
+  }
+
+  .custom-input {
+    &:first-child {
+      flex: 0 0 auto;
+    }
+
+    label textarea {
+      min-height: size(96px);
+
+      @include vp-767 {
+        min-height: size(128px);
+      }
+    }
+
+    input {
+      @include vp-767 {
+        font-size: size(16px);
+      }
+    }
+  }
+
+  form {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .custom-toggle--checkbox {
+    margin: 0 0 size(16px) 0;
+  }
+
+  &__field-wrapper {
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0 0 size(16px) 0;
+    width: 66.666%;
+
+    @include vp-1279 {
+      width: 100%;
+      margin: 0 0 24px 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .text,
+    .custom-input {
+      width: calc(50% - #{size(16px)});
+
+      @include vp-1279 {
+        width: 100%;
+      }
+    }
+
+    .custom-input {
+      margin: 0 size(16px) 0 0;
+
+      @include vp-1279 {
+        flex-grow: 1;
+        flex-shrink: 0;
+      }
+
+      @include vp-767 {
+        margin: 0 0 size(16px) 0;
+      }
+    }
+  }
+
+  &__orientation {
+    display: flex;
+    align-items: center;
+    margin: 0 size(16px) 0 0;
+
+    @include vp-1023 {
+      flex-wrap: wrap;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(8px) 0;
+    }
+
+    .custom-toggle {
+      flex-shrink: 0;
+      width: size(190px);
+      margin: 0 size(8px) 0 0;
+
+      @include vp-767 {
+        width: calc(50% - #{size(4px)});
+        margin: 0 size(8px) size(24px) 0;
+      }
+
+      &:last-of-type {
+        margin: 0 size(24px) 0 0;
+
+        @include vp-767 {
+          margin: 0 0 size(24px) 0;
+        }
+      }
+    }
+
+    .btn {
+      width: auto;
+      margin: 0;
+      flex: 1 1 auto;
+
+      @include vp-1279 {
+        margin: 0;
+      }
+
+      @include vp-1023 {
+        flex-grow: 1;
+        margin: 0;
+      }
+    }
+  }
+}

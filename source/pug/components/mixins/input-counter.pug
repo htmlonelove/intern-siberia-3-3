@@ -1,0 +1,13 @@
+mixin input-counter(options = {})
+  - const inputId = options.inputId ? options.inputId : false
+  - const min = options.min
+  - const max = options.max
+  - const type = options.type;
+  - const name = options.name ? options.name : "quantity"
+
+  .input-counter(data-counter="parent", data-counter-type= type)&attributes(attributes)
+    button(type="button", aria-label="Меньше", disabled, data-counter="decrease", data-min=min)
+      +icon("icon-minus", 20, 20)
+    input(type="text", name=name, id=inputId, value=min, readonly, aria-label="количество гостей")
+    button(type="button", aria-label="Больше", data-counter="increase", data-max=max)
+      +icon("icon-plus", 20, 20)

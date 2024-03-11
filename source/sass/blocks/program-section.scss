@@ -1,0 +1,25 @@
+.program-section__button {
+  display: none;
+
+  @include vp-767 {
+    display: inline-flex;
+    margin-top: size(40px);
+  }
+}
+
+.program-section__button-call {
+  min-width: size(268px);
+  display: block;
+  margin: size(40px) auto 0;
+
+  color: $color-default-white;
+
+  @include vp-767 {
+    margin-top: size(16px);
+
+    color: $color-coffee-bean;
+
+    border: 1px solid rgba($color-coffee-bean, 0.2);
+    background-color: $color-transparent;
+  }
+}

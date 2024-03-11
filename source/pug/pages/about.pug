@@ -1,0 +1,48 @@
+extends ../components/base/layout
+
+block variables
+  - const title = 'О нас' //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "about.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content
+      +bath-siberia()
+      section.quote-section(data-animate)
+        .container.fib
+          h2.subtitle Прямая речь
+          +quote("Дмитрий Портнягин", "Основатель Siberia", false, "content", "portnyagin").quote.quote--reverse
+            p.title.title--s.title--desktop
+              | Когда я был подростком, мы&nbsp;с&nbsp;папой ходили каждую неделю в баню
+              |&mdash;&nbsp;это стало для нас
+              span.accent &nbsp;важной семейной традицией.
+              | &nbsp;После, когда стал предпринимателем,
+              | я продолжаю каждую неделю ходить в баню, где не только
+              span.accent &nbsp;восстанавливаю силу,
+              | &nbsp;но и вспоминаю эти тёплые чувства, наполняя душу. Несколько лет я&nbsp;копил
+              span.accent  опыт лучших бань и мастеров.
+              |  И все это собрал в Siberia&nbsp;&mdash; моем бизнесе для души.
+              span.accent  Добро пожаловать.
+            p.title.title--s.title--mobile
+              | Когда я был подростком, мы&nbsp;с&nbsp;папой ходили каждую неделю в баню
+              |&mdash;&nbsp;это стало для нас
+              span.accent &nbsp;важной семейной традицией.
+              | &nbsp;После, когда стал предпринимателем,
+              | я продолжаю каждую неделю ходить в баню, где не только
+              span.accent &nbsp;восстанавливаю силу,
+              | &nbsp;но и вспоминаю эти тёплые чувства, наполняя душу. Несколько лет я&nbsp;копил
+              span.accent  опыт лучших бань и мастеров.
+              |  И все это собрал в Siberia&nbsp;&mdash; моем бизнесе для души.
+              span.accent  Добро пожаловать.
+      +about-service()
+      +history-logo()
+      +values()
+
+block modals
+  +modal("modal--no-scale modal--call", true)(data-modal="call")
+    +modal-call()

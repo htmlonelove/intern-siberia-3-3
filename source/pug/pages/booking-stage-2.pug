@@ -1,0 +1,91 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Бронирование - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "booking.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content
+      .booking-page(data-animate)
+        .container
+          .booking-page__form.is-final(data-validate, data-booking, data-url="../api/booking/check", data-callback="booking")
+            form(action="./php_mailer_booking/send.php", method="POST")
+              section.checkout
+                h2.subtitle Выберите способ оплаты
+                .checkout__tabs(data-tabs="parent")
+                  .checkout__controls(data-tabs="controls")
+                    label.tab-control.text.text--body-l(for="radio-tab1" data-tabs="control" data-payment="bank") Банковская карта
+                      input.visually-hidden(type="radio" id="radio-tab1" name="payment-type" value="Банковская карта" checked)
+                      span.tab-control__icon
+                        +icon("icon-check", 20, 20)
+                    label.tab-control.text.text--body-l(for="radio-tab2" data-tabs="control" data-payment="club-card") Клубная карта
+                      input.visually-hidden(type="radio" id="radio-tab2" name="payment-type" value="Клубная карта")
+                      span.tab-control__icon
+                        +icon("icon-check", 20, 20)
+                    label.tab-control.text.text--body-l(for="radio-tab3" data-tabs="control" data-payment="certificate") Подарочный сертификат
+                      input.visually-hidden(type="radio" id="radio-tab3" name="payment-type" value="Подарочный сертификат")
+                      span.tab-control__icon
+                        +icon("icon-check", 20, 20)
+                  .checkout__content(data-tabs="content")
+                    .checkout__element(data-tabs="element" data-payment-bank)
+                      fieldset.recepient-details
+                        legend.subtitle Ваши контактные данные
+                        .recepient-details__inputs
+                          +custom-input({inputLabel: "Ваше имя", inputId: "name", inputName: "booking-name"})(data-validate-type="text", data-limitations="letters", data-client="name")
+                          +custom-input({inputLabel: "Телефон", inputId: "phone", inputName: "booking-phone"})(data-validate-type="phone", data-client="phone")
+                          +custom-input({inputLabel: "Email", inputId: "email", inputName: "booking-email"})(data-validate-type="email", data-client="email")
+                          +custom-textarea({inputLabel: "Комментарий", inputId: "comment", inputName: "booking-comment"})(data-client="comment")
+                      +booking-info({isDiscount: false})
+
+                    .checkout__element(data-tabs="element")
+                      .checkout__wrapper
+                        fieldset.checkout__fieldset
+                          legend.subtitle Введите номер клубной карты
+                          +custom-input({inputLabel: "Номер клубной карты", inputId: "club-card", inputName: "club-card", inputError: "Неверный номер клубной карты"})(data-validate-type="matrix", data-matrix="___ ___ ___ ___", data-matrix-limitations="digit")
+                          p.checkout__fieldset-error.text.text--small.text--color-not-opacity Сервис временно недоступен.
+                            br
+                            | Вы&nbsp;всегда можете связаться с&nbsp;нами&nbsp;по&nbsp;телефону
+                            a(href="tel:+79779917777")  +7&nbsp;(977)&nbsp;991-77-77
+                          +btn({text: "прислать код подтверждения"})(data-check="button", data-type="club-card")
+                        fieldset.checkout__fieldset
+                          legend.subtitle Введите последние 4 цифры входящего номера
+                          +custom-input({inputLabel: "Последние 4 цифры входящего номера", inputId: "club-card-code", inputName: "club-code", inputError: "Неверный код, попробуйте запросить новый"})(data-validate-type="matrix", data-matrix="____", data-matrix-limitations="digit")
+                          +btn({text: "Подтвердить"})(data-verificate="button" data-verificate-type="club-card").checkout__verfication-btn
+                      fieldset.recepient-details
+                        legend.subtitle Ваш комментарий к заказу
+                        .recepient-details__inputs
+                          +custom-textarea({inputLabel: "Комментарий", inputId: "comment-1", inputName: "booking-comment-1"})(data-client="comment")
+                      +booking-info({isClubCard: true})(data-info-type="club-card")
+
+                    .checkout__element(data-tabs="element")
+                      .checkout__wrapper
+                        fieldset.checkout__fieldset
+                          legend.subtitle Введите номер сертификата
+                          +custom-input({inputLabel: "Номер сертификата", inputId: "certificate", inputName: "certificate-card", inputError: "Неверный номер сертификата"})(data-validate-type="matrix", data-matrix="___ ___ ___ ___", data-matrix-limitations="digit")
+                          p.checkout__fieldset-error.text.text--small.text--color-not-opacity Сервис временно недоступен.
+                            br
+                            | Вы&nbsp;всегда можете связаться с&nbsp;нами&nbsp;по&nbsp;телефону
+                            a(href="tel:+79779917777")  +7 (977) 991-77-77
+                          +btn({text: "прислать код подтверждения"})(data-check="button", data-type="certificate")
+                        fieldset.checkout__fieldset
+                          legend.subtitle Введите последние 4 цифры входящего номера
+                          +custom-input({inputLabel: "Последние 4 цифры входящего номера", inputId: "certificate-code", inputName: "certif-code", inputError: "Неверный код, попробуйте запросить новый"})(data-validate-type="matrix", data-matrix="____", data-matrix-limitations="digit")
+                          +btn({text: "Подтвердить"})(data-verificate="button" data-verificate-type="certificate").checkout__verfication-btn
+                      fieldset.recepient-details
+                        legend.subtitle Ваш комментарий к заказу
+                        .recepient-details__inputs
+                          +custom-textarea({inputLabel: "Комментарий", inputId: "comment-1", inputName: "booking-comment-1"})(data-client="comment")
+                      +booking-info({isCertificate: true})(data-info-type="certificate")
+                +booking-widget({btnText: "внести предоплату 20 000 ₽", btnTextMob: "внести предоплату 20 000 ₽", btnType: "submit"})
+
+block modals
+  +modal("modal--no-scale modal--bath")(data-modal="bath")
+    +modal-bath()
+  +modal("modal--no-scale modal--booking")(data-modal="booking-check")
+    +modal-booking(true)

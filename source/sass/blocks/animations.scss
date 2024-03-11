@@ -1,0 +1,197 @@
+@keyframes slide-back {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes slide-next {
+  0% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+
+  100% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes slide-next-2 {
+  0% {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
+  }
+
+  100% {
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+}
+
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-top {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-top-50 {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-bottom-50 {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-to-right {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+[data-animate] {
+  .d-100 {
+    animation-delay: 0.1s;
+  }
+
+  .d-200 {
+    animation-delay: 0.2s;
+  }
+
+  .d-300 {
+    animation-delay: 0.3s;
+  }
+
+  .d-400 {
+    animation-delay: 0.4s;
+  }
+
+  .d-500 {
+    animation-delay: 0.3s;
+  }
+
+  .d-600 {
+    animation-delay: 0.6s;
+  }
+
+  .d-700 {
+    animation-delay: 0.7s;
+  }
+
+  .d-800 {
+    animation-delay: 0.8s;
+  }
+
+  .fib,
+  .fit {
+    opacity: 0;
+    pointer-events: none;
+
+    @include vp-1023 {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  .str {
+    transform: translateX(-150%);
+    pointer-events: none;
+
+    @include vp-1023 {
+      transform: translateX(0);
+    }
+  }
+
+  &.show {
+    .fib,
+    .fit {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .str {
+      transform: translateX(0);
+      pointer-events: all;
+    }
+
+    .fib {
+      @include animation(fade-in-bottom-50, 1s, ease-in-out);
+    }
+
+    .fit {
+      @include animation(fade-in-top-50, 1s, ease-in-out);
+    }
+
+    .str {
+      @include animation(slide-to-right, 1.2s, ease-in-out);
+    }
+  }
+}
+
+@keyframes rotate-text {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: size(175px);
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes countdown-tab {
+  from {
+    stroke-dashoffset: size(225px);
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

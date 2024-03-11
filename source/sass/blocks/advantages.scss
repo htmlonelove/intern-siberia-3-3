@@ -1,0 +1,363 @@
+.advantages {
+  padding: size(96px) 0 size(40px) 0;
+
+  @include vp-1023 {
+    padding: 80px 0 40px 0;
+  }
+
+  @include vp-767 {
+    padding: 0 0 size(66px) 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+
+    @include vp-1023 {
+      display: block;
+    }
+  }
+
+  .subtitle {
+    padding: size(13px) 0 0 0;
+    margin: 0 size(139px) 0 0;
+
+    @include vp-1023 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__heading {
+    max-width: size(500px);
+    margin: 0 0 size(67px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(40px) 0;
+    }
+  }
+
+  .title {
+    margin: 0 0 size(20px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(14px) 0;
+    }
+  }
+
+  &__wrapper {
+    width: calc(100% + #{size(24px)});
+    margin: 0 size(-24px) size(39px) 0;
+
+    &.back {
+      .swiper-slide-active .advantages__card,
+      .is-visible .advantages__card {
+        animation: slide-back $trans-eio-1000;
+
+        @include vp-767 {
+          animation: unset;
+        }
+      }
+
+      .swiper-slide-active .advantages__card-title,
+      .is-visible .advantages__card-title {
+        opacity: 0;
+        animation: fade-in-bottom $trans-eio-700;
+        animation-delay: 0.8s;
+        animation-fill-mode: both;
+
+        @include vp-767 {
+          opacity: 1;
+          animation: unset;
+        }
+      }
+
+      .swiper-slide-active .advantages__card-number,
+      .is-visible .advantages__card-number {
+        opacity: 0;
+        animation: fade-in-top $trans-eio-700;
+        animation-delay: 0.8s;
+        animation-fill-mode: both;
+      }
+
+      .swiper-slide-next,
+      .is-next {
+        z-index: 3;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+
+      .swiper-slide-prev,
+      .is-prev {
+        z-index: -1;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+    }
+
+    &.next {
+      .swiper-slide-active .advantages__card,
+      .is-visible .advantages__card {
+        animation: slide-next $trans-eio-1000;
+
+        @include vp-767 {
+          animation: unset;
+        }
+      }
+
+      .swiper-slide-active .advantages__card-title,
+      .is-visible .advantages__card-title {
+        opacity: 0;
+        animation: fade-in-top $trans-eio-700;
+        animation-delay: 0.8s;
+        animation-fill-mode: both;
+
+        @include vp-767 {
+          opacity: 1;
+          animation: unset;
+        }
+      }
+
+      .swiper-slide-active .advantages__card-number,
+      .is-visible .advantages__card-number {
+        opacity: 0;
+        animation: fade-in-bottom $trans-eio-700;
+        animation-delay: 0.8s;
+        animation-fill-mode: both;
+      }
+
+      .swiper-slide-next,
+      .is-next {
+        z-index: -1;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+
+      .swiper-slide-prev,
+      .is-prev {
+        z-index: 3;
+
+        @include vp-767 {
+          z-index: unset;
+        }
+      }
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+      padding: 0;
+      width: calc(100% + #{size(48px)});
+      margin: 0 size(-24px);
+    }
+  }
+
+  &__slider {
+    @include vp-767 {
+      width: 100%;
+    }
+  }
+
+  &__group {
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 0;
+
+    @include vp-767 {
+      // display: contents;
+      width: calc(100% * 3 - #{size(108px)});
+    }
+
+    &.swiper-slide-active {
+      z-index: 4;
+
+      @include vp-767 {
+        z-index: unset;
+      }
+
+      .advantages__card-title {
+        opacity: 1;
+      }
+
+      .advantages__card-number {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__slide {
+    margin: 0 size(24px) 0 0;
+    width: calc(33.333% - #{size(24px)});
+
+    @include vp-767 {
+      margin: 0;
+      width: calc(100% - #{size(56px)});
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 25vw;
+    padding: size(24px);
+    border-radius: size(16px);
+    overflow: hidden;
+
+    @include vp-1279 {
+      min-height: 260px;
+      padding: 20px 16px;
+    }
+
+    @include vp-767 {
+      padding: size(24px);
+      min-height: size(212px);
+    }
+  }
+
+  &__card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-default-black;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+  }
+
+  &__card-title.title {
+    max-width: size(210px);
+    position: relative;
+    margin: 0 0 auto 0;
+    color: $color-default-white;
+    z-index: 1;
+
+    @include vp-767 {
+      max-width: size(243px);
+      opacity: 1;
+      margin: auto 0 0 0;
+    }
+  }
+
+  &__card-number {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: size(56px);
+    height: size(56px);
+    font-weight: 300;
+    font-size: size(13px);
+    line-height: size(18px);
+    color: rgba($color-coffee-bean, 0.7);
+    background-color: $color-default-white;
+    border-radius: 50%;
+    z-index: 1;
+
+    @include vp-1279 {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__card-current {
+    position: relative;
+    margin: 0 size(15px) 0 0;
+
+    @include vp-1279 {
+      margin: 0 10px 0 0;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: size(3px);
+      height: size(3px);
+      top: 50%;
+      right: size(-9px);
+      background-color: rgba($color-coffee-bean, 0.5);
+      border-radius: 50%;
+      transform: translateY(-50%);
+
+      @include vp-1279 {
+        right: -7px;
+      }
+    }
+  }
+
+  &__slider-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__caption.text {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0 size(17px) 0 0;
+    order: -1;
+
+    span {
+      padding: 0 0 size(2px) 0;
+    }
+
+    &::before {
+      content: "";
+      width: size(5px);
+      height: size(5px);
+      flex-shrink: 0;
+      margin: size(2px) size(4px) 0 size(8px);
+      background-color: $color-coffee-bean;
+      border-radius: 50%;
+      order: 1;
+    }
+
+    &::after {
+      content: "";
+      flex-shrink: 0;
+      position: relative;
+      width: size(348px);
+      height: 1px;
+      margin: size(2px) 0 0 0;
+      background-color: rgba($color-coffee-bean, 0.12);
+      order: 1;
+
+      @include vp-1279 {
+        flex-shrink: 1;
+        width: 240px;
+      }
+    }
+  }
+}

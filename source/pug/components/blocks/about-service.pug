@@ -1,0 +1,44 @@
+mixin about-service()
+  -
+    const advantages = [
+      {
+        text: "Капсульная коллекция банного\u00A0текстиля"
+      },
+      {
+        text: "Персональный райдер для каждого гостя"
+      },
+      {
+        text: "Отдельный микроклимат в\u00A0парной\u00A0под\u00A0ваш запрос"
+      },
+      {
+        text: "Велком-угощения в\u00A0каждой бане"
+      },
+      {
+        text: "Большое разнообразие веников"
+      },
+      {
+        text: "Линейка собственной косметики от шампуня до зубной пасты"
+      },
+      {
+        text: "Собственная бесплатная парковка"
+      },
+    ]
+
+  section.about-service(data-animate)
+    .container.fib
+      .about-service__top
+        h2.subtitle.about-service__subtitle Сервис
+        .about-service__header
+          p.title.title--s.about-service__title
+            | Мы создаем
+            span.accent  условия для комфортного отдыха
+            |  высокого уровня
+          p.text.about-service__text Уделяем внимание каждой мелочи, чтобы наши гости чувствовали себя как дома
+      .about-service__advantages.swiper-container
+        ol.ordered-list.swiper-wrapper
+          each item in advantages
+            li.ordered-list__item.swiper-slide
+              p.title.title--xxs-2.text--desktop= item.text
+              p.title.title--xxs-2.text--mobile= item.text
+        .about-service__pagination.swiper-pagination
+

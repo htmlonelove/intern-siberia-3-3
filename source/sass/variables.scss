@@ -1,0 +1,94 @@
+// Colors
+// ---------------------------------
+
+// Default
+
+$color-default-black:               #000000;
+$color-default-white:               #ffffff;
+$color-transparent:                 rgba(255, 255, 255, 0);
+
+// Project palette
+// для нейминга цветов используем https://www.htmlcsscolor.com/hex/334482
+
+$color-black-pearl:                 #1f2324;
+$color-coffee-bean:                 #322d29;
+$color-charade:                     #3b3f40;
+$color-squirrel:                    #8f7965;
+$color-mongoose:                    #a88e77;
+$color-rodeo-dust:                  #c2a489;
+$color-bon-jour:                    #e1dad5;
+$color-fantasy:                     #ebe5e1;
+$color-hint-of-red:                 #f7f3f0;
+$color-romance:                     #f2f0ea;
+$color-kournikova:                  #ffd04f;
+$color-persian-red:                 #d33636;
+$color-medium-carmine:              #af403e;
+$color-emerald:                     #5ecf87;
+$color-emerald-border:              #59bc7c;
+$color-fruit-salad:                 #40c351;
+$color-la-palma:                    #3aa320;
+$color-summer-sky:                  #26a3e2;
+$color-spring-wood:                 #e8e3df;
+$color-pale-slate:                  #ccc5c0;
+$color-atomic:                      #46494a;
+$color-tints-of-brass:              #b5a642;
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+// ---------------------------------
+
+// переменная используемая в html для подключения скейлинга
+$fz-default:                        16px;
+
+// у некоторых шрифтов в ios возникают проблемы с символом рубля
+// https://www.artlebedev.ru/kovodstvo/sections/159/#13
+$ff-rouble:                         "Rouble", "Arial", sans-serif;
+
+$ff-euclidflex:                    "Euclid Flex", "Arial", sans-serif;
+$ff-euclidsquare:                  "Euclid Square", "Arial", sans-serif;
+$ff-merriweather:                  "Merriweather", "Arial", serif;
+$ff-inter:                         "Inter", "Arial", sans-serif;
+$ff-highliner:                      "Highliner", "Arial", sans-serif;
+
+// Animation
+// ---------------------------------
+
+$tf-default:                        ease;
+$tf-ease-in-out:                    ease-in-out;
+$tf-linear:                         linear;
+$trans-default:                     0.3s $tf-default;
+$trans-eio:                         0.3s $tf-ease-in-out;
+
+// если требуется изинг отличный от $tf-default, то переменную называем не цифрой
+$trans-modal:                       0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+$trans-300:                         0.3s $tf-default;
+$trans-600:                         0.6s $tf-default;
+$trans-1000:                        1s $tf-default;
+$trans-10000:                       10s $tf-linear;
+$trans-eio-500:                     0.5s $tf-ease-in-out;
+$trans-eio-700:                     0.7s $tf-ease-in-out;
+$trans-eio-1000:                    1s $tf-ease-in-out;
+
+// Viewports
+// ---------------------------------
+
+$vp-320:                            320px;
+$vp-375:                            375px;
+$vp-667:                            667px;
+$vp-768:                            768px;
+$vp-1024:                           1024px;
+$vp-1280:                           1280px;
+$vp-1440:                           1440px;
+$vp-1680:                           1680px;
+$vp-1920:                           1920px;
+$vp-2240:                           2240px;
+
+// Retina
+// ---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

@@ -1,0 +1,34 @@
+.select-bath {
+  padding: 0 0 size(64px) 0;
+  opacity: 1;
+
+  @include vp-767 {
+    padding: 0;
+  }
+
+  .subtitle {
+    margin: 0 0 size(32px) 0;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    margin: 0 0 size(-8px) 0;
+    max-width: size(492px);
+
+    @include vp-767 {
+      width: 100%;
+      margin: 0 0 size(9px) 0;
+    }
+  }
+
+  .bath-option {
+    margin: 0 0 size(8px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(32px) 0;
+    }
+  }
+}

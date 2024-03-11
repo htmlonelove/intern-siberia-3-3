@@ -1,0 +1,518 @@
+.modal-certificate {
+  display: flex;
+  height: 100%;
+
+  &__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: size(20px) size(26px) size(30px) size(28px);
+    flex-shrink: 0;
+
+    svg {
+      width: size(31px);
+      height: size(26px);
+      // margin: 0 0 size(97px) 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__logo {
+    margin-top: size(35px);
+    margin-bottom: size(-15px);
+
+    @include vp-767 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    svg {
+      width: size(162px);
+      height: size(14px);
+
+      @include vp-767 {
+        width: size(112px);
+        height: size(12px);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+
+    border-left: 1px solid $color-medium-carmine;
+    border-right: 1px solid $color-medium-carmine;
+  }
+
+  &__title {
+    font-family: $ff-highliner;
+    margin: 0 0 size(19px) 0;
+    font-size: size(110px);
+    line-height: size(125px);
+    font-weight: 400;
+    color: $color-medium-carmine;
+    letter-spacing: 0.04em;
+    text-align: center;
+
+    @include vp-767 {
+      font-size: size(39px);
+      line-height: size(45px);
+    }
+  }
+
+  &__message {
+    margin: 0 0 0 0;
+    padding: 0 0 size(15px) 0;
+    font-family: $ff-inter;
+    text-align: center;
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+
+  &__deposit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    font-family: $ff-inter;
+    text-transform: uppercase;
+    font-size: size(11px);
+    line-height: size(13px);
+  }
+
+  &__price {
+    font-family: $ff-highliner;
+    font-weight: 400;
+    font-size: size(109px);
+    line-height: size(125px);
+    color: $color-medium-carmine;
+    margin: 0;
+    letter-spacing: 0.04em;
+
+    @include vp-767 {
+      font-size: size(56px);
+      line-height: size(76px);
+    }
+
+    span {
+      position: relative;
+      // top: size(-2px);
+      margin-left: size(8px);
+      display: inline-block;
+      font-weight: 600;
+      // font-size: size(62px);
+      // line-height: size(100px);
+
+      @include vp-767 {
+        margin-left: size(6px);
+        // top: size(-1px);
+        // font-size: size(44px);
+        // line-height: size(68px);
+      }
+    }
+
+    .modal-certificate__rouble svg {
+      position: relative;
+      // top: size(1px);
+      width: size(16px);
+      height: size(39px);
+
+      @include vp-767 {
+        // top: size(1px);
+        width: size(15px);
+        height: size(27px);
+      }
+    }
+  }
+
+  &__name {
+    position: relative;
+    font-weight: 400;
+    font-size: size(24px);
+    line-height: size(32px);
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    margin: 0 0 size(53px) 0;
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: size(-3px);
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 100%;
+      max-width: size(620px);
+      height: size(1px);
+      background-color: $color-medium-carmine;
+    }
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0 0 0;
+    width: 100%;
+    font-family: $ff-inter;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0;
+
+    a {
+      font-size: size(12px);
+      line-height: size(15px);
+      margin: size(28px) 0 0 0;
+
+      &:focus,
+      &:focus-within {
+        outline: none;
+        opacity: 0.3;
+      }
+
+      @include vp-767 {
+        font-size: size(8px);
+        line-height: size(10px);
+      }
+    }
+  }
+
+  &__address {
+    margin: 0;
+
+    text-align: right;
+    padding-top: size(15px);
+
+    @include vp-767 {
+      padding-top: 0;
+    }
+  }
+
+  &.is-horizontal {
+    // min-width: 55vw;
+    max-width: size(1200px);
+    min-width: 53.25vw;
+    min-height: 32.5vw;
+    // min-height: size(469px);
+    // min-width: size(768px);
+
+    // max-height: size(469px);
+
+    @include vp-1279 {
+      min-width: initial;
+      min-height: initial;
+    }
+
+    @include vp-767 {
+      width: size(327px);
+      min-height: size(209px);
+    }
+
+    .modal-certificate__icons  {
+      padding: size(28px) size(24px) size(27px) size(28px);
+
+      @include vp-767 {
+        padding: size(12px) size(9px) size(12px) size(8px);
+      }
+
+      svg {
+        @include vp-767 {
+          width: size(12px);
+          height: size(11px);
+          // margin: 0 0 size(60px) 0;
+
+          // &:last-child {
+          //   margin: 0;
+          // }
+        }
+      }
+    }
+
+    .modal-certificate__content {
+      padding: 0 size(33px) 0 size(33px);
+
+      @include vp-767 {
+        padding: size(23px) size(12px) 0 size(12px);
+      }
+    }
+
+    .modal-certificate__title {
+      @include vp-767 {
+        margin-bottom: size(8px);
+      }
+    }
+
+    .modal-certificate__info {
+      font-size: size(10px);
+      line-height: size(12px);
+      margin-top: size(-5px);
+
+      @include vp-767  {
+        margin-top: size(-40px);
+        font-size: size(4.5px);
+        line-height: size(5px);
+      }
+    }
+
+    .modal-certificate__contact {
+      max-width: size(274px);
+      font-size: size(13px);
+      line-height: size(15px);
+
+      @include vp-767 {
+        max-width: size(90px);
+        font-size: size(4px);
+        line-height: size(5px);
+      }
+
+      a {
+        font-size: size(14px);
+        line-height: size(18px);
+
+        @include vp-767 {
+          margin: size(12px) 0 0 0;
+          font-size: size(5px);
+          line-height: size(6px);
+        }
+      }
+    }
+
+    .modal-certificate__address {
+      max-width: size(260px);
+      font-size: size(13px);
+      line-height: size(15px);
+
+      @include vp-767 {
+        max-width: size(100px);
+        font-size: size(4px);
+        line-height: size(5px);
+      }
+    }
+
+    .modal-certificate__message {
+      font-size: size(22px);
+      line-height: size(26px);
+      text-transform: uppercase;
+      max-width: size(620px);
+
+      @include vp-767  {
+        font-size: size(8px);
+        line-height: size(9px);
+      }
+    }
+
+    .modal-certificate__deposit {
+      font-size: size(14px);
+      line-height: size(16px);
+      margin-bottom: size(-9px);
+
+      @include vp-767  {
+        font-size: size(5px);
+        line-height: size(6px);
+      }
+    }
+
+    .modal-certificate__price {
+      @include vp-767 {
+        margin: 0 0 size(54px) 0;
+        font-size: size(39px);
+        line-height: size(45px);
+      }
+
+      span {
+        // top: size(-2px);
+        // font-size: size(90px);
+        margin-left: size(15px);
+        // line-height: 100%;
+
+        @include vp-767 {
+        // top: size(-1px);
+        margin-left: size(5px);
+        // font-size: size(33px);
+        }
+      }
+
+      .modal-certificate__rouble svg {
+        position: relative;
+        top: size(1px);
+        width: size(20px);
+        height: size(55px);
+
+        @include vp-767 {
+          top: size(1px);
+          width: size(6px);
+          height: size(21px);
+        }
+      }
+    }
+
+    .modal-certificate__name {
+      margin-bottom: size(18px);
+    }
+  }
+
+  &.is-vertical {
+    min-width: 32vw;
+    // min-width: size(431px);
+    max-width: size(465px);
+    min-height: size(519px);
+
+    @include vp-1279 {
+      min-width: initial;
+      min-height: initial;
+    }
+
+    @include vp-767 {
+      min-height: size(434px);
+      width: size(327px);
+    }
+
+    .modal-certificate__content {
+      padding: size(30px) size(10px) 0 size(10px);
+
+      @include vp-767 {
+        padding: size(23px) size(12px) 0 size(12px);
+      }
+    }
+
+    .modal-certificate__icons {
+      padding: size(28px) size(15px) size(27px) size(15px);
+
+      @include vp-767 {
+        padding: size(30px) size(10px);
+      }
+
+      svg {
+        width: size(31px);
+        height: size(26px);
+
+        @include vp-767 {
+          width: size(15px);
+          height: size(14px);
+          // margin: 0 0 size(60px) 0;
+
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .modal-certificate__logo {
+      margin-bottom: size(-10px);
+      margin-top: 0;
+    }
+
+    .modal-certificate__title {
+      font-size: size(60px);
+      line-height: size(69px);
+      margin-bottom: size(60px);
+
+      @include vp-767 {
+        margin-bottom: size(56px);
+        font-size: size(43px);
+        line-height: size(48px);
+      }
+    }
+
+    .modal-certificate__info {
+      font-size: size(7px);
+      line-height: size(9px);
+
+      @include vp-767  {
+        font-size: size(4.5px);
+        line-height: size(5px);
+      }
+    }
+
+    .modal-certificate__deposit {
+      font-size: size(9px);
+      line-height: size(11px);
+
+      @include vp-767  {
+        font-size: size(6px);
+        line-height: size(8px);
+        margin-bottom: size(-5px);
+      }
+    }
+
+    .modal-certificate__price {
+      font-size: size(78px);
+      line-height: size(90px);
+      margin-bottom: size(70px);
+
+      @include vp-767 {
+        font-size: size(54px);
+        line-height: size(63px);
+        margin: 0;
+      }
+    }
+
+    .modal-certificate__contact {
+      max-width: size(151px);
+
+      @include vp-767 {
+        max-width: size(106px);
+      }
+
+      a {
+        font-size: size(9px);
+        line-height: size(11px);
+
+        @include vp-767 {
+          font-size: size(6px);
+          line-height: size(7px);
+          margin-top: size(19px);
+        }
+      }
+    }
+
+    .modal-certificate__message {
+      font-size: size(14px);
+      line-height: size(18px);
+      text-transform: uppercase;
+
+      @include vp-767  {
+        text-transform: uppercase;
+        font-size: size(10px);
+        line-height: size(12px);
+      }
+    }
+
+    .modal-certificate__name {
+      @include vp-767 {
+        margin-bottom: size(33px);
+      }
+    }
+
+    .modal-certificate__address {
+      max-width: size(136px);
+      padding-top: 0;
+
+      @include vp-767 {
+        max-width: size(100px);
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.advantages-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: size(24px);
+  border-radius: size(16px);
+  background-color: $color-default-black;
+  overflow: hidden;
+  z-index: -1;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  &__name {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: $color-default-white;
+
+    @include vp-767 {
+      font-size: size(20px);
+    }
+  }
+
+  &__description {
+    margin-top: auto;
+    margin-bottom: 0;
+    overflow: auto;
+  }
+}
+
+

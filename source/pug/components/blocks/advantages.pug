@@ -1,0 +1,201 @@
+mixin advantages()
+  section.advantages#advantages&attributes(attributes)
+    .container
+      .advantages__top
+        h2.subtitle Преимущества
+        .advantages__heading
+          p.title.title--s
+            | Создаем
+            span.accent  уникальный опыт традиционного парения
+            |  для каждого гостя
+          p.text.text--body Внимание к деталям и индивидуальным потребностям каждого&nbsp;гостя&nbsp;—&nbsp;суть Siberia.
+      .advantages__wrapper.swiper
+        .advantages__slider.swiper-wrapper
+          .advantages__group.swiper-slide
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "1", "slides/advantages-slider/mobile", "1", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Все включено
+                  br
+                  | в стоимость
+                .advantages__card-number
+                  span.advantages__card-current 1
+                  span.advantages__card-total 9
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "2", "slides/advantages-slider/mobile", "2", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Авторские программы парения&nbsp;в&nbsp;5&nbsp;банях,
+                  br
+                  | 4-5 заходов, до&nbsp;4&nbsp;часов
+                .advantages__card-number
+                  span.advantages__card-current 2
+                  span.advantages__card-total 9
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "3", "slides/advantages-slider/mobile", "3", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Звукотерапия живыми инструментами
+                .advantages__card-number
+                  span.advantages__card-current 3
+                  span.advantages__card-total 9
+          .advantages__group.swiper-slide
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "4", "slides/advantages-slider/mobile", "4", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Косметика собственного производства
+                .advantages__card-number
+                  span.advantages__card-current 4
+                  span.advantages__card-total 9
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "5", "slides/advantages-slider/mobile", "5", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Сибирская кухня
+                  br
+                  | от&nbsp;бренд-шефа
+                .advantages__card-number
+                  span.advantages__card-current 5
+                  span.advantages__card-total 9
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "6", "slides/advantages-slider/mobile", "6", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Мед с собственной
+                  br
+                  | пасеки
+                .advantages__card-number
+                  span.advantages__card-current 6
+                  span.advantages__card-total 9
+          .advantages__group.swiper-slide
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "7", "slides/advantages-slider/mobile", "7", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Капсульная коллекция банного текстиля
+                .advantages__card-number
+                  span.advantages__card-current 7
+                  span.advantages__card-total 9
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "8", "slides/advantages-slider/mobile", "8", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Эксклюзивные еженедельные мероприятия
+                .advantages__card-number
+                  span.advantages__card-current 8
+                  span.advantages__card-total 9
+            .advantages__slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "9", "slides/advantages-slider/mobile", "9", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Бесплатная парковка на&nbsp;12&nbsp;машин
+                .advantages__card-number
+                  span.advantages__card-current 9
+                  span.advantages__card-total 9
+      .advantages__slider-bottom
+          p.text.text--body.advantages__caption
+            span Все преимущества Siberia
+          +slider-nav()
+
+      .advantages__mobile.swiper(data-slider="mobile")
+        .advantages__slider.swiper-wrapper
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "1", "slides/advantages-slider/mobile", "1", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Все включено
+                br
+                | в стоимость
+              .advantages__card-number
+                span.advantages__card-current 1
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "2", "slides/advantages-slider/mobile", "2", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Авторские программы парения&nbsp;в&nbsp;5&nbsp;банях,
+                br
+                | 4-5 заходов, до&nbsp;4&nbsp;часов
+              .advantages__card-number
+                span.advantages__card-current 2
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "3", "slides/advantages-slider/mobile", "3", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Звукотерапия живыми инструментами
+              .advantages__card-number
+                span.advantages__card-current 3
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "4", "slides/advantages-slider/mobile", "4", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Косметика собственного производства
+              .advantages__card-number
+                span.advantages__card-current 4
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "5", "slides/advantages-slider/mobile", "5", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Сибирская кухня
+                br
+                | от&nbsp;бренд-шефа
+              .advantages__card-number
+                span.advantages__card-current 5
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "6", "slides/advantages-slider/mobile", "6", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Мед с собственной
+                br
+                | пасеки
+              .advantages__card-number
+                span.advantages__card-current 6
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "7", "slides/advantages-slider/mobile", "7", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Капсульная коллекция банного текстиля
+              .advantages__card-number
+                span.advantages__card-current 7
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+            .advantages__card
+              .advantages__card-img
+                +picture("slides/advantages-slider/desktop", "8", "slides/advantages-slider/mobile", "8", "jpg", 317, 360, "Слайд 1")
+              p.title.title--xxs-3.advantages__card-title
+                | Эксклюзивные еженедельные мероприятия
+              .advantages__card-number
+                span.advantages__card-current 8
+                span.advantages__card-total 9
+          .advantages__slide.swiper-slide
+              .advantages__card
+                .advantages__card-img
+                  +picture("slides/advantages-slider/desktop", "9", "slides/advantages-slider/mobile", "9", "jpg", 317, 360, "Слайд 1")
+                p.title.title--xxs-3.advantages__card-title
+                  | Бесплатная парковка на&nbsp;12&nbsp;машин
+                .advantages__card-number
+                  span.advantages__card-current 9
+                  span.advantages__card-total 9

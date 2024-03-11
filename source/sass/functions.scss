@@ -1,0 +1,23 @@
+@function size($size-in-px) {
+  @return calc($size-in-px / $fz-default * 1rem);
+}
+
+@function size-rotate($size-in-px) {
+  @return calc($size-in-px / $vp-667 * 100vw);
+}
+
+@function size-coefficient($size-in-px) {
+  @return calc($size-in-px * 1.17);
+}
+
+@function size-coefficient-lg($size-in-px) {
+  @return calc($size-in-px * 1.33);
+}
+
+@function size-coefficient-xl($size-in-px) {
+  @return calc($size-in-px * 1.55);
+}
+
+@function size-mobile($size-in-px) {
+  @return calc($size-in-px / $vp-375 * 100vw);
+}

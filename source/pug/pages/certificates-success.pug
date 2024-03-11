@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Завершение покупки сертификата - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content(data-animate)
+      +booking-final({title: "Поздравляем с&nbsp;покупкой сертификата на&nbsp;посещение Siberia",subtitle: "покупка завершена", balanceText: "Баланс сертификата", number: "8888 8888 8888 8888", numberText: "Номер сертификата", balance: "300 000", btnText: "перейти на главную", href: "index.html", img: "success-error"}).fib
+
+block modals
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

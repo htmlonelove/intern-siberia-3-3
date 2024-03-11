@@ -1,0 +1,120 @@
+mixin header(headerMods, currentUrl)
+  -
+    const headerLinks = [
+      {
+        href: "index.html",
+        text: "Главная"
+      },
+      {
+        href: "#",
+        text: "Бани",
+        innerList: [
+          {
+            href: "bath-nomad.html",
+            text: "Кочевник"
+          },
+          {
+            href: "bath-healer.html",
+            text: "Знахарь"
+          },
+          {
+            href: "bath-taiga.html",
+            text: "Тайга"
+          },
+          {
+            href: "bath-olkhon.html",
+            text: "Ольхон"
+          },
+          {
+            href: "bath-kyrnaia-izba.html",
+            text: "Курная изба"
+          },
+        ],
+      },
+      {
+        href: "cuisine.html",
+        text: "Кухня"
+      },
+      {
+        href: "about.html",
+        text: "О siberia"
+      },
+      {
+        href: "certificates.html",
+        text: "Сертификаты"
+      },
+      {
+        href: "siberia-club.html",
+        text: "Банный клуб"
+      },
+      {
+        href: "events.html",
+        text: "Мероприятия"
+      },
+      {
+        href: "contacts.html",
+        text: "Контакты"
+      },
+    ]
+
+  header.header(class=headerMods, data-animate)
+    .header__wrapper.str
+      .header__top
+        if(currentUrl === "index.html")
+          .header__logo.logo
+            .header__top-item
+              +icon("logo", 168, 96).logo__main
+            .header__top-item
+              +icon("logo-mini", 32, 42).logo__img
+            .header__top-item
+              +icon("logo-text", 117, 10).logo__text
+        else
+          a.header__logo.logo(href="index.html", aria-label="Переход на главную")
+            .header__top-item
+              +icon("logo", 168, 96).logo__main
+            .header__top-item
+              +icon("logo-mini", 32, 42).logo__img
+            .header__top-item
+              +icon("logo-text", 117, 10).logo__text
+        +link("tel:+74953456789", "", "icone-phone", 20, 20)(aria-label="Позвонить +74953456789").header__phone-link.header__phone-link--only-icon.header__top-item
+        button.btn-menu-toggle.header__top-item(type="button", aria-label="Переключатель отображения меню", aria-pressed="false", data-menu-toggle-btn)
+          +icon("icon-burger", 20, 20).btn-menu-toggle__open-icon
+          +icon("icon-close-2", 20, 20).btn-menu-toggle__close-icon
+      .header__inner
+        nav.main-nav.header__nav
+          .main-nav__wrapper
+            ul.main-nav__list(data-accordion="parent")
+              each link in headerLinks
+                - const activeState = currentUrl === link.href
+                if(link.innerList)
+                  li.main-nav__item(data-accordion="element")
+                    if(activeState)
+                      +link(link.href, link.text)(data-accordion="button").main-nav__link.is-active
+                        span(data-accordion="icon")
+                    else
+                      +link(link.href, link.text)(data-accordion="button").main-nav__link
+                          span(data-accordion="icon")
+                    ul.main-nav__inner-list(data-accordion="content")
+                      each innerLink in link.innerList
+                        if (innerLink.href === currentUrl)
+                          li.main-nav__inner-item.is-active
+                              +link(innerLink.href, innerLink.text)
+                        else
+                          li.main-nav__inner-item
+                              +link(innerLink.href, innerLink.text)
+                else
+                  li.main-nav__item
+                    if(activeState)
+                      span.main-nav__link.is-active=link.text
+                    else
+                      +link(link.href, link.text).main-nav__link
+        .header__bottom
+          +link("tel:+79779917777", "+7 977 991 77 77").header__phone-link.header__phone-link--only-text.header__phone-link--light
+          +link("tel:+79032995755", "+7 903 299 57 55").header__phone-link.header__phone-link--only-text.header__phone-link--dark
+          +socials().socials--with-border.socials--square.header__socials
+          if currentUrl === "booking.html"
+            +btn({tag: "button", type: "button", text: "Забронировать баню"})(disabled).btn--top-not-square.header__btn-reserve
+          else
+            //- +btn({tag: "a", href: bath ? `booking.html?${bath}` : "booking.html", text: "Забронировать баню"}).btn--top-not-square.header__btn-reserve
+            +btn({text: "Забронировать баню"})(data-open-modal="call").btn--top-not-square.header__btn-reserve
+    .header__overlay

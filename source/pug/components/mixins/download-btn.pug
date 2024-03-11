@@ -1,0 +1,11 @@
+mixin download-btn(options = {})
+  - const href = options.href;
+  - const name = options.name;
+  - const info = options.info;
+
+  a(href= href, download).download-btn
+    .download-btn__icon
+      +icon("icon-download", 20, 20)
+    .download-btn__text
+      span.text.text--small-caps.download-btn__name= name
+      span.text.text--small= info

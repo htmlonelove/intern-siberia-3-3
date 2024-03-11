@@ -1,0 +1,29 @@
+mixin cuisine-intro()
+  .intro&attributes(attributes)
+    .intro__slider-wrapper.swiper
+      .intro__slider.swiper-wrapper
+        .swiper-slide(data-caption="Строганина из муксуна и стерляди" data-preview={'jpg': 'img/slides/intro-slider/preview/img-1.jpg', 'jpg2x': 'img/slides/intro-slider/preview/img-1@2x.jpg','webp': 'img/slides/intro-slider/preview/img-1.webp','webp2x': 'img/slides/intro-slider/preview/img-1@2x.webp'})
+          +picture("slides/intro-slider/desktop", "img-1", "slides/intro-slider/mobile", "img-1", "jpg", 645, 968, "Слайд 1")
+        .swiper-slide(data-caption="Строганина из муксуна и стерляди" data-preview={'jpg': 'img/slides/intro-slider/preview/img-2.jpg', 'jpg2x': 'img/slides/intro-slider/preview/img-2@2x.jpg','webp': 'img/slides/intro-slider/preview/img-2.webp','webp2x': 'img/slides/intro-slider/preview/img-2@2x.webp'})
+          +picture("slides/intro-slider/desktop", "img-2", "slides/intro-slider/mobile", "img-2", "jpg", 774, 516, "Слайд 2")
+        .swiper-slide(data-caption="Строганина из муксуна и стерляди" data-preview={'jpg': 'img/slides/intro-slider/preview/img-3.jpg', 'jpg2x': 'img/slides/intro-slider/preview/img-3@2x.jpg','webp': 'img/slides/intro-slider/preview/img-3.webp','webp2x': 'img/slides/intro-slider/preview/img-3@2x.webp'})
+          +picture("slides/intro-slider/desktop", "img-3", "slides/intro-slider/mobile", "img-3", "jpg", 750, 500, "Слайд 3")
+        .swiper-slide(data-caption="Строганина из муксуна и стерляди" data-preview={'jpg': 'img/slides/intro-slider/preview/img-4.jpg', 'jpg2x': 'img/slides/intro-slider/preview/img-4@2x.jpg','webp': 'img/slides/intro-slider/preview/img-4.webp','webp2x': 'img/slides/intro-slider/preview/img-4@2x.webp'})
+          +picture("slides/intro-slider/desktop", "img-4", "slides/intro-slider/mobile", "img-4", "jpg", 735, 490, "Слайд 4")
+        .swiper-slide(data-caption="Раки отварные  отборные" data-preview={'jpg': 'img/slides/intro-slider/preview/img-5.jpg', 'jpg2x': 'img/slides/intro-slider/preview/img-5.jpg','webp': 'img/slides/intro-slider/preview/img-5.webp','webp2x': 'img/slides/intro-slider/preview/img-5@2x.webp'})
+          +picture("slides/intro-slider/desktop", "img-5", "slides/intro-slider/mobile", "img-5", "jpg", 645, 968, "Слайд 1")
+
+    .container
+      .intro__heading.fit
+        h2.subtitle.subtitle--white Кухня
+          span.hidden-mobile &nbsp;Siberia
+        +opening-hours().hidden-mobile
+      .intro__content.fib
+        h1.title.title--white
+          | Традиционная
+          span.accent  сибирская кухня
+        p.intro__text.text.text--body.text--body-s.text--white В&nbsp;ресторане
+          span  Siberia
+          |  мы&nbsp;готовим традиционные русские&nbsp;деликатесы. В&nbsp;зависимости от&nbsp;времени&nbsp;года&nbsp;—&nbsp;сезонное меню.
+      +scroll-btn("quote").fib
+      .intro__slider-pagination.swiper-pagination

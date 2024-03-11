@@ -1,0 +1,8 @@
+mixin schedule(data)
+  ul.schedule
+    each item in data
+      li.schedule__item
+        a.schedule__link(href=item.href, data-move-to=item.href)
+          span.schedule__date!= item.date
+          if item.time
+            span.schedule__time!= item.time

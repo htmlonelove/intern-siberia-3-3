@@ -1,0 +1,16 @@
+mixin select-guests()
+  .select-guests(data-total-min="2", data-total-max="10")&attributes(attributes)
+    h2.subtitle укажите количество гостей
+    ul.select-guests__list
+      li.select-guests__item
+        p.text.text--body Взрослые
+        +input-counter({min: "1", max: "10", type: "adults", name: "adults-qty"})
+      li.select-guests__item
+        p.text.text--body Дети от 7 до 12 лет *
+        +input-counter({min: "0", max: "9", type: "child", name: "child-qty"})
+      li.select-guests__item
+        p.text.text--body Дети до 7 лет *
+        +input-counter({min: "0", max: "4", type: "baby", name: "baby-qty"})
+      li.select-guests__item
+        +btn({text: "Подтвердить"})(data-guests-confirm)
+    p.select-guests__caption.text.text--small Детям с&nbsp;7&nbsp;до&nbsp;12&nbsp;лет скидка&nbsp;50%, до&nbsp;7&nbsp;лет — бесплатно. Число детей до&nbsp;7&nbsp;лет не&nbsp;учитывается при&nbsp;выборе бани.

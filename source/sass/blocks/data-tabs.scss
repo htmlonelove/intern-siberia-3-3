@@ -1,0 +1,57 @@
+[data-tabs="parent"] {
+  overflow: hidden;
+
+  &.no-transition {
+    > [data-tabs="control"],
+    > [data-tabs="content"],
+    > [data-tabs="element"] {
+      transition: none;
+    }
+  }
+
+  &.no-transition-global {
+    [data-tabs="control"],
+    [data-tabs="content"],
+    [data-tabs="element"] {
+      transition: none;
+    }
+  }
+
+  &.transition-transform [data-tabs="element"] {
+    transform: translateY(20px);
+    transition: opacity $trans-eio-500, visibility $trans-eio-500, transform $trans-eio-500;
+  }
+
+  &.transition-transform [data-tabs="element"].is-active {
+    z-index: 1;
+
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+}
+
+[data-tabs="parent"] [data-tabs="content"] {
+  position: relative;
+  transition: height $trans-eio-500;
+}
+
+[data-tabs="element"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+}
+
+[data-tabs="element"].is-active {
+  z-index: 1;
+
+  visibility: visible;
+  opacity: 1;
+}
+

@@ -1,0 +1,41 @@
+.download-btn {
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    width: size(56px);
+    height: size(56px);
+    margin: 0 size(16px) 0 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-default-white;
+    background-color: $color-mongoose;
+    border-radius: 50%;
+    transition: background-color $trans-default;
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name.text {
+    margin: 0 0 size(4px) 0;
+    color: $color-coffee-bean;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      .download-btn__icon {
+        background-color: $color-tints-of-brass;
+      }
+    }
+  }
+}

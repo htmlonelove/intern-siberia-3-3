@@ -1,0 +1,56 @@
+.error-404 {
+  padding-top: size(56px);
+
+  @include vp-1023 {
+    padding-top: 100px;
+  }
+
+  @include vp-767 {
+    padding-top: size(116px);
+  }
+
+  .subtitle {
+    margin: 0 0 size(32px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: size(24px);
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+
+      .error-404__br {
+        display: none;
+      }
+    }
+  }
+
+  &__accent {
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-bottom: size(40px);
+    max-width: size(490px);
+
+    @include vp-767 {
+      width: size(290px);
+      margin-bottom: size(64px);
+    }
+  }
+
+  &__btn {
+    margin-bottom: size(40px);
+    user-select: none;
+
+    @include vp-767 {
+      margin-bottom: size(281px);
+    }
+  }
+}

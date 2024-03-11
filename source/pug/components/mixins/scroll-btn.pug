@@ -1,0 +1,5 @@
+mixin scroll-btn(id)
+  button.scroll-btn(data-move-to=`#${id}`)&attributes(attributes)
+    span.scroll-btn__icon
+      +icon("icon-arrow", 20, 20)
+    span.text.text--small-caps.text--white Подробности ниже

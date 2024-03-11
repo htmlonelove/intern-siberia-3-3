@@ -1,0 +1,160 @@
+.inner-contacts {
+  display: flex;
+
+  @include vp-767 {
+    flex-direction: column;
+  }
+
+  &__address {
+    margin-right: size(140px);
+
+    @include vp-767 {
+      margin-top: size(40px);
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    max-width: size(616px);
+
+    @include vp-767 {
+      order: -1;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: $color-hint-of-red;
+    transform: scale(0.98);
+    transition: transform $trans-eio-700;
+
+    &.is-active {
+      z-index: 2;
+
+      animation: slide-next $trans-eio-700 both;
+      transform: none;
+    }
+  }
+
+  &__text {
+    max-width: size(230px);
+
+    @include vp-767 {
+      order: 1;
+      width: 100%;
+      max-width: initial;
+      padding-right: 20%;
+      margin-bottom: size(16px);
+      font-size: size(13px);
+      line-height: size(18px);
+    }
+  }
+
+  &__socials {
+    margin-left: auto;
+
+    @include vp-767 {
+      order: 3;
+      margin-right: size(13px);
+    }
+  }
+
+  &__phone-link {
+    font-size: size(72px);
+    line-height: size(72px);
+    font-weight: 300;
+
+    @include vp-1679 {
+      font-size: 72px;
+      line-height: 72px;
+    }
+
+    @include vp-1279 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+
+    @include vp-767 {
+      order: 2;
+      font-size: size(30px);
+      line-height: size(36px);
+    }
+  }
+
+  &__btns {
+    width: 100%;
+    display: flex;
+    margin-top: size(40px);
+
+    @include vp-1279 {
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+
+    @include vp-767 {
+      margin-top: 0;
+      order: 3;
+    }
+  }
+
+  &__btn {
+    margin-bottom: size(2px);
+
+    width: size(320px);
+    padding-left: size(20px);
+    padding-right: size(20px);
+
+    @include vp-767 {
+      display: none;
+    }
+
+    &--call {
+      width: auto;
+      flex-grow: 1;
+      max-width: size(279px);
+      margin-left: size(16px);
+
+      white-space: nowrap;
+
+      @include vp-1279 {
+        margin-left: 0;
+        margin-top: size(16px);
+      }
+
+      @include vp-767 {
+        display: block;
+        max-width: 100%;
+        margin-top: 0;
+
+        background-color: $color-tints-of-brass;
+        border: none;
+        color: $color-default-white;
+      }
+    }
+  }
+
+  .map {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    border-radius: size(16px);
+    overflow: hidden;
+    transition: transform $trans-eio-700;
+  }
+
+  .map.is-active {
+    z-index: 2;
+  }
+
+  .map__inner {
+    height: 100%;
+  }
+}

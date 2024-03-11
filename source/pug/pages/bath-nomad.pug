@@ -1,0 +1,322 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Баня Кочевник - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const bath = "nomad"
+  - const currentUrl = "bath-nomad.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const tags = ["#Контрасты тепла и холода", "#Терапия травами", "#Подходит для спортсменов"]
+  -
+    const bathAdvantagesList = [
+      {
+        name: "Пар",
+        description: "Полынь лимонная, мята болотная, анис, можжевельник",
+        path: "content/bath-nomad/speciality",
+        img: "par",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Пар"
+      },
+      {
+        name: "Скрабы",
+        description: "Медово-травяное крошево, молотый кедровый орех с&nbsp;алтайскими травами",
+        path: "content/bath-nomad/speciality",
+        img: "scr",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Пар"
+      },
+      {
+        name: "Веники",
+        description: "Дуб, береза, пихта, можжевельник",
+        path: "content/bath-nomad/speciality",
+        img: "ven",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Пар"
+      },
+      {
+        name: "Звуки",
+        description: "Живые звуки&nbsp;&mdash; вибратоны, шейкеры",
+        path: "content/bath-nomad/speciality",
+        img: "sound",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Пар"
+      },
+    ]
+  -
+    const sliderData = [
+      {
+        video: true,
+        srcDesktop: "video/baths/nomad/nomad.mp4",
+        srcMobile: "video/baths/nomad/nomad-m.mp4",
+        srcDesktopPrev: "video/baths/nomad/nomad-prev.mp4",
+        srcMobilePrev: "video/baths/nomad/nomad-prev-m.mp4",
+        buttonText: "Смотрите видео о бане кочевника",
+        videoCaption: "Смотрите видео о бане «Кочевник»",
+        videoTime: "0:53",
+        id: "g7TuSBe-ZGw"
+      },
+      {
+        path: "nomad-slider/",
+        name: "1",
+        alt: "Слайд 1"
+      },
+      {
+        path: "nomad-slider/",
+        name: "2",
+        alt: "Слайд 2"
+      },
+      {
+        path: "nomad-slider/",
+        name: "3",
+        alt: "Слайд 3"
+      },
+      {
+        path: "nomad-slider/",
+        name: "4",
+        alt: "Слайд 4"
+      },
+      {
+        path: "nomad-slider/",
+        name: "5",
+        alt: "Слайд 5"
+      },
+      {
+        path: "nomad-slider/",
+        name: "6",
+        alt: "Слайд 6"
+      },
+      {
+        path: "nomad-slider/",
+        name: "7",
+        alt: "Слайд 7"
+      },
+      {
+        path: "nomad-slider/",
+        name: "8",
+        alt: "Слайд 8"
+      },
+      {
+        path: "nomad-slider/",
+        name: "9",
+        alt: "Слайд 9"
+      },
+      {
+        path: "nomad-slider/",
+        name: "10",
+        alt: "Слайд 10"
+      },
+    ]
+  -
+    var dataAccordion = [
+      {
+        stage: "Первый заход",
+        name: "Пар «Путешествие на Алтай»",
+        time: "?? мин",
+        text: [
+          "Аромат полыни лимонной, луговой мяты и&nbsp;можжевельника, дождевание пихтовой водой и&nbsp;авторская музыкальная композиция. Бесконтактное парение полотенцами для создания особого ощущения ветра Алтайских полей. После первого пара гостям подается напиток &laquo;бани Кочевников&raquo;.",
+        ],
+        path: "content/bath-nomad/program",
+        imgName: "1",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Второй заход",
+        name: "Парение",
+        time: "?? мин",
+        text: [
+          "Сначала растираем тело горячими травяными букетами. После — наносим мёд и начинаем парение прямо по&nbsp;нему. Работаем дубовыми, березовыми, пихтово-кедровыми вениками, можжевельником.",
+          "Добавляем контраста холодной минеральной водой и ледяными шайбами с ароматом пихты и грейпфрута. Обязательно проводим особую процедуру для здоровья гостя — растирание пихтовыми вениками с&nbsp;акцентом на ноги: согретые ноги — это тепло во&nbsp;всём теле.",
+          "Горячий чан с&nbsp;шалфеем, пихтой и чабрецом готовим на самый изысканный вкус. Эти ароматы дарят полное ощущение, что гость на Алтае, а&nbsp;не в мегаполисе. Яркое парение завершаем в холодной купели. После — греем ноги в&nbsp;крапивно-лимонном отваре, и&nbsp;при этом пар-мастер делает «холодное» парение.",
+        ],
+        path: "content/bath-nomad/program",
+        imgName: "2",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Третий заход",
+        name: "Догрев",
+        time: "?? мин",
+        text: [
+          "Этап догрева начинается с&nbsp;проливания тела мятно-анисовым отваром. После поддачи пара происходит парение простыней. В&nbsp;этот момент наступает особое, &laquo;банное&raquo; расслабление тела. Завершается догрев парением дубовыми вениками.",
+        ],
+        path: "content/bath-nomad/program",
+        imgName: "3",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Четвертый заход",
+        name: "Очищение",
+        time: "?? мин",
+        text: [
+          "Проводим с&nbsp;помощью скрабов на выбор гостя. Например, кедровым или медово-травяным крошевом.",
+        ],
+        path: "content/bath-nomad/program",
+        imgName: "4",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Пятый заход",
+        name: "Финальный пар",
+        time: "?? мин",
+        text: [
+          "Завершаем путешествие на Алтай и освежаем ощущения паром с ароматом луговой мяты.",
+        ],
+        path: "content/bath-nomad/program",
+        imgName: "5",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+    ]
+
+block main
+  .page-content
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          .inner-intro__heading
+            h2.subtitle Звуки алтая
+            +specifications([{name: "вмещает баня", value: "До 4 человек"},{name: "длится программа", value: "4 часа"},{name: "площадь бани", value: "77 м<sup>2</sup>"}]).inner-intro__specifications.text.text--small-caps-2.text--color-not-opacity
+          h1.inner-intro__title.title.title--xl Баня &laquo;Кочевник&raquo;
+          .inner-intro__info-block
+            p.inner-intro__info
+              span.text.text--small-caps вместимость
+              span.text.text--small-caps до 4 человек
+            p.inner-intro__info
+              span.text.text--small-caps длительность программы
+              span.text.text--small-caps 4 часа
+            p.inner-intro__info
+              span.text.text--small-caps площадь
+              span.text.text--small-caps 77 м#[sup 2]
+          p.inner-intro__description.text.text--body.text--desktop Вы&nbsp;ощутите на&nbsp;себе быструю смену климата в&nbsp;местах обитания кочевых народов: прохладный дождь, яркое солнце, теплый сильный ветер.
+          p.inner-intro__description.text.text--body.text--mobile Вы&nbsp;ощутите на&nbsp;себе быструю смену климата в&nbsp;местах обитания кочевых народов: прохладный дождь, яркое солнце, теплый сильный ветер.
+          +tags(tags)
+        //- .container.container--npr.container--tab-np
+        .container
+          +bath-slider(sliderData, "Галерея бани «Кочевник»")
+          +btn({text: "Забронировать баню"})(data-open-modal="call").inner-intro__btn-reserve
+          //- +btn({tag: "a", href: "booking.html?nomad", text: "Забронировать баню"}).inner-intro__btn-reserve
+    div(data-animate)
+      section.quote-section.section.section--padding-narrow.fib.d-200
+        .container
+          h2.subtitle Прямая речь
+          +quote("Сергей Нестеров", "Идеолог Siberia", true, "content", "sergey-nesterov")
+            p.title.title--s На&nbsp;первом пару гостя погружают в
+              span.accent &nbsp;природные звуки Алтайских равнин,
+              |  тепло сильного ветра, прохладу дождя, жару солнца. А&nbsp;где-то
+              span.accent  в&nbsp;отдалении слышен звук варгана темир-комус
+              | &nbsp;&mdash; инструмента Алтайских народов. Попарившись в&nbsp;бане,
+              span.accent  гость отдыхает в&nbsp;фитокомнате,
+              |  на&nbsp;мягком сене, наслаждаясь звуками природы Алтая.
+    div(data-animate)
+      section.section.speciality-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle особенности
+            .section__heading
+              p.title.title--s В&nbsp;бане &laquo;Кочевник&raquo;&nbsp;&mdash; уникальная атмосфера
+              p.text.text--body Мы&nbsp;создаем ее&nbsp;с&nbsp;помощью авторских приемов и&nbsp;методов парения.
+        .container.container--tab-np
+          +bath-advantages(bathAdvantagesList)
+    div(data-animate)
+      section.section.section--bg-white.section--padding-middle.section--mob-padding-low.program-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle программа парения
+            .section__heading
+              p.title.title--s Каждое парение &mdash;
+                br
+                |  это
+                span.accent  отдельный ритуал
+              p.text.text--body.text--desktop Мастер по&nbsp;пару рассказывает вам о&nbsp;традициях, особенностях каждого ритуала и&nbsp;помогает комфортно пройти этот путь. Программа парения может меняться в&nbsp;зависимости от&nbsp;количества людей.
+              p.text.text--body.text--mobile Мастер по&nbsp;пару рассказывает вам о&nbsp;традициях, особенностях каждого ритуала и&nbsp;помогает комфортно пройти этот путь. Программа парения может меняться в&nbsp;зависимости от&nbsp;количества людей.
+        .container.container--mob-np
+          +accordion(dataAccordion)
+        .container
+          +price()
+          +btn({tag: "a", href: "booking.html?nomad", text: "забронировать баню"}).program-section__button
+          +btn({type: "button", text: "Получить консультацию"})(data-open-modal="call").program-section__button-call
+    div(data-animate)
+      section.section.section--padding-bottom-low.additional-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle дополнительно
+            .section__heading
+              p.title.title--s В&nbsp;бане &laquo;Кочевник&raquo; вы&nbsp;можете приобрести:
+          .additional-products
+            ul.additional-products__list
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Пихтовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Березовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Дубовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Можжевеловая полка
+                p.additional-products__price.text.text--body 20 000 ₽
+              li.additional-products__item.additional-products__item--other
+                p.additional-products__name.title.title--xxs-2 Байкальская прорубь
+                p.additional-products__price.text.text--body 30 000 ₽
+              li.additional-products__item.additional-products__item--other
+                p.additional-products__name.title.title--xxs-2 Ведро льда
+                p.additional-products__price.text.text--body 1 000 ₽
+              li.additional-products__item.additional-products__item--steam
+                p.additional-products__name.title.title--xxs-2 Авторское парение от&nbsp;идеолога Siberia Сергея Нестерова
+                p.additional-products__price.text.text--body 30 000 ₽
+
+            ul.additional-products__list
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 4 руки
+                p.additional-products__price.text.text--body 3 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 6 рук
+                p.additional-products__price.text.text--body 5 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Массаж 30 мин
+                p.additional-products__price.text.text--body 5 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Массаж 45 мин
+                p.additional-products__price.text.text--body 8 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Массаж 60 мин
+                p.additional-products__price.text.text--body 10 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Мыльный массаж (помывка)
+                p.additional-products__price.text.text--body 5 000 ₽
+    div(data-animate)
+      section.section.section--padding-top-low.section--padding-bottom-low.inner-contacts-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle контакты
+            .section__heading
+              p.title.title--s Добавьте
+                span.accent   Siberia
+                br
+                |  в&nbsp;своё расписание
+              p.text.text--body Удачное расположение Siberia позволит вам проще найти место в&nbsp;насыщенном графике для комфортного отдыха.
+          +inner-contacts("Забронировать баню «Кочевник»", "booking.html?nomad")
+
+
+block modals
+  +modal("modal--no-scale modal--preload modal--map", false)(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

@@ -1,0 +1,46 @@
+mixin values()
+  -
+    const rules = [
+      {
+        title: "Любим свое дело",
+        description: "Важно быть не просто профессионалом, а совмещать это\u00A0с\u00A0любовью ко всему, что\u00A0делаем."
+      },
+      {
+        title: "Изучаем и чтим традиции",
+        description: "Программы парения, отвары, рецептуры мы привозим из Сибири, где нас обучают их создатели."
+      },
+      {
+        title: "Всегда ищем новое",
+        description: "Не стоим на месте и всегда в поисках лучшего опыта, ощущений, эмоций и переживаний для наших гостей."
+      },
+      {
+        title: "Молодость душой и телом",
+        description: "Ценим созидательную энергию, которая бьет через край и способна достигать невероятного."
+      },
+    ]
+
+  section.values(data-animate)
+    .container.fib
+      .values__top
+        h2.subtitle.values__subtitle Ценности
+        .values__header
+          p.title.title--s.values__title
+            | Живем по
+            span.accent  принципам,
+            |  опираемся на
+            span.accent  ценности
+          p.text.values__text
+            | Базовые правила Siberia, которые позволяют
+            | нам делать лучший сервис.
+      .values__swiper.swiper-container
+        ol.ordered-list.swiper-wrapper
+          each item in rules
+            li.ordered-list__item.swiper-slide
+              .values__desc
+                p.title.title--xxs-2= item.title
+                p.title.title--xxs-3.text--desktop= item.description
+                p.title.title--xxs-3.text--mobile= item.description
+        .values__pagination.swiper-pagination
+      +btn({type: "button", text: "Получить консультацию <span>по&nbsp;банному комплексу</span>"}).values__call-btn(data-open-modal="call")
+
+

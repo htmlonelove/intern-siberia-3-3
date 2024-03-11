@@ -1,0 +1,52 @@
+
+.rotate-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: size-rotate(50px) size-rotate(122px) size-rotate(50px) size-rotate(96px);
+  background-color: $color-coffee-bean;
+  color: $color-default-white;
+
+  &__img {
+    flex-shrink: 0;
+    width: size-rotate(98px);
+    height: size-rotate(105px);
+    margin-right: size-rotate(40px);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__inner {
+    flex-grow: 1;
+  }
+
+  &__title {
+    margin: 0 0 size-rotate(8px) 0;
+    font-size: size-rotate(20px);
+    line-height: size-rotate(26px);
+    color: $color-default-white;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: size-rotate(14px);
+    line-height: size-rotate(20px);
+    color: rgba($color-default-white, 0.7);
+  }
+
+  &.is-shown {
+    display: flex;
+  }
+}

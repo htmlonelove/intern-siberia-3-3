@@ -1,0 +1,339 @@
+.menu-tab {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: size(-16px) 0 size(48px) 0;
+    width: 100%;
+
+    @include vp-767 {
+      margin: 0 0 size(40px) 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    padding: size(16px) 0;
+
+    @include vp-767 {
+      padding: 0;
+      margin: 0 0 size(16px) 0;
+      overflow: hidden;
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        .menu-tab__img {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__info {
+    flex-grow: 1;
+  }
+
+  &__price {
+    flex-shrink: 0;
+
+    @include vp-767 {
+      align-self: flex-start;
+      background-color: $color-hint-of-red;
+      padding-left: size(8px);
+    }
+  }
+
+  &__title {
+    flex-shrink: 0;
+    display: flex;
+    align-items: baseline;
+    margin: 0 0 size(4px) 0;
+
+    @include vp-767 {
+      display: block;
+      // display: flex;
+      // max-width: size(180px);
+      position: relative;
+      max-width: size(180px);
+
+
+      // &::before {
+      //   z-index: -1;
+      //   content: "";
+      //   position: absolute;
+      //   right: size(-8px);
+      //   top: 0;
+      //   display: block;
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: red;
+      // }
+    }
+
+    &--desktop {
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include vp-767 {
+        // display: flex;
+        display: block;
+        max-width: size(180px);
+        position: relative;
+
+        // &::before {
+        //   z-index: -1;
+        //   content: "";
+        //   position: absolute;
+        //   right: size(-8px);
+        //   top: 0;
+        //   display: block;
+        //   width: 100%;
+        //   height: 100%;
+        //   background-color: red;
+        // }
+      }
+    }
+
+    // @include vp-767 {
+    //   display: flex;
+    //   // max-width: size(180px);
+    //   position: relative;
+
+    //   // &::before {
+    //   //   z-index: -1;
+    //   //   content: "";
+    //   //   position: absolute;
+    //   //   right: size(-8px);
+    //   //   top: 0;
+    //   //   display: block;
+    //   //   width: 100%;
+    //   //   height: 100%;
+    //   //   background-color: red;
+    //   // }
+    // }
+
+    span {
+      max-width: size(586px);
+
+      @include vp-1279 {
+        max-width: 68%;
+      }
+
+      @include vp-767 {
+        display: inline;
+        max-width: size(586px);
+        background-color: $color-hint-of-red;
+        box-shadow: size(8px) 0 0 $color-hint-of-red;
+        position: relative;
+        vertical-align: top;
+        line-height: size(16px);
+        // flex-basis: size(180px);
+        flex-shrink: 2;
+        // max-width: size(180px);
+      }
+    }
+
+    &::after {
+      content: "";
+      height: size(1px);
+      width: auto;
+      flex-grow: 1;
+      margin: 0 size(8px);
+      // border-bottom: size(1px) dotted rgba($color-coffee-bean, 0.7);
+      background-image: url("/img/sprite/icon-line-2.svg");
+
+      @include vp-1023 {
+        height: 1px;
+      }
+
+      @include vp-767 {
+        z-index: -2;
+        position: absolute;
+        left: 0;
+        top: size(14px);
+        //  display: inline-block;
+        width: 100vw;
+        height: size(1px);
+        border: 0;
+        min-width: size(80px);
+      }
+    }
+  }
+
+  &__description {
+    max-width: size(586px);
+
+    &--desktop {
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @include vp-767 {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 38%;
+    right: size(250px);
+    width: size(260px);
+    height: size(171px);
+    border-radius: size(16px);
+    overflow: hidden;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $trans-eio;
+
+    @include vp-767 {
+      display: none;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__pagination {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    @include vp-1023 {
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .text {
+      padding: size(20px) 0 0 0;
+
+      @include vp-767 {
+        padding: 0;
+      }
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: size(332px);
+      height: 1px;
+      margin: size(29px) size(16px) 0 size(16px);
+      background-color: rgba($color-coffee-bean, 0.2);
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+  }
+
+  &__show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 0;
+    margin: 0 size(16px) 0 0;
+    width: size(56px);
+    height: size(56px);
+    color: $color-coffee-bean;
+    border: 1px solid rgba($color-coffee-bean, 0.2);
+    border-radius: 50%;
+    background-color: $color-transparent;
+    transition: color $trans-default, background-color $trans-default;
+    cursor: pointer;
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        background-color: $color-mongoose;
+        color: $color-default-white;
+      }
+    }
+
+    @include vp-1023 {
+      margin: 0 0 16px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(16px) 0;
+    }
+
+    svg {
+      fill: none;
+      width: size(20px);
+      height: size(20px);
+    }
+
+    &:disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  &__caption.text {
+    max-width: size(117px);
+    padding: 0;
+  }
+
+  &__count {
+    order: 1;
+    flex-shrink: 1;
+    padding: size(8px) 0 0 0;
+
+    @include vp-1023 {
+      display: none;
+    }
+
+    .title {
+      margin: 0 0 size(8px) 0;
+    }
+  }
+
+  &__subcategory {
+    @include vp-767 {
+      margin: 0 0 size(9px) 0;
+    }
+
+    .menu-tab__description {
+      max-width: size(327px);
+
+      @include vp-767 {
+        max-width: size(248px);
+      }
+    }
+  }
+
+  &__subcategory-title {
+    margin: 0 0 size(32px) 0;
+    font-family: $ff-merriweather;
+    font-style: italic;
+    font-weight: 300;
+    font-size: size(35px);
+    line-height: size(44px);
+    color: $color-mongoose;
+
+    @include vp-767 {
+      font-size: size(21px);
+      line-height: size(28px);
+    }
+  }
+}

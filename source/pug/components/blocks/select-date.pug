@@ -1,0 +1,5 @@
+mixin select-date()
+  .select-date&attributes(attributes)
+    h2.subtitle Выберите дату и время
+    +calendar()
+    .select-date__time-slots(data-time="parent")

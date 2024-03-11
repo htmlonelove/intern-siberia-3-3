@@ -1,0 +1,13 @@
+mixin inner-contacts(buttonText, href)
+  .inner-contacts&attributes(attributes)
+    +address().inner-contacts__address
+    .inner-contacts__container
+      .inner-contacts__wrapper.is-active(data-contacts-map="container")
+        p.inner-contacts__text.text.text--small-2 Звоните с&nbsp;10:00 до&nbsp;21:00 по&nbsp;Москве, пишите в&nbsp;любое время:
+        +socials().socials--rounded.socials--hover-squirrel.inner-contacts__socials
+        +link("tel:+79779917777", "+7 977 991 77 77").inner-contacts__phone-link
+        .inner-contacts__btns
+          //- +btn({tag: "a", href: href, text: buttonText}).inner-contacts__btn
+          //- +btn({type: "button", text: "Заказать обратный звонок"}).inner-contacts__btn.inner-contacts__btn--call.btn--bordered(data-open-modal="call")
+          +btn({text: buttonText})(data-open-modal="call").inner-contacts__btn
+      +map("contacts-map")(data-contacts-map="map")

@@ -1,0 +1,5 @@
+mixin advantages-card(name, description, path, img, imgWidth, imgHeight, alt)
+  .advantages-card&attributes(attributes)
+    +picture(path + "/desktop", img, path + "/mobile", img, "jpg", imgWidth, imgHeight, alt).advantages-card__img
+    p.advantages-card__name.title.title--xxs.title--white!=name
+    p.advantages-card__description.text.text--body.text--white!=description

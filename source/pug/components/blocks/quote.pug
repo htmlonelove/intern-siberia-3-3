@@ -1,0 +1,14 @@
+mixin quote(name, position, collapsible, path, nameImg, reverse)
+  figure.quote&attributes(attributes)
+      blockquote.quote__text(data-read-more= collapsible ? "block" : false)
+        block
+        if collapsible === true
+          +btn-read-more().quote__btn
+      //- figcaption.quote__caption
+      //-   .quote__author
+      //-     p.quote__name.title.title--xxs-2!=name
+      //-     p.quote__position.text.text--small!=position
+      //-   .quote__img-wrap
+      //-     +picture(path, nameImg, path, nameImg, "jpg", 120, 120, "Автор цитаты")
+
+

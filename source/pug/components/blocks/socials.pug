@@ -1,0 +1,13 @@
+mixin socials()
+  .socials&attributes(attributes)
+    ul.socials__list
+      li.socials__item
+        a.socials__link.socials__link--whatsapp.socials__link--light(href="https://wa.me/79779917777", aria-label="Whatsapp", target="_blank", rel="nofollow noopener noreferrer")
+          +icon("icon-whatsapp", 24, 24).socials__icon
+        a.socials__link.socials__link--whatsapp.socials__link--dark(href="https://wa.me/79032995755", aria-label="Whatsapp", target="_blank", rel="nofollow noopener noreferrer")
+          +icon("icon-whatsapp", 24, 24).socials__icon
+      li.socials__item
+        a.socials__link.socials__link--telegram.socials__link--light(href="https://t.me/+79779917777", aria-label="Telegram")
+          +icon("icon-telegram", 18, 18).socials__icon
+        a.socials__link.socials__link--telegram.socials__link--dark(href="https://t.me/+79032995755", aria-label="Telegram")
+          +icon("icon-telegram", 18, 18).socials__icon

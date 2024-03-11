@@ -1,0 +1,42 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content
+      +intro()
+      div(data-animate)
+        +advantages().fib.d-200
+      div(data-animate)
+        +baths().fib.d-200
+      div(data-animate)
+        section.quote-section.quote-section--main.fib.d-200
+          .container
+            h2.subtitle Прямая речь
+            +quote("Сергей Нестеров", "Идеолог Siberia", false, "content", "sergey-nesterov")
+              p.title.title--s Мы бережно
+                span.accent  возрождаем настоящую банную традицию
+                |  и&nbsp;ставим на&nbsp;первое место опыт, который получают наши гости, а&nbsp;также их&nbsp;ощущения. От&nbsp;первого касания горячими листьями веника, до&nbsp;состояния полного
+                span.accent  перерождения и&nbsp;ощущения абсолютного счастья.
+      div(data-animate)
+        +cuisine().fib.d-200
+      div(data-animate)
+        +club().fib.d-200
+      div(data-animate)
+        +contacts(true).contacts--main.fib.d-200
+
+block modals
+  +modal("modal--no-scale modal--video", true)(data-modal="video")
+    +modal-video()
+  +modal("modal--no-scale modal--map", true)(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

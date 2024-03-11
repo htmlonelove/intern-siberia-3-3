@@ -1,0 +1,108 @@
+.certificate-option {
+  position: relative;
+
+  label {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: size(21px);
+    min-height: size(168px);
+    color: $color-coffee-bean;
+    background-color: $color-default-white;
+    border: none;
+    border-radius: size(16px);
+    cursor: pointer;
+    user-select: none;
+    transition: background-color $trans-default, color $trans-default;
+
+    @include vp-1679 {
+      padding: 21px;
+    }
+
+    @include vp-767 {
+      justify-content: flex-start;
+      min-height: auto;
+      padding: size(25px) size(24px);
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        color: $color-default-white;
+        background-color: $color-mongoose;
+
+        .certificate-option__icon {
+          right: size(16px);
+          width: size(40px);
+          height: size(40px);
+          border-color: $color-default-white;
+          background-color: $color-transparent;
+        }
+      }
+    }
+  }
+
+  span {
+    color: inherit;
+  }
+
+  &__icon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: size(36px);
+    right: size(32px);
+    width: size(6px);
+    height: size(6px);
+    color: $color-default-white;
+    background-color: $color-mongoose;
+    border: size(2px) solid $color-transparent;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: background-color $trans-default, border-color $trans-default, width $trans-default, height $trans-default, right $trans-default;
+
+    @include vp-767 {
+      right: size(33px);
+    }
+
+    svg {
+      fill: none;
+      opacity: 0;
+      width: size(20px);
+      height: size(20px);
+    }
+  }
+
+  input:checked ~ label {
+    color: $color-default-white;
+    background-color: $color-coffee-bean;
+
+    .certificate-option__icon {
+      right: size(16px);
+      width: size(40px);
+      height: size(40px);
+      border-color: $color-tints-of-brass;
+      background-color: $color-tints-of-brass;
+
+      svg {
+        opacity: 1;
+      }
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        color: $color-default-white;
+        background-color: $color-coffee-bean;
+
+        .certificate-option__icon {
+          right: size(16px);
+          width: size(40px);
+          height: size(40px);
+          border-color: $color-tints-of-brass;
+          background-color: $color-tints-of-brass;
+        }
+      }
+    }
+  }
+}

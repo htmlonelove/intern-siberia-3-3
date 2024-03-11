@@ -1,0 +1,71 @@
+.logo {
+  display: flex;
+  justify-content: center;
+
+  &__main {
+    width: size-coefficient-xl(168px);
+    height: size-coefficient-xl(96px);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: size-coefficient-xl(48px);
+    margin-bottom: size-coefficient-xl(48px);
+
+    @include vp-2239 {
+      width: size-coefficient-lg(168px);
+      height: size-coefficient-lg(96px);
+      margin-top: size-coefficient-lg(48px);
+      margin-bottom: size-coefficient-lg(48px);
+    }
+
+    @include vp-1919 {
+      width: size-coefficient(168px);
+      height: size-coefficient(96px);
+      margin-top: size-coefficient(48px);
+      margin-bottom: size-coefficient(48px);
+    }
+
+    @include vp-1679 {
+      width: 168px;
+      height: 96px;
+      margin-top: 48px;
+      margin-bottom: 48px;
+    }
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  &__img {
+    display: none;
+
+    @include vp-1023 {
+      color: $color-squirrel;
+      display: block;
+      width: size(32px);
+      height: size(42px);
+      margin-left: size(16px);
+      margin-right: size(16px);
+      margin-top: size(11px);
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+      width: size(117px);
+      height: size(11px);
+      margin-left: size(19px);
+      margin-right: size(21px);
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    @include vp-767 {
+      margin-right: size(33px);
+      margin-left: size(33px);
+    }
+  }
+}

@@ -1,0 +1,256 @@
+.inner-intro {
+  padding: size(72px) 0;
+
+  [data-animate]:not(:first-child) & {
+    padding-top: size(64px);
+    padding-bottom: size(68px);
+  }
+
+  @include vp-2239 {
+    padding: size(72px) 0;
+  }
+
+  @include vp-1919 {
+    padding: size(56px) 0;
+  }
+
+  @include vp-1023 {
+    padding: 120px 0 56px;
+
+    [data-animate]:not(:first-child) & {
+      padding-top: 64px;
+      padding-bottom: 15px;
+    }
+  }
+
+  @include vp-767 {
+    height: auto;
+    padding: size(96px) 0 size(18px) 0;
+
+    [data-animate]:not(:first-child) & {
+      padding-top: size(62px);
+      padding-bottom: size(15px);
+    }
+  }
+
+  &__heading {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: size(73px);
+
+    .subtitle + .subtitle {
+      margin-left: auto;
+    }
+
+    .specifications__list {
+      position: relative;
+      top: -5px;
+    }
+
+    @include vp-1679 {
+      margin-bottom: 73px;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(24px);
+    }
+  }
+
+  &__specifications {
+    flex-grow: 1;
+    margin-left: auto;
+
+    .specifications__list {
+      justify-content: flex-end;
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__info-block {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      margin-bottom: size(24px);
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    margin: 0 0 size(12px) 0;
+
+    &::after {
+      order: -1;
+      flex-grow: 1;
+      content: '';
+      height: size(1px);
+      margin: 0 size(8px);
+      background-color: rgba($color-coffee-bean, 0.2);
+
+    }
+
+    .text:first-child {
+      order: -1;
+    }
+  }
+
+  &__opening-hours {
+    flex-grow: 1;
+    margin-left: auto;
+    justify-content: flex-end;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: size(24px);
+    max-width: size(700px);
+
+    @include vp-1679 {
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    @include vp-767 {
+      margin-bottom: size(22px);
+    }
+  }
+
+  &__description {
+    max-width: size(602px);
+    margin-bottom: size(64px);
+
+    & + & {
+      margin-top: size(-42px);
+    }
+
+    @include vp-1679 {
+      max-width: 602px;
+      margin-bottom: 64px;
+
+      & + & {
+        margin-top: -42px;
+      }
+    }
+
+    @include vp-767 {
+      margin-bottom: size(40px);
+
+      & + & {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__btn-reserve {
+    display: none;
+
+    @include vp-767 {
+      display: inline-flex;
+      width: 100%;
+      margin-top: size(32px);
+    }
+  }
+
+  &__video-block {
+    position: relative;
+    background-color: $color-default-black;
+    border-radius: size(16px);
+    height: size(449px);
+    overflow: hidden;
+
+    @include vp-1023 {
+      height: 449px;
+    }
+
+    @include vp-767 {
+      height: size(183px);
+    }
+
+    .btn-play-with-text {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      margin: auto;
+
+      @include vp-1023 {
+        width: size(56px);
+        height: size(56px);
+        bottom: size(16px);
+        left: size(16px);
+        top: initial;
+        right: initial;
+        margin: 0;
+      }
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+  }
+
+  &__img-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--narrow {
+    .inner-intro__heading {
+      margin-bottom: size(30px);
+
+      @include vp-1679 {
+        margin-bottom: 30px;
+      }
+
+      @include vp-767 {
+        margin-bottom: size(25px);
+      }
+    }
+
+    .inner-intro__description {
+      max-width: size(400px);
+
+      @include vp-1679 {
+        min-width: 400px;
+      }
+
+      @include vp-767 {
+        min-width: initial;
+      }
+    }
+
+    .inner-intro__video-block {
+      max-width: size(800px);
+      margin: 0 auto;
+      overflow: hidden;
+
+      @include vp-1679 {
+        max-width: 800px;
+      }
+    }
+  }
+
+  &--dark {
+    .subtitle {
+      color: $color-default-white;
+    }
+  }
+}

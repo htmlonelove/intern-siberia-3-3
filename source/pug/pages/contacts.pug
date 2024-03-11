@@ -1,0 +1,42 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Контакты - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "contacts.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content
+      div(data-animate)
+        +hospitality().fit
+      //- div(data-animate)
+      //-   +team().section.section--padding-equal.fib.d-300
+      div(data-animate)
+        +downloads().section.section--padding-equal.fib.d-300
+      div(data-animate)
+        section.contacts-form.section.section--padding-equal.fib.d-300
+          .container
+            .section__top
+              h2.subtitle Заявка&nbsp;на&nbsp;звонок
+              .section__heading
+                p.title.title--s Оставьте свои контакты и&nbsp;наш
+                  span.accent &nbsp;менеджер свяжется
+                  |  с&nbsp;вами
+                p.text.text--body Наши специалисты ответят на&nbsp;все&nbsp;вопросы и&nbsp;дадут исчерпывающую консультацию.
+            +bottom-block({isForm: true, title: "Заявка отправлена", text: "Спасибо за обращение. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.", bg: {name: "club", format: "jpg", width: 700, height: 467}}).bottom-block--wrapper-np.bottom-block--not-manager
+              block form
+                +form({name: "Константин Константинопольский", position: "Менеджер по работе с клиентами", action: "./php_mailer_contacts/send.php", id: "submit_form_zakazzvonka"})(data-callback="contacts").form--row
+                  +custom-input({inputLabel: "Ваше имя", inputId: "contacts-name", inputName: "contacts-name", inputError: "Ваше имя"})(data-validate-type="text", data-limitations="letters")
+                  +custom-input({inputLabel: "Телефон", inputId: "contacts-phone", inputName: "contacts-phone", inputError: "Телефон"})(data-validate-type="phone")
+
+
+block modals
+  +modal("modal--no-scale modal--map")(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

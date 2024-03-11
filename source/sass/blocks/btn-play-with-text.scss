@@ -1,0 +1,112 @@
+.btn-play-with-text {
+  z-index: 1;
+  position: relative;
+  width: size(122px);
+  height: size(122px);
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: size(9px);
+  line-height: 100%;
+  text-transform: uppercase;
+  color: $color-default-white;
+  pointer-events: none;
+  cursor: pointer;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      .btn-play-with-text__circle {
+        color: $color-default-white;
+        background-color: $color-tints-of-brass;
+      }
+    }
+  }
+
+  @include vp-1679 {
+    width: 122px;
+    height: 122px;
+    font-size: 9px;
+  }
+
+  @include vp-767 {
+    width: size(56px);
+    height: size(56px);
+    font-size: size(9px);
+  }
+
+  &__circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: size(56px);
+    height: size(56px);
+    border-radius: 50%;
+    color: $color-coffee-bean;
+    background-color: $color-default-white;
+    transition: background $trans-default, color $trans-default;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: calc(50% + #{size(2px)});
+      transform: translate(-50%, -50%);
+      width: size(10px);
+      height: size(12px);
+
+      @include vp-1679 {
+        left: calc(50% + 2px);
+        width: 10px;
+        height: 12px;
+      }
+
+      @include vp-767 {
+        left: calc(50% + #{size(2px)});
+        width: size(10px);
+        height: size(12px);
+      }
+    }
+
+    @include vp-1679 {
+      width: 56px;
+      height: 56px;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: rotate-text $trans-10000 infinite;
+
+    span {
+      position: absolute;
+      left: 50%;
+      transform-origin: 0 size(61px);
+      font-size: size(11px);
+      font-weight: 500;
+    }
+
+    @include vp-1679 {
+      span {
+        transform-origin: 0 61px;
+        font-size: 11px;
+      }
+    }
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+.quote-section {
+  &--main {
+    @include vp-767 {
+      display: none;
+    }
+  }
+}

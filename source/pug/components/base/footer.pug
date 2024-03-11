@@ -1,0 +1,51 @@
+mixin footer(footerMods, currentUrl)
+  -
+    const footerLinks = [
+      {
+        href: "bath-nomad.html",
+        text: "Кочевник",
+        imgName: "nomad"
+      },
+      {
+        href: "bath-healer.html",
+        text: "Знахарь",
+        imgName: "healer"
+      },
+      {
+        href: "bath-olkhon.html",
+        text: "Ольхон",
+        imgName: "olkhon"
+      },
+      {
+        href: "bath-taiga.html",
+        text: "Тайга",
+        imgName: "taiga"
+      },
+      {
+        href: "bath-kyrnaia-izba.html",
+        text: "Курная изба",
+        imgName: "kyrnaia-izba"
+      },
+    ]
+
+  footer.footer(class=footerMods, data-animate)
+    .container.fib
+      .footer__content
+        ul.footer__list
+          each link in footerLinks
+            li.footer__item
+              a.footer__link(href=link.href)= link.text
+                span.footer__img
+                  +picture("content/footer/desktop", link.imgName, "content/footer/mobile", link.imgName, "jpg", 402, 192, "Фоновое изображение")
+        .footer__bottom
+          .footer__yandex-place
+            if footerMods === "footer--dark"
+              +link("https://yandex.ru/profile/11391549196?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1","", "icon-yandex-place-for-dark", 196, 42)(target="__blank" rel="nofollow noopener noreferrer")
+            else
+              +link("https://yandex.ru/profile/11391549196?intent=reviews&utm_source=badge&utm_medium=rating&utm_campaign=v1","", "icon-yandex-place", 196, 42)(target="__blank" rel="nofollow noopener noreferrer")
+          .footer__copyright
+            .footer__rights
+              p.footer__text &#169;2022 Siberia. Все права защищены
+            +greencow()
+            .footer__author
+              p.footer__text Дизайн и разработка #[a(href="https://greencow.ru/") Greencow]

@@ -1,0 +1,6 @@
+mixin modal-booking(button)
+  .modal-booking
+    h2.title.title--xs-1 Уточните бронирование
+    p.text.text--body Прошло слишком много времени с&nbsp;момента выбора бани и&nbsp;остальных параметров, необходимо уточнить бронирование.
+    if button
+      +btn({text: "перейти в выбору бани"})(data-close-modal)

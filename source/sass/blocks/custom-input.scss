@@ -1,0 +1,176 @@
+.custom-input,
+.custom-textarea {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  label {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    input,
+    textarea {
+      flex-grow: 1;
+      min-height: size(64px);
+      padding: size(30px) size(16px) size(11px) size(24px);
+      font-weight: 300;
+      font-size: size(15px);
+      line-height: size(22px);
+      color: $color-coffee-bean;
+      border: none;
+      border-radius: size(16px);
+      outline: none;
+
+      &:hover + .custom-input__label {
+        color: rgba($color-coffee-bean, 0.7);
+      }
+
+      &:focus ~ .custom-input__label,
+      &:focus ~ .custom-input__error {
+        transform: translateX(-6%) translateY(#{size(-13px)}) scale(0.9);
+      }
+    }
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      right: size(16px);
+      top: size(16px);
+      width: size(4px);
+      height: size(4px);
+      border-radius: 50%;
+      background-color: rgba($color-coffee-bean, 0.5);
+    }
+
+    textarea {
+      min-height: size(96px);
+
+      @include vp-767 {
+        min-height: size(128px);
+        padding: size(48px) size(16px) size(11px) size(24px);
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    left: size(24px);
+    top: size(20px);
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+    color: rgba($color-coffee-bean, 0.5);
+    transition: transform $trans-default, color $trans-default, opacity $trans-default;
+
+    @include vp-767 {
+      top: size(21px);
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: size(24px);
+    top: size(20px);
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    color: $color-persian-red;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity $trans-default, transform $trans-default;
+  }
+
+  &.is-invalid {
+    input {
+      color: $color-persian-red;
+    }
+
+    label::after {
+      background-color: $color-persian-red;
+    }
+
+    .custom-input__label {
+      // color: $color-persian-red;
+      opacity: 0;
+    }
+
+    .custom-input__error {
+      opacity: 1;
+    }
+
+    label input,
+    label textarea {
+      &:hover + .custom-input__label {
+        color: $color-persian-red;
+      }
+    }
+  }
+
+  &.is-valid {
+    label::after {
+      background-color: $color-la-palma;
+    }
+
+    .custom-input__label {
+      transform: translateX(-6%) translateY(#{size(-13px)}) scale(0.9);
+    }
+
+    label input,
+    label textarea {
+      &:hover + .custom-input__label {
+        color: rgba($color-coffee-bean, 0.5);
+      }
+    }
+  }
+
+  &.not-empty {
+    .custom-input__label {
+      transform: translateX(-6%) translateY(#{size(-13px)}) scale(0.9);
+    }
+
+    .custom-input__error {
+      transform: translateX(-6%) translateY(#{size(-13px)}) scale(0.9);
+    }
+  }
+
+  &[data-validate-type] {
+    label::after {
+      display: block;
+    }
+  }
+
+  &--dark {
+    label input,
+    label textarea {
+      color: $color-default-white;
+      background-color: $color-charade;
+
+      &:hover + .custom-input__label {
+        color: rgba($color-default-white, 0.7);
+      }
+    }
+
+    label::after {
+      background-color: rgba($color-default-white, 0.5);
+    }
+
+    .custom-input__label {
+      color: rgba($color-default-white, 0.5);
+    }
+
+    &.is-valid label input:hover + .custom-input__label,
+    &.is-valid label textarea:hover + .custom-input__label {
+      color: rgba($color-default-white, 0.7);
+    }
+
+    &.is-valid label::after,
+    &.is-valid label::after {
+      background-color: $color-la-palma;
+    }
+  }
+}

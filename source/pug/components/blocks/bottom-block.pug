@@ -1,0 +1,32 @@
+mixin bottom-block(options = {})
+  - const name = options.name
+  - const position = options.position
+  - const text = options.text
+  - const title = options.title
+  - const img = options.img
+  - const bg = options.bg
+  - const isForm = options.isForm
+  - const href = options.href
+  - const btnText = options.btnText
+
+  .bottom-block&attributes(attributes)
+    if name
+      .bottom-block__manager
+        .bottom-block__manager-img
+          +picture("content", img, "content", img, "jpg", 80, 80, name)
+        p.bottom-block__manager-name.title.title--xxs-2= name
+        p.bottom-block-manager-position.text.text--small !{position}
+    .bottom-block__wrapper
+      if isForm
+        block form
+      .bottom-block__card
+        +img('content', bg.name, bg.format, bg.width, bg.height, "Фон")
+        p.bottom-block__title.title.title--xs-1.title--white !{title}
+        p.bottom-block__text.text.text--white.text--body.text--desktop !{text}
+        p.bottom-block__text.text.text--white.text--body.text--mobile !{text}
+        if isForm
+          button.btn.bottom-block__close-btn(data-close, aria-label="Закрыть")
+            +icon("icon-close", 20, 20)
+            span Закрыть сообщение
+        else
+          +btn({href: href, text: btnText})(download)

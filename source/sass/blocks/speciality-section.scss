@@ -1,0 +1,11 @@
+.speciality-section {
+  .subtitle {
+    margin-right: size(142px);
+  }
+
+  @include vp-767 {
+    .subtitle {
+      padding-top: 0;
+    }
+  }
+}

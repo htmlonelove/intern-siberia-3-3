@@ -1,0 +1,134 @@
+.bath-siberia {
+  padding-top: 53px;
+  padding-bottom: 120px;
+
+  @include vp-1023 {
+    padding-top: 115px;
+  }
+
+  @include vp-767 {
+    padding-top: 7.2rem;
+    padding-bottom: 80px;
+  }
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+
+    @include vp-767 {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__opening-hours {
+    color: $color-coffee-bean;
+
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &__title {
+    max-width: size(805px);
+    margin-bottom: 24px;
+
+    @include vp-767 {
+      width: size(327px);
+      margin-bottom: 15px;
+    }
+  }
+
+  &__text {
+    width: size(505px);
+
+    @include vp-767 {
+      width: size(327px);
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    margin-bottom: 64px;
+
+    @include vp-767 {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__video-block {
+    position: relative;
+    width: size(800px);
+    height: size(449px);
+    margin: 0 auto;
+    background-color: $color-default-black;
+    border-radius: size(16px);
+
+    .btn-play-with-text {
+      position: absolute;
+      left: 50%;
+      bottom: 50%;
+      transform: translate(-50%, 50%);
+
+      @include vp-767 {
+        bottom: size(16px);
+        left: size(16px);
+        width: size(56px);
+        height: size(56px);
+        background-color: $color-default-white;
+        border-radius: 50%;
+        transform: none;
+      }
+    }
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      object-fit: cover;
+    }
+
+    @include vp-1279 {
+      width: auto;
+      height: auto;
+
+      @include aspect-ratio(800, 449);
+    }
+
+    @include vp-767 {
+      width: size(327px);
+      height: size(183px);
+    }
+  }
+
+  &__video {
+    position: relative;
+    height: size(449px);
+    border-radius: 16px;
+    background-color: $color-default-black;
+
+    @include vp-767 {
+      width: size(327px);
+      height: 183px;
+    }
+  }
+
+  &__footnote {
+    display: none;
+
+    @include vp-767 {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: block;
+      font-weight: 500;
+      font-size: 11px;
+      line-height: 16px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: $color-default-white;
+    }
+  }
+}

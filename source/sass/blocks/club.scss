@@ -1,0 +1,169 @@
+.club {
+  position: relative;
+  padding: size(24px) 0;
+  height: 100vh;
+  height: calc(100 * var(--vh, 1vh));
+  color: $color-default-white;
+
+  @include vp-767 {
+    // height: auto;
+    padding: 0;
+    height: size(567px);
+  }
+
+  &__img {
+    position: absolute;
+    width: calc(100% - #{size(48px)});
+    height: calc(100% - #{size(48px)});
+    top: size(24px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: size(16px);
+    background-color: $color-default-black;
+    overflow: hidden;
+    z-index: -1;
+
+    @include vp-1023 {
+      top: 0;
+      left: 0;
+      height: 100%;
+      min-height: 511px;
+      width: 100%;
+      border-radius: 0;
+      transform: none;
+    }
+
+    @include vp-767 {
+      min-height: size(511px);
+      background-color: $color-default-black;
+    }
+
+    &::after {
+      display: none;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(0deg, rgba($color-default-black, 0.3) 0%, rgba($color-default-black, 0) 49.94%);
+      z-index: 1;
+
+      @include vp-767 {
+        display: block;
+      }
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.7;
+      object-fit: cover;
+      object-position: 0 0;
+
+      @include vp-767 {
+        object-position: size(-20px) 0;
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding-top: size(56px);
+    padding-bottom: size(56px);
+
+    @media(max-height: 900px) and (min-width: 1440px) {
+      padding-top: size(32px);
+      padding-bottom: size(32px);
+    }
+
+    @include vp-1439 {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    @include vp-767 {
+      padding-top: size(32px);
+      padding-bottom: 0;
+    }
+  }
+
+  .subtitle {
+    margin: 0 0 size(32px) 0;
+
+    @include vp-1439 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  .title--md {
+    max-width: size(420px);
+    margin: 0 0 size(21px) 0;
+
+    @include vp-1279 {
+      max-width: 280px;
+      margin: 0 0 16px 0;
+    }
+
+    @include vp-767 {
+      max-width: size(220px);
+      margin: auto 0 size(16px) 0;
+    }
+
+    .accent {
+      color: inherit;
+    }
+  }
+
+  .text {
+    margin: 0 0 size(48px) 0;
+    // max-width: size(288px);
+    max-width: size(450px);
+
+    @include vp-1439 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(48px) 0;
+    }
+  }
+
+  .btn {
+    margin: 0 0 auto 0;
+
+    @include vp-767 {
+      order: 1;
+      margin: 0 size(-24px);
+      width: calc(100% + #{size(48px)});
+      border-radius: 0;
+    }
+  }
+
+  .ordered-list {
+    margin: size(24px) 0 size(-24px) 0;
+
+    @include vp-767 {
+      margin: 0 size(-24px);
+      display: none;
+    }
+  }
+
+  .ordered-list .title {
+    max-width: size(228px);
+
+    @include vp-767 {
+      max-width: unset;
+    }
+  }
+}

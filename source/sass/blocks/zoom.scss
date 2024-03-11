@@ -1,0 +1,42 @@
+.zoom {
+  // position: relative;
+  overflow: hidden;
+  user-select: none;
+
+  @include vp-767 {
+    // width: size(327px);
+  }
+
+  // &.is-horizontal {
+  //   @include vp-767 {
+  //     min-height: size(209px);
+  //   }
+  // }
+
+  // &.is-vertical {
+  //   @include vp-767 {
+  //     min-height: size(434px);
+  //   }
+  // }
+}
+
+.zoom__item {
+  .zoom.init & {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transform-origin: 0 0;
+    transition: transform $trans-default;
+
+    img {
+      backface-visibility: hidden;
+    }
+
+    &.scaled {
+      cursor: grab;
+    }
+  }
+}
+
+

@@ -1,0 +1,306 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Баня Тайга - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const bath = "taiga"
+  - const currentUrl = "bath-taiga.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+  - const tags = ["#Кедровые купели", "#Вместительная парная", "#Для больших компаний"]
+  -
+    const bathAdvantagesList = [
+      {
+        name: "Пар",
+        description: "Пихта, можжевельник, масло сосны",
+        path: "content/bath-tayga/speciality",
+        img: "par",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Пар"
+      },
+      {
+        name: "Скрабы",
+        description: "Таежная клюква, хвойный затир, кедровый затир",
+        path: "content/bath-tayga/speciality",
+        img: "scr",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Скрабы"
+      },
+      {
+        name: "Веники",
+        description: "Дуб, пихта, можжевельник, кедр",
+        path: "content/bath-tayga/speciality",
+        img: "ven",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Веники"
+      },
+      {
+        name: "Звуки",
+        description: "Колокольчики, калимба",
+        path: "content/bath-tayga/speciality",
+        img: "sound",
+        imgWidth: "464",
+        imgHeight: "516",
+        alt: "Звуки"
+      },
+    ]
+  -
+    const sliderData = [
+      {
+        video: true,
+        srcDesktop: "video/baths/taiga/taiga.mp4",
+        srcMobile: "video/baths/taiga/taiga-m.mp4",
+        srcDesktopPrev: "video/baths/taiga/taiga-prev.mp4",
+        srcMobilePrev: "video/baths/taiga/taiga-prev-m.mp4",
+        buttonText: "Смотрите видео о бане тайга",
+        videoCaption: "Смотрите видео о бане «Тайга»",
+        videoTime: "0:55",
+        id: "gesN4WZ585g"
+      },
+      {
+        path: "tayga-slider/",
+        name: "1",
+        alt: "Слайд 1"
+      },
+      {
+        path: "tayga-slider/",
+        name: "2",
+        alt: "Слайд 2"
+      },
+      {
+        path: "tayga-slider/",
+        name: "3",
+        alt: "Слайд 3"
+      },
+      {
+        path: "tayga-slider/",
+        name: "4",
+        alt: "Слайд 4"
+      },
+      {
+        path: "tayga-slider/",
+        name: "5",
+        alt: "Слайд 5"
+      },
+      {
+        path: "tayga-slider/",
+        name: "6",
+        alt: "Слайд 6"
+      },
+      {
+        path: "tayga-slider/",
+        name: "7",
+        alt: "Слайд 7"
+      },
+      {
+        path: "tayga-slider/",
+        name: "8",
+        alt: "Слайд 8"
+      },
+      {
+        path: "tayga-slider/",
+        name: "9",
+        alt: "Слайд 9"
+      },
+    ]
+  -
+    var dataAccordion = [
+      {
+        stage: "Первый заход",
+        name: "Таежный пар",
+        time: "?? мин",
+        text: [
+          "Гости вдыхают прохладный аромат замороженной сибирской пихты. После первого пара - напитки от шеф-повара из смородины и пихты.",
+        ],
+        path: "content/bath-tayga/program",
+        imgName: "1",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Второй заход",
+        name: "Парение",
+        time: "?? мин",
+        text: [
+          "Горячая купель с ароматами пихты и мандарина подготовит гостя к основному парению. Его проводим дубовыми, пихтовыми и можжевеловыми вениками. В парении ног особый акцент делаем на работу мягкой хвоей. Контрастные процедуры проводим ледяными шайбами с пихтово-можжевеловым ароматом.",
+        ],
+        path: "content/bath-tayga/program",
+        imgName: "2",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Третий заход",
+        name: "Догрев",
+        time: "?? мин",
+        text: [
+          "После холодной купели проводим догрев и массажно-растирочное парение пихтовыми вениками.",
+        ],
+        path: "content/bath-tayga/program",
+        imgName: "3",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Четвертый заход",
+        name: "Очищение",
+        time: "?? мин",
+        text: [
+          "Три вида скрабов на выбор: «Таежная клюква», «Хвойный затир», «Кедровый затир».  Каждый скраб выполняется на пихтовой полке, с применением пихтовых и березовых веников.",
+        ],
+        path: "content/bath-tayga/program",
+        imgName: "4",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+      {
+        stage: "Пятый заход",
+        name: "Финальный пар",
+        time: "?? мин",
+        text: [
+          "Пар на можжевельнике.",
+        ],
+        path: "content/bath-tayga/program",
+        imgName: "5",
+        imgWidth: "550",
+        imgHeight: "338",
+        alt: "Парение"
+      },
+    ]
+
+block main
+  .page-content
+    div(data-animate)
+      section.inner-intro.fib.d-200
+        .container
+          .inner-intro__heading
+            h2.subtitle тепло живого огня
+            +specifications([{name: "вмещает баня", value: "До 10 человек"},{name: "длится программа", value: "4 часа"}, {name: "площадь бани", value: "128 м<sup>2</sup>"}]).inner-intro__specifications.text.text--small-caps-2.text--color-not-opacity
+          h1.inner-intro__title.title.title--xl Баня &laquo;Тайга&raquo;
+          .inner-intro__info-block
+            p.inner-intro__info
+              span.text.text--small-caps вместимость
+              span.text.text--small-caps до 10 человек
+            p.inner-intro__info
+              span.text.text--small-caps длительность программы
+              span.text.text--small-caps 4 часа
+            p.inner-intro__info
+              span.text.text--small-caps площадь
+              span.text.text--small-caps 128 м#[sup 2]
+          p.inner-intro__description.text.text--body.text--desktop Вы&nbsp;ощутите на&nbsp;себе быструю смену климата в&nbsp;местах обитания кочевых народов: прохладный дождь, яркое солнце, теплый сильный ветер.
+          p.inner-intro__description.text.text--body.text--mobile Вы&nbsp;ощутите на&nbsp;себе быструю смену климата в&nbsp;местах обитания кочевых народов: прохладный дождь, яркое солнце, теплый сильный ветер.
+          +tags(tags)
+        //- .container.container--npr.container--tab-np
+        .container
+          +bath-slider(sliderData, "Галерея бани «Тайга»")
+          +btn({text: "Забронировать баню"})(data-open-modal="call").inner-intro__btn-reserve
+          //- +btn({tag: "a", href: "booking.html?taiga", text: "Забронировать баню"}).inner-intro__btn-reserve
+    div(data-animate)
+      section.quote-section.section.section--padding-narrow.fib.d-200
+        .container
+          h2.subtitle Прямая речь
+          +quote("Сергей Нестеров", "Идеолог Siberia", true, "content", "sergey-nesterov")
+            p.title.title--s В&nbsp;бане используем очень много
+              span.accent  хвойных ароматов,
+              |  в&nbsp;том числе
+              span.accent  их даёт парение можжевеловыми вениками.
+              |  Отдыхая в&nbsp;горячем хвойном чане среди живых елок гости слышат
+              span.accent  звуки сибирской тайги.
+    div(data-animate)
+      section.section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle особенности
+            .section__heading
+              p.title.title--s В&nbsp;бане &laquo;Тайга&raquo;&nbsp;&mdash; уникальная атмосфера
+              p.text.text--body Мы&nbsp;создаем ее&nbsp;с&nbsp;помощью авторских приемов и&nbsp;методов парения.
+        .container.container--tab-np
+          +bath-advantages(bathAdvantagesList)
+    div(data-animate)
+      section.section.section--bg-white.section--padding-middle.fib.d-200
+        .container
+          .section__top
+            h2.subtitle программа парения
+            .section__heading
+              p.title.title--s Каждое парение &mdash; это
+                span.accent  отдельный ритуал
+              p.text.text--body.text--desktop Мастер по&nbsp;пару рассказывает вам о&nbsp;традициях, особенностях каждого ритуала и&nbsp;помогает комфортно пройти этот путь. Программа парения может меняться в&nbsp;зависимости от&nbsp;количества людей.
+              p.text.text--body.text--mobile Мастер по&nbsp;пару рассказывает вам о&nbsp;традициях, особенностях каждого ритуала и&nbsp;помогает комфортно пройти этот путь. Программа парения может меняться в&nbsp;зависимости от&nbsp;количества людей.
+        .container.container--mob-np
+          +accordion(dataAccordion)
+        .container
+          +price()
+          +btn({tag: "a", href: "booking.html?taiga", text: "забронировать баню"}).program-section__button
+          +btn({type: "button", text: "Получить консультацию"})(data-open-modal="call").program-section__button-call
+    div(data-animate)
+      section.section.section--padding-bottom-low.additional-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle дополнительно
+            .section__heading
+              p.title.title--s В&nbsp;бане &laquo;Тайга&raquo; вы&nbsp;можете приобрести:
+          .additional-products
+            ul.additional-products__list
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Пихтовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Березовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Дубовая полка
+                p.additional-products__price.text.text--body 15 000 ₽
+              li.additional-products__item.additional-products__item--shelf
+                p.additional-products__name.title.title--xxs-2 Можжевеловая полка
+                p.additional-products__price.text.text--body 20 000 ₽
+              li.additional-products__item.additional-products__item--other
+                p.additional-products__name.title.title--xxs-2 Байкальская прорубь
+                p.additional-products__price.text.text--body 30 000 ₽
+              li.additional-products__item.additional-products__item--other
+                p.additional-products__name.title.title--xxs-2 Ведро льда
+                p.additional-products__price.text.text--body 1 000 ₽
+
+            ul.additional-products__list
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 4 руки
+                p.additional-products__price.text.text--body 3 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 6 рук
+                p.additional-products__price.text.text--body 5 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Парение вениками в 8 рук
+                p.additional-products__price.text.text--body 8 000 ₽
+              li.additional-products__item.additional-products__item--massage
+                p.additional-products__name.title.title--xxs-2 Мыльный массаж (помывка)
+                p.additional-products__price.text.text--body 5 000 ₽
+              li.additional-products__item.additional-products__item--steam
+                p.additional-products__name.title.title--xxs-2 Авторское парение от&nbsp;идеолога Siberia Сергея Нестерова
+                p.additional-products__price.text.text--body 30 000 ₽
+    div(data-animate)
+      section.section.section--padding-top-low.section--padding-bottom-low.inner-contacts-section.fib.d-200
+        .container
+          .section__top
+            h2.subtitle контакты
+            .section__heading
+              p.title.title--s Добавьте
+                span.accent   Siberia
+                br
+                |  в&nbsp;своё расписание
+              p.text.text--body Удачное расположение Siberia позволит вам проще найти место в&nbsp;насыщенном графике для комфортного отдыха.
+          +inner-contacts("Забронировать баню «Тайга»", "booking.html?taiga")
+
+
+block modals
+  +modal("modal--no-scale modal--preload modal--map", false)(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

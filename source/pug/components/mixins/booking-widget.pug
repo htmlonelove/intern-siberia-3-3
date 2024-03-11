@@ -1,0 +1,27 @@
+mixin booking-widget(options={})
+  - const step1 = options.step1;
+  - const btnText = options.btnText;
+  - const btnTextMob = options.btnTextMob;
+  - const btnType = options.btnType;
+  - const isContinue = options.isContinue;
+
+  .booking-widget&attributes(attributes)
+    if step1
+      .booking-widget__info
+        .booking-widget__guests.text.text--small.text--white
+          .booking-widget__adults(data-widget="adults")
+            span 2
+            |  взрослых,
+          .booking-widget__kids(data-widget="child")
+            span 0
+            |  детей от 7 до 12 лет
+        .booking-widget__time-slot.text.text--small.text--white
+          span.booking-widget__date(data-widget="date") Выберите дату
+          span.booking-widget__time(data-widget="time") и время посещения
+        .booking-widget__bath.text.text--small.text--white
+          span(data-widget="bath") Выберите баню
+    else
+      +btn({text: "Назад к выбору бани"})(data-widget="back").btn--transparent
+    .booking-widget__divider
+    +btn({text: btnText, type: btnType})(disabled, data-widget= isContinue ? "continue" : false).btn--small.booking-widget__desktop
+    +btn({text: btnTextMob, type: btnType})(disabled, data-widget= isContinue ? "continue" : false).btn--small.booking-widget__mobile

@@ -1,0 +1,25 @@
+.link {
+  // font-size: inherit;
+  // font-weight: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: color $trans-300;
+
+  &[href]:hover {
+    color: $color-squirrel;
+  }
+
+  &--white {
+    color: $color-default-white;
+  }
+
+  &--hover-rodeo-dust {
+    &[href]:hover {
+      color: $color-rodeo-dust;
+    }
+  }
+
+  &--fw-500 {
+    font-weight: 500;
+  }
+}

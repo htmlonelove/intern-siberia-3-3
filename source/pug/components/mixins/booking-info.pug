@@ -1,0 +1,67 @@
+mixin booking-info(options = {})
+  //- - const isDiscount = options.isDiscount;
+  - const isClubCard = options.isClubCard;
+  - const isCertificate = options.isCertificate;
+
+  section.booking-info&attributes(attributes)
+    h2.subtitle.booking-info__desktop Проверьте информацию о бронировании
+    h2.subtitle.booking-info__mobile Ваша бронь
+    .booking-info__row.booking-info__row--desktop
+      .booking-info__summary
+        p.booking-info__bath.text.text--body-l.text--color-not-opacity Баня знахаря
+        p.booking-info__time-slot.text.text--body-l.text--color-not-opacity
+          span.booking-info__date 15 сентября
+          span.booking-info__time  10:00 — 14:00
+        p.booking-info__guests.text.text--body-l.text--color-not-opacity
+          span.booking-info__adults
+            span 4
+            |  взрослых,&nbsp;
+          span.booking-info__kids
+            span.booking-info__kids-quantity 2
+            |  детей
+            span.booking-info__kids-type  от 7 до 12 лет
+      .booking-info__divider
+      .booking-info__total-price
+        input(type="text", id="total-price", name="total-price", value="503800" placeholder="").visually-hidden
+        span.text.text--body-l.text--color-not-opacity Итого:&nbsp;
+        label.text.text--body-l.text--color-not-opacity(for="total-price") 503 800
+        |  &nbsp;₽
+        span.booking-info__discount.text.text--white.text--color-not-opacity.text--body-medium-1 — 10%
+
+    .booking-info__row.booking-info__row--mobile
+      p.booking-info__price.text.text--small Итого
+      .booking-info__divider
+      .booking-info__total-price.text.text--body-l.text--color-not-opacity
+        input(type="text", id="total-price1", name="total-price", value="503800" placeholder="").visually-hidden
+        label.text.text--body-l.text--color-not-opacity(for="total-price") 503 800
+        |  &nbsp;₽
+        span.booking-info__discount — 10%
+
+    if isClubCard
+      .booking-info__row.booking-info__row--balance
+        p.text.text--small Баланс вашей клубной карты
+        .booking-info__divider
+        .booking-info__balance(data-balance).text.text--body-l.text--color-not-opacity
+          span 15 000
+          |  ₽
+        p.booking-info__balance-error.text.text--small.text--color-not-opacity Средств недостаточно для предоплаты брони.
+          br
+          | Вы можете оплатить банковской картой с сохранением скидки - 10%
+    if isCertificate
+      .booking-info__row.booking-info__row--balance
+        p.text.text--small Баланс сертификата
+        .booking-info__divider
+        .booking-info__balance(data-balance).text.text--body-l.text--color-not-opacity
+          span 60 800
+          |  ₽
+        p.booking-info__balance-error.text.text--small.text--color-not-opacity Средств недостаточно для предоплаты брони.
+          br
+          | Выберите другой способ оплаты
+
+    .booking-info__row
+      p.text.text--small Предоплата брони
+      .booking-info__divider
+      .booking-info__prepayment
+        input(type="text", id="prepayment", name="prepayment", value="20000" placeholder="").visually-hidden
+        label.title.title--xxs-l(for="prepayment") 20 000
+        |  ₽

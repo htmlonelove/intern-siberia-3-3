@@ -1,0 +1,58 @@
+.menu {
+  &__controls {
+    display: flex;
+    justify-self: flex-end;
+    flex-wrap: wrap;
+    margin: 0 size(36px) size(56px) size(60px);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include vp-767 {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      margin: 0 size(-24px) size(42px) size(-24px);
+      padding: 0 size(24px);
+    }
+
+    .btn-tab {
+      margin: 0 size(8px) size(8px) 0;
+      flex-shrink: 0;
+      min-width: unset;
+    }
+  }
+
+  &__content {
+    margin: 0 0 size(120px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(80px) 0;
+    }
+  }
+
+  &__item {
+    width: 100%;
+  }
+
+  .bottom-block__card {
+    img {
+      object-position: 0 54%;
+    }
+
+    @include vp-767 {
+      min-height: size(424px);
+
+      img {
+        object-position: 74%;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .bottom-block__title.title {
+    @include vp-767 {
+      font-family: $ff-euclidsquare;
+    }
+  }
+}

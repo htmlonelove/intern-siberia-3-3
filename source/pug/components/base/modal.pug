@@ -1,0 +1,13 @@
+mixin modal(mods, isIntro, isCerificate)
+  .modal.modal--preload(class=mods)&attributes(attributes)
+    .modal__wrapper(class=isCerificate ? "zoom" : false)
+      .modal__overlay(data-close-modal)
+      .modal__content(class=isCerificate ? "zoom__item" : false)
+        if block
+          block
+        if !isIntro
+          button.modal__close-btn(type="button", aria-label="Закрыть попап", data-close-modal)
+            +icon("icon-close", 20, 20)
+      if isIntro
+        button.modal__close-btn(type="button", aria-label="Закрыть попап", data-close-modal)
+          +icon("icon-close", 20, 20)

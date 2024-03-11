@@ -1,0 +1,72 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Кухня - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "cuisine.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content
+      div(data-animate)
+        +cuisine-intro().intro--cuisine
+      div(data-animate)
+        section.section.section--padding-dif.quote-section.fib.d-200#quote
+          .container
+            h2.subtitle Прямая речь
+            +quote("Сергей Гордеев", "Бренд-шеф Siberia", false, "content", "gordeev")
+              p.title.title--s Только у&nbsp;нас&nbsp;вы&nbsp;попробуете настоящие
+                span.accent  Сибирские пельмени по&nbsp;Эвенкийскому рецепту
+                |   с&nbsp;тремя видами мяса, только у&nbsp;нас&nbsp;можно прочувствовать самую правильную квашенную капусту на&nbsp;яблочном соке по&nbsp;рецепту из&nbsp;Сибирской глубинки поселка Подтёсово. Мы&nbsp;берём
+                span.accent   продукты напрямую из&nbsp;северных регионов:
+                |   Якутия, Таймыр, Эвенкия, Красноярск.
+      div(data-animate)
+        section.menu.section.section--padding-equal-2.transition-transform(data-tabs="parent", data-menu)
+          .container
+            .section__top
+              h2.subtitle Меню
+              .menu__controls(data-tabs="controls")
+                button(data-tabs="control").btn-tab.text.text--small-caps.is-active Холодные Закуски
+                button(data-tabs="control").btn-tab.text.text--small-caps Салаты
+                button(data-tabs="control").btn-tab.text.text--small-caps К пенному
+                button(data-tabs="control").btn-tab.text.text--small-caps Горячие блюда
+                button(data-tabs="control").btn-tab.text.text--small-caps Супы
+                button(data-tabs="control").btn-tab.text.text--small-caps Пельмени и вареники
+                button(data-tabs="control").btn-tab.text.text--small-caps Сибирские деликатесы
+                button(data-tabs="control").btn-tab.text.text--small-caps Гарниры
+                button(data-tabs="control").btn-tab.text.text--small-caps Десерты
+                button(data-tabs="control").btn-tab.text.text--small-caps Напитки
+            .menu__content(data-tabs="content")
+              .menu__item(data-tabs="element" data-category="cold-appetizers")
+                +menu-tab({total: 34, caption: "Холодных закусок"})
+              .menu__item(data-tabs="element" data-category="salads")
+                +menu-tab({total: 34, caption: "Салатов"})
+              .menu__item(data-tabs="element" data-category="to-beer")
+                +menu-tab({total: 34, caption: "К пенному"})
+              .menu__item(data-tabs="element" data-category="hot-dishes")
+                +menu-tab({total: 34, caption: "Горячих блюд"})
+              .menu__item(data-tabs="element" data-category="soups")
+                +menu-tab({total: 34, caption: "Супов"})
+              .menu__item(data-tabs="element" data-category="dumplings")
+                +menu-tab({total: 34, caption: "Пельменей и вареников"})
+              .menu__item(data-tabs="element" data-category="siberian-delicacies")
+                +menu-tab({total: 34, caption: "Сибирских деликатесов"})
+              .menu__item(data-tabs="element" data-category="side-dishes")
+                +menu-tab({total: 34, caption: "Гарниров"})
+              .menu__item(data-tabs="element" data-category="desserts")
+                +menu-tab({total: 34, caption: "Десертов"})
+              .menu__item(data-tabs="element" data-category="beverages")
+                +menu-tab({total: 34, caption: "Напитков", isSubcat: true})
+
+            +bottom-block({isForm: false, title: "Меню лета 2022", text: "Свежайшие сезонные продукты, выращенные специально для&nbsp;наших гостей на&nbsp;сибирских экофермах.", btnText: "СКАЧАТЬ pdf — 1.22 mb", href: "downloads/menu_siberia.pdf", bg: {name: "cuisine", format: "jpg", width: 700, height: 270}}).fib.d-300
+
+
+block modals
+  +modal("modal--no-scale modal--map")(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

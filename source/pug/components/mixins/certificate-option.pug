@@ -1,0 +1,12 @@
+mixin certificate-option(options = {})
+  - const value = options.value
+  - const id = options.id
+  - const text = options.text
+
+  .certificate-option
+    input(type="radio", value= value, id= id, name="certificate-option").visually-hidden
+    label(for= id)
+      span.certificate-option__icon
+        +icon("icon-check", 20, 20)
+      span.title.title--xxs-1.certificate-option__text!= text
+        |  ₽

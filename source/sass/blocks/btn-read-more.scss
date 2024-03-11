@@ -1,0 +1,84 @@
+.btn-read-more {
+  display: none;
+  align-items: center;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @include vp-767 {
+    display: flex;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      .btn-read-more__icon {
+        background-color: $color-kournikova;
+      }
+    }
+  }
+
+
+  &__icon {
+    order: 1;
+    position: relative;
+    width: size(20px);
+    height: size(20px);
+    margin-left: size(8px);
+    border-radius: 50%;
+    background-color: $color-squirrel;
+    color: $color-default-white;
+    transition: background $trans-default;
+
+    &::after,
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 50%;
+      left: 50%;
+      width: size(8px);
+      height: size(1px);
+      transform: translate(-50%, -50%);
+      border-radius: size(3px);
+      background-color: currentColor;
+      transition: background $trans-default;
+    }
+
+    &::before {
+      transform: rotate(90deg);
+      width: size(8px);
+      left: calc(50% - #{size(4px)});
+    }
+  }
+
+  &__open-text {
+    display: none;
+  }
+}
+
+.is-active {
+  .btn-read-more {
+    color: $color-default-white;
+  }
+
+  .btn-read-more__close-text {
+    display: none;
+  }
+
+  .btn-read-more__icon {
+    color: $color-coffee-bean;
+    background-color: $color-default-white;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.is-active {
+  .btn-read-more__open-text {
+    display: block;
+  }
+}

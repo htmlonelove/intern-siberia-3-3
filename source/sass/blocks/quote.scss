@@ -1,0 +1,135 @@
+.quote {
+  margin: 0;
+  margin-top: size(32px);
+
+  @include vp-767 {
+    margin-top: size(23px);
+  }
+
+  &__caption {
+    display: flex;
+    max-width: size(714px);
+    margin-left: auto;
+
+    &::after {
+      order: 1;
+      flex-grow: 1;
+      align-self: center;
+      content: "";
+      display: block;
+      width: size(20px);
+      height: 1px;
+      margin: 0 size(16px);
+      background-color: rgba($color-coffee-bean, 0.2);
+    }
+  }
+
+  &__author {
+    align-self: flex-end;
+    margin-right: size(-10px);
+    margin-bottom: size(6px);
+    padding-left: size(11px);
+
+    @include vp-767 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__name {
+    position: relative;
+    margin-bottom: size(4px);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: size(-13px);
+      display: block;
+      width: size(5px);
+      height: size(5px);
+      background-color: $color-coffee-bean;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__text {
+    margin: 0;
+  }
+
+  &__text + &__caption {
+    margin-top: size(64px);
+
+    @include vp-1679 {
+      margin-top: 64px;
+    }
+
+    @include vp-767 {
+      margin-top: size(46px);
+    }
+  }
+
+  &__img-wrap {
+    order: 2;
+    width: size(80px);
+    height: size(80px);
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include vp-1679 {
+      width: 80px;
+      height: 80px;
+    }
+
+    @include vp-767 {
+      width: size(64px);
+      height: size(64px);
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__btn {
+    margin-top: size(24px);
+  }
+
+  &--light {
+    .quote__name {
+      color: $color-default-white;
+    }
+
+    .quote__position {
+      color: rgba($color-default-white, 0.7);
+    }
+
+    .quote__name::before {
+      background-color: $color-default-white;
+    }
+
+    .quote__caption::after {
+      background-color: rgba($color-default-white, 0.12);
+    }
+
+    .btn-read-more__close-text,
+    .btn-read-more__open-text {
+      color: $color-default-white;
+    }
+  }
+
+  &--reverse {
+    .quote__caption::after {
+      order: unset;
+    }
+
+    .quote__author {
+      order: 1;
+    }
+
+    .quote__img-wrap {
+      order: -1;
+    }
+  }
+}

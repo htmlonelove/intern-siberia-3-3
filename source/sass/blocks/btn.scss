@@ -1,0 +1,111 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  margin: 0;
+  padding: size(20px) size(48px);
+
+  // color: $color-coffee-bean;
+  color: $color-default-white;
+
+  font-weight: 500;
+  font-size: size(11px);
+  line-height: size(16px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  background-color: $color-tints-of-brass;
+  border: none;
+  border-radius: size(16px);
+  cursor: pointer;
+  user-select: none;
+
+  transition: color $trans-default, background-color $trans-default;
+
+  @include vp-1439 {
+    padding: 20px;
+  }
+
+  @include vp-1023 {
+    padding: 20px 14px;
+  }
+
+  @include vp-767 {
+    width: 100%;
+    padding: size(20px) size(48px);
+    font-size: size(11px);
+    line-height: size(16px);
+  }
+
+  &:disabled,
+  &.is-disabled {
+    color: rgba($color-coffee-bean, 0.5);
+    background-color: $color-bon-jour;
+    pointer-events: none;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      background-color: $color-mongoose;
+      color: $color-default-white;
+    }
+  }
+
+  &--reverse {
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover {
+        background-color: $color-default-white;
+        color: $color-mongoose;
+      }
+    }
+  }
+
+  &--large {
+    padding: size(24px) size(48px);
+  }
+
+  &--small {
+    padding: size(20px) size(31px);
+  }
+
+  &--square {
+    border-radius: 0;
+
+    @include vp-1279 {
+      padding: 19px 0;
+    }
+  }
+
+  &--top-not-square {
+    border-radius: 0 0 size(16px) size(16px);
+  }
+
+  &--transparent {
+    color: $color-default-white;
+    border: 1px solid rgba($color-default-white, 0.2);
+    background-color: $color-transparent;
+
+    @include vp-767 {
+      color: $color-coffee-bean;
+      border: 1px solid rgba($color-coffee-bean, 0.2);
+    }
+  }
+
+  &--bordered {
+    padding: size(19px) size(48px);
+    color: $color-coffee-bean;
+    border: 1px solid rgba($color-coffee-bean, 0.2);
+    background-color: $color-transparent;
+
+    @include vp-767 {
+      padding: size(19px) size(48px);
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-mongoose;
+        color: $color-default-white;
+      }
+    }
+  }
+}

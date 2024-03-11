@@ -1,0 +1,22 @@
+.application-for-membership {
+  @include vp-767 {
+    padding-top: size(58px);
+  }
+
+  .section__heading {
+    .title {
+      @include vp-767 {
+        margin-bottom: size(16px);
+      }
+    }
+  }
+
+}
+
+.application-for-membership__heading-text {
+  max-width: size(390px);
+
+  @include vp-1679 {
+    max-width: 390px;
+  }
+}

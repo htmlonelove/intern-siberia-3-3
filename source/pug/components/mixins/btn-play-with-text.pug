@@ -1,0 +1,6 @@
+mixin btn-play-with-text(text)
+  button&attributes(attributes).btn-play-with-text(data-animate-circle-text="button")
+    span.btn-play-with-text__circle
+      +icon("icon-play-2", 8, 10)
+    span.btn-play-with-text__text(data-animate-circle-text="text")!=text
+

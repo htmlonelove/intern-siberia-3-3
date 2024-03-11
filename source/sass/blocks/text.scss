@@ -1,0 +1,217 @@
+.text {
+  margin: 0;
+  font-family: $ff-euclidsquare;
+  color: rgba($color-coffee-bean, 0.7);
+
+  &--color-not-opacity {
+    color: $color-coffee-bean;
+  }
+
+  &--body {
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-1023 {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &--body-s {
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-767 {
+      font-size: size(13px);
+      line-height: size(18px);
+    }
+  }
+
+  &--body-l {
+    font-weight: 500;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-767 {
+      font-weight: 500;
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &--body-l-2 {
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-767 {
+      font-weight: 500;
+      font-size: size(16px);
+      line-height: size(22px);
+    }
+  }
+
+  &--body-medium {
+    font-weight: 500;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-1023 {
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &--body-medium-1 {
+    font-weight: 500;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-1023 {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      font-weight: 500;
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &--small {
+    font-weight: 300;
+    font-size: size(13px);
+    line-height: size(18px);
+
+    @include vp-1023 {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    @include vp-767 {
+      font-size: size(13px);
+      line-height: size(18px);
+    }
+  }
+
+  &--small-2 {
+    font-weight: 300;
+    font-size: size(13px);
+    line-height: size(18px);
+
+    @include vp-1023 {
+      font-size: 13px;
+      line-height: 18px;
+    }
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &--small-medium {
+    font-weight: 500;
+    font-size: size(13px);
+    line-height: size(18px);
+
+    @include vp-1023 {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  &--small-italic {
+    font-family: $ff-merriweather;
+    font-style: italic;
+    font-weight: 300;
+    font-size: size(13px);
+    line-height: size(18px);
+  }
+
+  &--small-caps {
+    font-weight: 500;
+    font-size: size(11px);
+    line-height: size(16px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-coffee-bean;
+
+    @include vp-1023 {
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    @include vp-767 {
+      font-size: size(11px);
+      line-height: size(16px);
+    }
+  }
+
+  &--small-caps-2 {
+    font-weight: 500;
+    font-size: size(11px);
+    line-height: size(16px);
+    letter-spacing: 0.05em;
+  }
+
+  &--small-caps-3 {
+    font-weight: 500;
+    font-size: size(11px);
+    line-height: size(16px);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: $color-coffee-bean;
+
+    @include vp-1023 {
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    @include vp-767 {
+      font-weight: 300;
+      font-size: size(13px);
+      line-height: size(18px);
+      text-transform: none;
+    }
+  }
+
+  &--white {
+    color: $color-default-white;
+  }
+
+  &--white-opacity {
+    color: rgba($color-default-white, 0.7);
+  }
+
+  &--desktop {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+}

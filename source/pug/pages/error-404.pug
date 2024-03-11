@@ -1,0 +1,29 @@
+extends ../components/base/layout
+
+block variables
+  - const title = 'Страницы не существует' //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "error-404.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content(data-animate)
+      section.error-404
+        .container.fib
+          p.subtitle Страницы не существует
+          h1.title.error-404__title
+            span.accent.error-404__accent Ошибка 404 —
+            br.error-404__br
+            | такой страницы не существует
+            br.error-404__br
+            |  или она&nbsp;была удалена
+          p.text.text--body.error-404__text Воспользуйтесь меню сайта или&nbsp;перейдите на главную страницу.
+          +btn({text: "перейти на главную", href: "index.html"}).error-404__btn
+
+block modals
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

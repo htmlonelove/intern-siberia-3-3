@@ -1,0 +1,41 @@
+mixin contacts(isSlider)
+  section.contacts&attributes(attributes)
+    .container
+      .contacts__top
+        h2.subtitle контакты
+        .contacts__heading
+          p.title.title--s Добавьте
+            span.accent  Siberia
+            |  в&nbsp;своё расписание
+          p.text.text--body Удачное расположение Siberia позволит вам проще найти место в&nbsp;насыщенном&nbsp;графике для&nbsp;комфортного отдыха.
+      .contacts__wrapper
+        .contacts__info
+          p.contacts__address.text.text--small
+            | Ждем вас в&nbsp;гости&nbsp;по&nbsp;адресу:
+            button(data-open-map).contacts__button.title.title--xxs-3 Москва, ул.&nbsp;Образцова&nbsp;31, строение&nbsp;3
+              span.contacts__button-icon
+                +icon("icon-marker", 16, 16).contacts__marker
+                +icon("icon-close", 16, 16).contacts__close
+          p.contacts__open.text.text--body
+            span.text.text--small Режим работы:
+            | Работаем ежедневно с&nbsp;10:00&nbsp;до&nbsp;00:00
+          +btn({type: "button", text: "Заказать&nbsp;звонок"})(data-open-modal="call").contacts__call
+        .contacts__content-wrapper
+          .contacts__content.is-active
+            if isSlider
+              .swiper
+                .swiper-wrapper
+                  //- .contacts__img.swiper-slide
+                  //-   +picture("content", "lobby", "content", "lobby", "jpg", 700, 467, "Лобби")
+                  .contacts__img.swiper-slide
+                    video(src="video/facade-warmcolor2.mp4" preload="auto" muted autoplay loop playsinline)
+                .contacts__navigation
+                  button.btn-tab.btn-tab--white.is-active(data-index="0") лобби
+                  button.btn-tab.btn-tab--white(data-index="1") Фасад
+            .contacts__phone-block
+              p.text.text--small Звоните с&nbsp;10:00 до&nbsp;21:00 по&nbsp;Москве, пишите в&nbsp;любое время:
+              .contacts__number
+                +link("tel:+79779917777", "+7 977 991 77 77").title.title--xl
+                +socials().socials--invert.contacts__socials
+              +btn({type: "button", text: "Заказать&nbsp;звонок"})(data-open-modal="call").contacts__call-mobile
+          +map("contacts-map").contacts__map

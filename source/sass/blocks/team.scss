@@ -1,0 +1,171 @@
+.team {
+  .subtitle {
+    margin: 0 size(129px) 0 0;
+  }
+
+  .section__heading {
+    .text {
+      max-width: size(445px);
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0 size(-24px) size(-24px) 0;
+    width: calc(100% + #{size(24px)});
+    display: flex;
+    flex-wrap: wrap;
+
+    @include vp-767 {
+      width: calc(100% + #{size(48px)});
+      margin: 0 size(-24px);
+      display: block;
+    }
+  }
+
+  &__item {
+    width: calc(33.333% - #{size(24px)});
+    margin: 0 size(24px) size(24px) 0;
+
+    @include vp-1279 {
+      width: calc(50% - #{size(24px)});
+      margin: 0 24px 24px 0;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      margin: 0;
+    }
+
+    &:last-child {
+      .team__card {
+        @include vp-767 {
+          border-bottom: 1px solid rgba($color-coffee-bean, 0.12);
+        }
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: size(24px) size(24px) size(32px) size(24px);
+    background-color: $color-default-white;
+    border-radius: size(16px);
+
+    @include vp-767 {
+      padding: size(24px);
+      background-color: $color-transparent;
+      border-top: 1px solid rgba($color-coffee-bean, 0.12);
+      border-radius: 0;
+    }
+
+    &.is-active {
+      @include vp-767 {
+        background-color: rgba($color-bon-jour, 0.5);
+      }
+
+      .team__card-button {
+        background-color: $color-default-white;
+        border-color: $color-default-white;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    [data-accordion=content] {
+      opacity: 1;
+    }
+  }
+
+  &__card-photo {
+    margin: 0 0 size(32px) 0;
+    width: size(96px);
+    height: size(96px);
+    border-radius: 50%;
+    background-color: $color-default-black;
+
+    @include vp-767 {
+      flex-shrink: 0;
+      margin: 0 size(16px) 0 0;
+      width: size(72px);
+      height: size(72px);
+    }
+  }
+
+  .title--xxs {
+    margin: 0 0 size(8px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(4px) 0;
+    }
+  }
+
+  &__card-top {
+    margin: 0 0 size(56px) 0;
+
+    @include vp-767 {
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__card-name {
+    @include vp-767 {
+      margin: 0 size(37px) 0 0;
+    }
+  }
+
+  .text--small {
+    max-width: size(180px);
+  }
+
+  &__card-info {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 size(-4px) 0;
+
+    @include vp-767 {
+      padding: size(64px) 0 0 size(88px);
+      margin: auto 0 size(-8px) 0;
+    }
+
+    .link {
+      margin: 0 0 size(4px) 0;
+
+      @include vp-767 {
+        margin: 0 0 size(8px) 0;
+      }
+    }
+  }
+
+  &__card-button {
+    display: none;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: size(48px);
+    height: size(48px);
+    border-radius: 50%;
+    background-color: $color-transparent;
+    border: 1px solid rgba($color-coffee-bean, 0.2);
+    transition: color $trans-default, background-color $trans-default, border-color $trans-default;
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+      fill: none;
+      color: $color-coffee-bean;
+      transition: transform $trans-default, color $trans-default;
+    }
+
+    @include vp-767 {
+      display: flex;
+    }
+  }
+}

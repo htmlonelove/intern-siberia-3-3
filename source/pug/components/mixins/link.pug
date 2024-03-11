@@ -1,0 +1,11 @@
+mixin link(href, text, icon, width, height)
+  if (href)
+    a&attributes(attributes)(href=href).link=text
+      if(icon !== undefined)
+        +icon(icon, width, height)
+      block
+  else
+    span&attributes(attributes).link=text
+      if(icon !== undefined)
+        +icon(icon, width, height)
+      block

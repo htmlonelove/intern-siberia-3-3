@@ -1,0 +1,118 @@
+.booking {
+  display: flex;
+  align-items: flex-start;
+
+  @include vp-1279 {
+    flex-direction: column;
+  }
+
+  @include vp-767 {
+    min-height: calc(100vh - #{size(116px)});
+  }
+
+  &__wrapper {
+    margin: 0 size(68px) 0 0;
+    padding: 0 0 size(135px) 0;
+    flex-shrink: 1;
+
+    @include vp-1439 {
+      margin: 0 48px 0 0;
+    }
+
+    @include vp-1023 {
+      padding: 0 0 135px 0;
+    }
+
+    @include vp-767 {
+      margin: 0;
+      padding: 0 0 size(40px) 0;
+    }
+
+    .booking__element:last-of-type {
+      @include vp-767 {
+        border-bottom: 1px solid rgba($color-coffee-bean, 0.12);
+      }
+    }
+  }
+
+  .booking__wrapper ~ .booking__element {
+    @include vp-1279 {
+      order: -1;
+    }
+  }
+
+  &__title {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+      margin: 0 0 size(24px) 0;
+      order: -1;
+    }
+  }
+
+  &__element {
+    @include vp-767 {
+      width: calc(100% + #{size(48px)});
+      margin: 0 size(-24px);
+      padding: 0 size(24px);
+      border-top: 1px solid rgba($color-coffee-bean, 0.12);
+      transition: background-color $trans-default;
+    }
+
+    &.is-active {
+      @include vp-767 {
+        background-color: rgba($color-bon-jour, 0.5);
+      }
+
+      .booking__icon {
+        background-color: $color-default-white;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @include vp-767 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: size(24px) 0;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: size(48px);
+    height: size(48px);
+    border-radius: 50%;
+    background-color: $color-transparent;
+    border: 1px solid rgba($color-coffee-bean, 0.2);
+    transition: color $trans-default, background-color $trans-default, border-color $trans-default;
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+      fill: none;
+      color: $color-coffee-bean;
+      transition: transform $trans-default, color $trans-default;
+    }
+  }
+
+  .booking-widget {
+    margin: auto 0 0 0;
+
+    @include vp-767 {
+      margin: auto size(-12px) 0 size(-12px);
+    }
+  }
+}

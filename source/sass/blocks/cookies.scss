@@ -1,0 +1,74 @@
+.cookies {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  right: size(24px);
+  bottom: size(24px);
+  padding: size(24px) size(24px) size(33px) size(24px);
+  border-radius: size(16px);
+  background-color: $color-default-white;
+  z-index: 100000;
+
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+
+  transition: opacity $trans-default, transform $trans-default, visibility $trans-default;
+
+  @include vp-767 {
+    width: 100%;
+    border-radius: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $color-coffee-bean;
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text {
+    max-width: size(264px);
+
+    @include vp-767 {
+      color: $color-default-white;
+    }
+  }
+
+  &__btn {
+    width: size(40px);
+    height: size(40px);
+    flex-shrink: 0;
+    align-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: size(-8px) size(-8px) 0 size(56px);
+    padding: 0;
+    color: $color-default-white;
+    border: 0;
+    border-radius: 50%;
+    background-color: $color-tints-of-brass;
+    cursor: pointer;
+    transition: color $trans-default, background-color $trans-default;
+
+    @include vp-767 {
+      margin: size(-8px) size(-8px) 0 auto;
+    }
+
+    svg {
+      width: size(20px);
+      height: size(20px);
+    }
+
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-mongoose;
+        color: $color-default-white;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.subtitle {
+  display: flex;
+  // align-items: center;
+  margin: 0;
+  font-weight: 500;
+  font-size: size(11px);
+  line-height: size(16px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  @include vp-767 {
+    font-size: size(11px);
+    line-height: size(16px);
+  }
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    margin: size(5px) size(8px) 0 0;
+    width: size(5px);
+    height: size(5px);
+    border-radius: 50%;
+    background-color: currentColor;
+    order: -1;
+
+    @include vp-767 {
+      width: size(5px);
+      height: size(5px);
+    }
+  }
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    margin: size(7px) size(8px) 0 0;
+    width: size(40px);
+    height: 1px;
+    background-color: currentColor;
+    opacity: 0.2;
+    order: -1;
+  }
+}

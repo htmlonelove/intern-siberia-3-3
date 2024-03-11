@@ -1,0 +1,5 @@
+mixin cookies()
+  .cookies(data-cookies, data-cookies-duration='30')
+    p.text.text--body Продолжая пользоваться сайтом, вы соглашаетесь с использованием файлов cookie
+    button.cookies__btn(type='button', data-cookies-consent, aria-label="Подтвердить согласие и скрыть сообщение")
+      +icon("icon-close", 20, 20)

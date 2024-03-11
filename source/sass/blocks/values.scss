@@ -1,0 +1,241 @@
+.values {
+  padding-top: size(120px);
+  padding-bottom: size(58px);
+
+  @include vp-767 {
+    padding-top: size(61px);
+    padding-bottom: size(56px);
+  }
+
+  &__top {
+    display: flex;
+    align-items: self-start;
+    margin-bottom: size(65px);
+
+    @include vp-767 {
+      flex-direction: column;
+      margin-bottom: size(14px);
+    }
+  }
+
+  &__subtitle {
+    padding-top: size(13px);
+    margin-right: size(171px);
+
+    @include vp-767 {
+      margin-bottom: size(24px);
+    }
+  }
+
+  &__title {
+    margin-bottom: size(20px);
+    max-width: 37rem;
+
+    @include vp-767 {
+      margin-bottom: size(16px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include vp-767 {
+      width: size(319px);
+      padding: 0 0 0 1.6rem;
+      min-height: size(212px);
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__swiper {
+    .ordered-list__item {
+      display: flex;
+      align-items: self-start;
+      width: 50%;
+      margin-right: 0;
+      margin-bottom: size(67px);
+
+      &::before {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: size(72px);
+        height: size(72px);
+        margin-right: size(25px);
+        color: $color-default-white;
+        background-color: $color-mongoose;
+        border-radius: 50%;
+        font-weight: 500;
+        font-size: size(20px);
+        line-height: size(26px);
+      }
+    }
+
+    .title--xxs-2 {
+      margin-bottom: size(10px);
+      font-size: size(20px);
+      line-height: size(26px);
+    }
+
+    .title--xxs-3 {
+      font-weight: 300;
+      font-size: size(15px);
+      line-height: size(22px);
+    }
+
+    @include vp-1279 {
+      .ordered-list__num {
+        margin-right: 16px;
+      }
+    }
+
+    @include vp-1023 {
+      .ordered-list__num {
+        margin-right: 25px;
+      }
+
+      .title--xxs-2 {
+        font-weight: 500;
+      }
+    }
+
+    @include vp-767 {
+      position: relative;
+      width: calc(100% + 3rem);
+      margin: 0 -1.5rem;
+      min-height: size(302px);
+      overflow: hidden;
+
+
+      .ordered-list {
+        width: auto;
+        overflow-x: unset;
+        margin: 0;
+      }
+
+      .ordered-list__item  {
+        flex-direction: column;
+        justify-content: space-between;
+        width: size(319px);
+        min-height: size(302px);
+        margin-bottom: 0;
+        margin-right: size(16px);
+        padding: size(24px);
+        background-color: $color-default-white;
+        border-radius: size(16px);
+
+        &::before {
+          display: none;
+        }
+      }
+
+      .title--xxs-2 {
+        font-weight: 500;
+        font-size: size(16px);
+        line-height: size(22px);
+        margin-bottom: size(16px);
+      }
+
+      .title--xxs-3  {
+        width: size(223px);
+        margin-bottom: 80px;
+        font-size: size(14px);
+        line-height: size(20px);
+        color: rgba($color-coffee-bean, 0.7);
+      }
+    }
+  }
+
+  &__text {
+    max-width: 22rem;
+    font-weight: 300;
+    font-size: size(15px);
+    line-height: size(22px);
+
+    @include vp-767 {
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &__desc {
+    width: size(304px);
+
+    @include vp-1279 {
+      width: 219px;
+    }
+
+    @include vp-1023 {
+      width: 264px;
+    }
+
+    @include vp-767 {
+      width: size(271px);
+    }
+  }
+
+  &__pagination {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+      position: absolute;
+      bottom: size(48px);
+      left: size(48px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      font-size: size(13px);
+      line-height: size(18px);
+      width: size(56px);
+      height: size(56px);
+      order: 1;
+      color: $color-default-white;
+      background-color: $color-mongoose;
+      border-radius: 50%;
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: "";
+        width: size(3px);
+        height: size(3px);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba($color-default-white, 50%);
+      }
+
+      .swiper-pagination-current {
+        margin-right: size(13px);
+      }
+
+      .swiper-pagination {
+        display: block;
+      }
+    }
+  }
+
+  &__call-btn {
+    margin: size(64px) auto 0;
+    display: block;
+
+    color: $color-default-white;
+
+    @include vp-767 {
+      width: calc(100% - #{size(8px)});
+      margin-top: 0;
+    }
+
+    span {
+      @include vp-767 {
+        display: none;
+      }
+    }
+  }
+}

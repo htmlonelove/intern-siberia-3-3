@@ -1,0 +1,13 @@
+.inner-contacts-section {
+  @include vp-767 {
+    padding-top: size(65px);
+  }
+
+  .subtitle {
+    margin-right: size(170px);
+
+    @include vp-767 {
+      padding-top: 0;
+    }
+  }
+}

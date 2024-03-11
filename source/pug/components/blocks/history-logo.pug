@@ -1,0 +1,26 @@
+mixin history-logo()
+  section.history-logo(data-animate)
+    .container.fib
+      .history-logo__top
+        h2.subtitle.history-logo__subtitle история логотипа
+        .history-logo__header
+          p.title.title--s.history-logo__title
+            | Эмблема олицетворяла
+            span.accent  богатство этого&nbsp;края
+            |  лесами и&nbsp;пушными зверями
+          p.text.text--body.text--desktop.history-logo__text
+            | Время &mdash; ценный ресурс, поэтому каждая ваша
+            | минута в Siberia будет прожита по полной.
+          p.text.text--body.text--mobile.history-logo__text
+            | Время &mdash; ценный ресурс, поэтому каждая ваша
+            | минута в Siberia будет прожита по полной.
+      .history-logo__content
+        +icon("about-logo", 638, 415).history-logo__svg
+        +icon("about-logo__mobile", 260, 420).history-logo__svg-mobile
+        p.text.text--small-italic.history-logo__description
+          | Изображение двух соболей, стоящих на задних лапах под&nbsp;деревом
+        p.text.text--small-italic.history-logo__description
+          | Богатство Сибирских лесов ценными породами дерева
+        p.text.text--small-italic.history-logo__description
+
+          | Глубокое уважение к вековым банными традициям Сибири

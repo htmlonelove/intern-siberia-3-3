@@ -1,0 +1,156 @@
+.booking-final {
+  position: relative;
+  padding: size(24px) 0;
+  height: 100vh;
+  /* stylelint-disable-next-line */
+  height: calc(100 * var(--vh, 1vh));
+  color: $color-default-white;
+
+  @include vp-1023 {
+    padding: 80px 0 0 0;
+  }
+
+  @include vp-767 {
+    height: var(--screen-height, 100vh);
+    padding: size(116px) 0 size(12px) 0;
+  }
+
+  &__img {
+    position: absolute;
+    width: calc(100% - #{size(48px)});
+    height: calc(100% - #{size(48px)});
+    top: size(24px);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: size(16px);
+    background-color: $color-default-black;
+    overflow: hidden;
+    z-index: -1;
+
+    @include vp-1023 {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      transform: none;
+    }
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+
+      @include vp-767 {
+        object-position: 60%;
+      }
+    }
+  }
+
+  .container {
+    padding-top: size(56px);
+    padding-bottom: size(56px);
+
+
+    @include vp-767 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  .subtitle {
+    margin: 0 0 size(19px) 0;
+
+    @include vp-1279 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(24px) 0;
+    }
+  }
+
+  .title {
+    max-width: size(700px);
+
+    .accent {
+      color: inherit;
+    }
+  }
+
+  &__text {
+    margin: size(24px) 0 0 0;
+
+    @include vp-1279 {
+      margin: 24px 0 0 0;
+    }
+
+    @include vp-767 {
+      margin: size(24px) 0 0 0;
+    }
+  }
+
+  .btn {
+    margin: size(48px) 0 0 0;
+
+    @include vp-1279 {
+      margin: 48px 0 0 0;
+    }
+
+    @include vp-1023 {
+      width: 230px;
+    }
+
+    @include vp-767 {
+      margin: auto size(-12px) 0 size(-12px);
+      width: calc(100% + #{size(24px)});
+    }
+  }
+
+  &__balance {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 size(4px);
+    margin: size(23px) 0 0 0;
+    color: $color-default-white;
+
+    @include vp-1279 {
+      margin: 24px 0 0 0;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      margin: size(24px) 0 0 0;
+    }
+
+    .text {
+      color: inherit;
+      min-width: size(132px);
+
+      @include vp-767 {
+        min-width: initial;
+      }
+    }
+  }
+
+  &__divider {
+    flex-grow: 1;
+    width: auto;
+    max-width: size(259px);
+    height: 1px;
+    margin: 0 size(16px);
+    background-color: rgba($color-default-white, 0.5);
+
+    @include vp-767 {
+      margin: 0 size(8px);
+    }
+  }
+}

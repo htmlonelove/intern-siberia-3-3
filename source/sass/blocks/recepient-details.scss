@@ -1,0 +1,35 @@
+.recepient-details {
+  padding: 0;
+  margin: 0;
+  border: none;
+
+  &__inputs {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100% + #{size(16px)});
+    margin: 0 size(-16px) size(32px) 0;
+
+    @include vp-767 {
+      width: 100%;
+      margin: 0 0 size(40px) 0;
+    }
+  }
+
+  .custom-input {
+    width: calc(33.333% - #{size(16px)});
+    margin: 0 size(16px) size(16px) 0;
+
+    @include vp-1279 {
+      width: 100%;
+    }
+
+    @include vp-767 {
+      width: 100%;
+      margin: 0 0 size(8px) 0;
+    }
+
+    &:last-child {
+      width: 100%;
+    }
+  }
+}

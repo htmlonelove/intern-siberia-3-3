@@ -1,0 +1,268 @@
+mixin baths()
+  section.baths&attributes(attributes)
+    .container
+      .baths__top
+        h2.subtitle Бани
+        .baths__heading
+          p.title.title--s
+            span.accent В Siberia 5 бань.
+            |  Выберите любую себе по душе
+          p.text.text--body В каждой бане уникальная программа парения, атмосфера и&nbsp;стиль.
+      .baths__wrapper.swiper(data-slider="mobile")
+        .baths__navigation
+          button(data-index="0").btn-tab.text.text--small-caps.is-active Кочевник
+          button(data-index="1").btn-tab.text.text--small-caps Знахарь
+          button(data-index="2").btn-tab.text.text--small-caps Ольхон
+          button(data-index="3").btn-tab.text.text--small-caps Тайга
+          button(data-index="4").btn-tab.text.text--small-caps курная изба
+        .baths__slider.swiper-wrapper
+          .baths__slide.swiper-slide
+            .bath-card
+              .bath-card__img-wrapper
+                .bath-card__slider-wrapper.swiper
+                  button(aria-label="Предыдущий слайд").bath-card__nav-btn.bath-card__nav-btn--prev
+                  button(aria-label="Следующий слайд").bath-card__nav-btn.bath-card__nav-btn--next
+                  .bath-card__nav-icon
+                    +icon("icon-arrow", 20, 20)
+                  .bath-card__slider.swiper-wrapper
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-nomad/desktop", "kochevnik-photo-1", "slides/baths-slider-nomad/mobile", "Photo-1", "jpg", 600, 480, "Слайд 1")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-nomad/desktop", "kochevnik-photo-2", "slides/baths-slider-nomad/mobile", "Photo-1", "jpg", 600, 480, "Слайд 2")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-nomad/desktop", "kochevnik-photo-3", "slides/baths-slider-nomad/mobile", "Photo-1", "jpg", 600, 480, "Слайд 3")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-nomad/desktop", "kochevnik-photo-4", "slides/baths-slider-nomad/mobile", "Photo-1", "jpg", 600, 480, "Слайд 3")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-nomad/desktop", "kochevnik-photo-5", "slides/baths-slider-nomad/mobile", "Photo-1", "jpg", 600, 480, "Слайд 3")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-nomad/desktop", "kochevnik-photo-6", "slides/baths-slider-nomad/mobile", "Photo-1", "jpg", 600, 480, "Слайд 3")
+                  .bath-card__pagination
+              .bath-card__content
+                .bath-card__top
+                  p.bath-card__info
+                    span.title.title--xxs-2 До 4 человек
+                    span.text.text--small-2 вмещает баня
+                  p.bath-card__info
+                    span.title.title--xxs-2 4 часа
+                    span.text.text--small-2 длится программа
+                  p.bath-card__info
+                    span.title.title--xxs-2 77 м#[sup 2]
+                    span.text.text--small-2 площадь бани
+                h3.title.title--md-2 Кочевник
+                p.bath-card__text-desktop.text.text--small-2 Вы ощутите на&nbsp;себе быструю смену климата в&nbsp;местах&nbsp;обитания кочевых народов: прохладный дождь,&nbsp;яркое&nbsp;солнце, теплый сильный ветер.
+                p.bath-card__text-mobil.text.text--small-2 Вы ощутите на&nbsp;себе быструю смену климата в&nbsp;местах обитания кочевых народов.
+                .bath-card__links
+                  a(href="bath-nomad.html").text.text--small-caps.bath-card__link Подробнее о Бане
+                  .bath-card__info-block
+                    p.bath-card__info
+                      span.text.text--small-caps вместимость
+                      span.text.text--small-caps до 4 человек
+                    p.bath-card__info
+                      span.text.text--small-caps длительность программы
+                      span.text.text--small-caps 4 часа
+                    p.bath-card__info
+                      span.text.text--small-caps площадь
+                      span.text.text--small-caps 98 м#[sup 2]
+                  //- +btn({text: "Забронировать баню", href: "booking.html?nomad"}).btn--square
+                  +btn({text: "Забронировать баню"})(data-open-modal="call").btn--square
+          .baths__slide.swiper-slide
+            .bath-card
+              .bath-card__img-wrapper
+                .bath-card__slider-wrapper.swiper
+                  button(aria-label="Предыдущий слайд").bath-card__nav-btn.bath-card__nav-btn--prev
+                  button(aria-label="Следующий слайд").bath-card__nav-btn.bath-card__nav-btn--next
+                  .bath-card__nav-icon
+                      +icon("icon-arrow", 20, 20)
+                  .bath-card__slider.swiper-wrapper
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-healer/desktop", "healer-1", "slides/baths-slider-healer/mobile", "healer", "jpg", 600, 480, "Слайд 1")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-healer/desktop", "healer-2", "slides/baths-slider-healer/mobile", "healer", "jpg", 600, 480, "Слайд 2")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-healer/desktop", "healer-3", "slides/baths-slider-healer/mobile", "healer", "jpg", 600, 480, "Слайд 3")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-healer/desktop", "healer-4", "slides/baths-slider-healer/mobile", "healer", "jpg", 600, 480, "Слайд 4")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-healer/desktop", "healer-5", "slides/baths-slider-healer/mobile", "healer", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-healer/desktop", "healer-6", "slides/baths-slider-healer/mobile", "healer", "jpg", 600, 480, "Слайд 6")
+                  .bath-card__pagination
+              .bath-card__content
+                .bath-card__top
+                  p.bath-card__info
+                    span.title.title--xxs-2 До 6 человек
+                    span.text.text--small-2 вмещает баня
+                  p.bath-card__info
+                    span.title.title--xxs-2 4 часа
+                    span.text.text--small-2 длится программа
+                  p.bath-card__info
+                    span.title.title--xxs-2 98 м#[sup 2]
+                    span.text.text--small-2 площадь бани
+                h3.title.title--md-2 Знахарь
+                p.bath-card__text-desktop.text.text--small-2 Дубовая парная с&nbsp;ароматами сибирского&nbsp;разнотравья и&nbsp;звукотерапия в&nbsp;специальной фито-комнате.
+                p.bath-card__text-mobil.text.text--small-2 Дубовая парная с&nbsp;ароматами сибирского разнотравья и&nbsp;звукотерапия в&nbsp;фито-комнате.
+                .bath-card__links
+                  a(href="bath-healer.html").text.text--small-caps.bath-card__link Подробнее о Бане
+                  .bath-card__info-block
+                    p.bath-card__info
+                      span.text.text--small-caps вместимость
+                      span.text.text--small-caps до 6 человек
+                    p.bath-card__info
+                      span.text.text--small-caps длительность программы
+                      span.text.text--small-caps 4 часа
+                    p.bath-card__info
+                      span.text.text--small-caps площадь
+                      span.text.text--small-caps 77 м#[sup 2]
+                  //- +btn({text: "Забронировать баню", href: "booking.html?healer"}).btn--square
+                  +btn({text: "Забронировать баню"})(data-open-modal="call").btn--square
+          .baths__slide.swiper-slide
+            .bath-card
+              .bath-card__img-wrapper
+                .bath-card__slider-wrapper.swiper
+                  button(aria-label="Предыдущий слайд").bath-card__nav-btn.bath-card__nav-btn--prev
+                  button(aria-label="Следующий слайд").bath-card__nav-btn.bath-card__nav-btn--next
+                  .bath-card__nav-icon
+                    +icon("icon-arrow", 20, 20)
+                  .bath-card__slider.swiper-wrapper
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-olkhon/desktop", "olkhon-1", "slides/baths-slider-olkhon/mobile", "olkhon", "jpg", 600, 480, "Слайд 1")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-olkhon/desktop", "olkhon-2", "slides/baths-slider-olkhon/mobile", "olkhon", "jpg", 600, 480, "Слайд 2")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-olkhon/desktop", "olkhon-3", "slides/baths-slider-olkhon/mobile", "olkhon", "jpg", 600, 480, "Слайд 3")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-olkhon/desktop", "olkhon-4", "slides/baths-slider-olkhon/mobile", "olkhon", "jpg", 600, 480, "Слайд 4")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-olkhon/desktop", "olkhon-5", "slides/baths-slider-olkhon/mobile", "olkhon", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-olkhon/desktop", "olkhon-6", "slides/baths-slider-olkhon/mobile", "olkhon", "jpg", 600, 480, "Слайд 6")
+                  .bath-card__pagination
+              .bath-card__content
+                .bath-card__top
+                  p.bath-card__info
+                    span.title.title--xxs-2 До 6 человек
+                    span.text.text--small-2 вмещает баня
+                  p.bath-card__info
+                    span.title.title--xxs-2 4 часа
+                    span.text.text--small-2 длится программа
+                  p.bath-card__info
+                    span.title.title--xxs-2 94 м#[sup 2]
+                    span.text.text--small-2 площадь бани
+                h3.title.title--md-2 Ольхон
+                p.text.text--small-2 Глиняная парная без&nbsp;острых углов&nbsp;создает особое&nbsp;движение и&nbsp;насыщенность пара.
+                  span.bath-card__text-desktop  Атмосфера настоящего&nbsp;стойбища шамана на&nbsp;Байкале.
+                .bath-card__links
+                  a(href="bath-olkhon.html").text.text--small-caps.bath-card__link Подробнее о Бане
+                  .bath-card__info-block
+                    p.bath-card__info
+                      span.text.text--small-caps вместимость
+                      span.text.text--small-caps до 6 человек
+                    p.bath-card__info
+                      span.text.text--small-caps длительность программы
+                      span.text.text--small-caps 4 часа
+                    p.bath-card__info
+                      span.text.text--small-caps площадь
+                      span.text.text--small-caps 94 м#[sup 2]
+                  //- +btn({text: "Забронировать баню", href: "booking.html?olkhon"}).btn--square
+                  +btn({text: "Забронировать баню"})(data-open-modal="call").btn--square
+          .baths__slide.swiper-slide
+            .bath-card
+              .bath-card__img-wrapper
+                .bath-card__slider-wrapper.swiper
+                  button(aria-label="Предыдущий слайд").bath-card__nav-btn.bath-card__nav-btn--prev
+                  button(aria-label="Следующий слайд").bath-card__nav-btn.bath-card__nav-btn--next
+                  .bath-card__nav-icon
+                      +icon("icon-arrow", 20, 20)
+                  .bath-card__slider.swiper-wrapper
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-tayga/desktop", "tayga-1", "slides/baths-slider-tayga/mobile", "tayga", "jpg", 600, 480, "Слайд 1")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-tayga/desktop", "tayga-2", "slides/baths-slider-tayga/mobile", "tayga", "jpg", 600, 480, "Слайд 2")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-tayga/desktop", "tayga-3", "slides/baths-slider-tayga/mobile", "tayga", "jpg", 600, 480, "Слайд 3")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-tayga/desktop", "tayga-4", "slides/baths-slider-tayga/mobile", "tayga", "jpg", 600, 480, "Слайд 4")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-tayga/desktop", "tayga-5", "slides/baths-slider-tayga/mobile", "tayga", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-tayga/desktop", "tayga-6", "slides/baths-slider-tayga/mobile", "tayga", "jpg", 600, 480, "Слайд 6")
+                  .bath-card__pagination
+              .bath-card__content
+                .bath-card__top
+                  p.bath-card__info
+                    span.title.title--xxs-2 До 10 человек
+                    span.text.text--small-2 вмещает баня
+                  p.bath-card__info
+                    span.title.title--xxs-2 4 часа
+                    span.text.text--small-2 длится программа
+                  p.bath-card__info
+                    span.title.title--xxs-2 128 м#[sup 2]
+                    span.text.text--small-2 площадь бани
+                h3.title.title--md-2 Тайга
+                p.bath-card__text-desktop.text.text--small-2 Хвойные ароматы и&nbsp;парение можжевеловыми вениками. Отдыхая в&nbsp;горячей кедровой купели среди живых елок, вы&nbsp;слышите звуки сибирской тайги.
+                p.bath-card__text-mobil.text.text--small-2 Отдыхая в&nbsp;горячей кедровой купели среди живых елок, вы&nbsp;слышите звуки сибирской тайги.
+                .bath-card__links
+                  a(href="bath-taiga.html").text.text--small-caps.bath-card__link Подробнее о Бане
+                  .bath-card__info-block
+                    p.bath-card__info
+                      span.text.text--small-caps вместимость
+                      span.text.text--small-caps до 610 человек
+                    p.bath-card__info
+                      span.text.text--small-caps длительность программы
+                      span.text.text--small-caps 4 часа
+                    p.bath-card__info
+                      span.text.text--small-caps площадь
+                      span.text.text--small-caps 128 м#[sup 2]
+                  //- +btn({text: "Забронировать баню", href: "booking.html?taiga"}).btn--square
+                  +btn({text: "Забронировать баню"})(data-open-modal="call").btn--square
+          .baths__slide.swiper-slide
+            .bath-card
+              .bath-card__img-wrapper
+                .bath-card__slider-wrapper.swiper
+                  button(aria-label="Предыдущий слайд").bath-card__nav-btn.bath-card__nav-btn--prev
+                  button(aria-label="Следующий слайд").bath-card__nav-btn.bath-card__nav-btn--next
+                  .bath-card__nav-icon
+                      +icon("icon-arrow", 20, 20)
+                  .bath-card__slider.swiper-wrapper
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-kyrnaia-izba/desktop", "kyr-1", "slides/baths-slider-kyrnaia-izba/mobile", "kyr", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-kyrnaia-izba/desktop", "kyr-2", "slides/baths-slider-kyrnaia-izba/mobile", "kyr", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-kyrnaia-izba/desktop", "kyr-3", "slides/baths-slider-kyrnaia-izba/mobile", "kyr", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-kyrnaia-izba/desktop", "kyr-4", "slides/baths-slider-kyrnaia-izba/mobile", "kyr", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-kyrnaia-izba/desktop", "kyr-5", "slides/baths-slider-kyrnaia-izba/mobile", "kyr", "jpg", 600, 480, "Слайд 5")
+                    .bath-card__slide.swiper-slide
+                      +picture("slides/baths-slider-kyrnaia-izba/desktop", "kyr-6", "slides/baths-slider-kyrnaia-izba/mobile", "kyr", "jpg", 600, 480, "Слайд 5")
+                  .bath-card__pagination
+              .bath-card__content
+                .bath-card__top
+                  p.bath-card__info
+                    span.title.title--xxs-2 До 3 человек
+                    span.text.text--small-2 вмещает баня
+                  p.bath-card__info
+                    span.title.title--xxs-2 4 часа
+                    span.text.text--small-2 длится программа
+                  p.bath-card__info
+                    span.title.title--xxs-2 87 м#[sup 2]
+                    span.text.text--small-2 площадь бани
+                h3.title.title--md-2 Курная изба
+                p.bath-card__text-desktop.text.text--small-2 Сибирская деревенская баня. Парная из&nbsp;липовой дранки, с&nbsp;ароматом бани по-черному, как&nbsp; у&nbsp;бабушки в&nbsp;деревне. Особый,  целебный, духмяный пар, наполненный запахами трав.
+                p.bath-card__text-mobil.text.text--small-2 Парная из&nbsp;липовой дранки с&nbsp;ароматом бани по-черному, как&nbsp;у&nbsp;бабушки в&nbsp;деревне.
+                .bath-card__links
+                  a(href="bath-kyrnaia-izba.html").text.text--small-caps.bath-card__link Подробнее о Бане
+                  .bath-card__info-block
+                    p.bath-card__info
+                      span.text.text--small-caps вместимость
+                      span.text.text--small-caps до 3 человек
+                    p.bath-card__info
+                      span.text.text--small-caps длительность программы
+                      span.text.text--small-caps 4 часа
+                    p.bath-card__info
+                      span.text.text--small-caps площадь
+                      span.text.text--small-caps 87 м#[sup 2]
+                  //- +btn({text: "Забронировать баню", href: "booking.html?kurnaya-izba"}).btn--square
+                  +btn({text: "Забронировать баню"})(data-open-modal="call").btn--square

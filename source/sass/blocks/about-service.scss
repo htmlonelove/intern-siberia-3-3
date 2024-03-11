@@ -1,0 +1,222 @@
+.about-service {
+  padding-top: 140px;
+  padding-bottom: 50px;
+
+  @include vp-767 {
+    padding-top: 67px;
+    padding-bottom: 0;
+  }
+
+  &__top {
+    display: flex;
+    align-items: self-start;
+    margin-bottom: 65px;
+
+    @include vp-767 {
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__subtitle {
+    padding-top: 13px;
+    margin-right: 191px;
+
+    @include vp-1279 {
+      margin-right: 62px;
+    }
+
+    @include vp-767 {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__header {
+    max-width: 35rem;
+
+    @include vp-1279 {
+      max-width: 100%;
+    }
+
+    @include vp-1023 {
+      max-width: 35rem;
+    }
+
+    @include vp-767 {
+      width: size(327px);
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+
+    @include vp-767 {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__text {
+    width: size(473px);
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 22px;
+
+    @include vp-767 {
+      width: size(324px);
+      font-size: size(14px);
+      line-height: size(20px);
+    }
+  }
+
+  &__advantages {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+
+    .ordered-list__item {
+      display: flex;
+      flex-direction: column;
+      align-items: self-start;
+      width: 20.5%;
+      margin-bottom: 64px;
+      margin-right: size(44px);
+
+      &::before {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 16px;
+        color: $color-default-white;
+        background-color: $color-mongoose;
+        font-size: 20px;
+        line-height: 26px;
+      }
+
+      &:first-of-type {
+        // margin-right: 39px;
+      }
+
+      &:nth-child(2) {
+        // margin-right: 49px;
+      }
+
+      &:nth-child(3) {
+        width: 21.3%;
+        // margin-right: 43px;
+      }
+
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+
+    @include vp-1279 {
+      .ordered-list__item {
+        width: 20%;
+        margin-right: size(25px);
+
+        &:first-of-type,
+        &:nth-child(2),
+        &:nth-child(3)
+        &:nth-child(4n) {
+          margin-right: size(25px);
+        }
+      }
+    }
+
+    @include vp-767 {
+      position: relative;
+      flex-wrap: nowrap;
+      padding: 0 0 0 1.6rem;
+      margin: 0 size(-23px);
+      min-height: size(212px);
+      overflow: hidden;
+
+      .ordered-list {
+        overflow: unset;
+      }
+
+      .ordered-list__item {
+        width: size(319px);
+        min-height: size(212px);
+        justify-content: start;
+        padding: 24px;
+        background-color: $color-default-white;
+        border-radius: 16px;
+        margin-bottom: 0;
+        margin-right: size(16px);
+
+        &::before {
+          display: none;
+        }
+
+        &:first-child .title--xxs-2 {
+          width: 242px;
+        }
+
+        &:nth-child(4n) {
+          margin-right: size(16px);
+        }
+      }
+
+      .title--xxs-2 {
+        font-weight: 500;
+        font-size: size(16px);
+        line-height: size(22px);
+      }
+
+      .swiper-slide {
+        min-height: size(212px);
+      }
+    }
+  }
+
+  &__advantage {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 24px;
+    color: $color-coffee-bean;
+
+    @include vp-767 {
+      font-size: size(16px);
+      line-height: size(22px);
+      margin: 0 0 64px;
+      width: size(271px);
+    }
+  }
+
+  &__pagination {
+    display: none;
+
+    @include vp-767 {
+      position: absolute;
+      bottom: 47px;
+      left: 47px;
+      display: flex;
+      width: size(56px);
+      height: size(56px);
+      font-weight: 300;
+      font-size: size(13px);
+      line-height: size(18px);
+      align-items: center;
+      justify-content: center;
+      color: $color-default-white;
+      background-color: $color-mongoose;
+      border-radius: 50%;
+
+      &::after {
+        position: absolute;
+        content: "";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: rgba($color-default-white, 50%);
+      }
+
+      .swiper-pagination-current {
+        margin-right: 15px;
+      }
+    }
+  }
+}

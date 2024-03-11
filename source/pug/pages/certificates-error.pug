@@ -1,0 +1,19 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Оплата не удалась - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = false
+  - const footerMods = ""
+  - const currentUrl = "" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content(data-animate)
+      +booking-final({title: "Оплата банковской картой не удалась", subtitle: "Покупка сертификата", text: "Попробуйте использовать другую карту.", btnText: "вернуться к выбору сертификата", href: "certificates.html", img: "certificates-error"}).fib
+
+block modals
+  +modal("modal--no-scale modal--call")(data-modal="call")
+    +modal-call()

@@ -1,0 +1,222 @@
+.video {
+  position: relative;
+  width: size(144px);
+  height: size(144px);
+  // border-radius: 50%;
+  border-radius: size(290px);
+  background-color: $color-default-black;
+  cursor: pointer;
+  overflow: hidden;
+  transform: translateZ(0) translate3d(0, 0, 0);
+  z-index: 2;
+  will-change: transform;
+  transition: background-color 0s, transform $trans-default, right $trans-1000, top $trans-1000, width $trans-1000, height $trans-1000, border-radius $trans-1000;
+  transition-delay: 0s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s, 0.2s;
+
+  @include vp-1279 {
+    transition: background-color 0s, transform $trans-default, left $trans-1000, top $trans-1000, width $trans-1000, height $trans-1000, border-radius $trans-1000;
+  }
+
+  @include vp-1439 {
+    width: 120px;
+    height: 120px;
+  }
+
+  @include vp-1023 {
+    width: 100%;
+    height: 48.8vw;
+    padding: size(16px);
+    border-radius: size(16px);
+    transition: none;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover {
+      transform: translate(50%, -50%) scale(1.14) translateZ(0);
+    }
+  }
+
+  &.is-open {
+    width: 69.7vw;
+    height: 38vw;
+    border-radius: size(16px);
+    right: calc(50% + #{size(14px)});
+    pointer-events: none;
+    background-color: $color-transparent;
+    transform: translate(50%, -50%) translateZ(0) translate3d(0, 0, 0);
+    // transition-delay: 0s;
+    transition-delay: 1.95s, 0s, 0s, 0s, 0s, 0s, 0s, 0s;
+    z-index: 6;
+
+    @include vp-1439 {
+      right: calc(50% + 11px);
+    }
+
+    @include vp-1279 {
+      // right: calc(50% + 12px);
+      width: 720px;
+      right: unset;
+      left: calc(50% - 12px);
+      transform: translate(-50%, -50%) translateZ(0) translate3d(0, 0, 0);
+    }
+
+    @include vp-1023 {
+      right: 50%;
+    }
+
+    @include vp-1023 {
+      width: 100%;
+      right: unset;
+      height: size(183px);
+    }
+
+    .video__btn {
+      opacity: 0;
+
+      @include vp-1023 {
+        opacity: 1;
+      }
+    }
+
+    video {
+      opacity: 0;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $color-transparent;
+    border: 0;
+    z-index: 1;
+    cursor: pointer;
+
+    @include vp-1023 {
+      display: none;
+    }
+  }
+
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    transition: opacity $trans-600;
+  }
+
+  &__btn {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: $color-default-white;
+    transform: translate(-50%, -50%);
+    transition: opacity $trans-600;
+    transition-delay: 0.4s;
+
+    @include vp-1023 {
+      left: size(16px);
+      top: unset;
+      bottom: size(16px);
+      width: size(56px);
+      height: size(56px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $color-coffee-bean;
+      background-color: $color-default-white;
+      border-radius: 50%;
+      transform: none;
+      z-index: 3;
+    }
+
+    svg {
+      width: size(32px);
+      height: size(32px);
+
+      @include vp-1023 {
+        width: size(20px);
+        height: size(20px);
+      }
+    }
+  }
+
+  &__cover,
+  &__title,
+  &__duration {
+    display: none;
+
+    @include vp-1023 {
+      display: block;
+      z-index: 1;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: size(16px);
+    left: size(16px);
+  }
+
+  &__cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: size(16px);
+    overflow: hidden;
+    transform: translateZ(0);
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &.is-hidden,
+    &.is-hidden ~ .video__btn {
+      display: none;
+    }
+  }
+
+  &__duration {
+    position: absolute;
+    right: size(16px);
+    bottom: size(16px);
+    font-weight: 300;
+    font-size: size(13px);
+    line-height: size(18px);
+    color: $color-default-white;
+  }
+
+  &__mobile {
+    display: none;
+    // width: calc(100% + #{size(32px)});
+    // height: calc(100% + #{size(32px)});
+    // margin: size(-16px);
+
+    @include vp-1023 {
+      display: block;
+    }
+
+    iframe,
+    video {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      z-index: 10;
+    }
+  }
+
+  &__desktop {
+    @include vp-1023 {
+      display: none;
+    }
+  }
+}

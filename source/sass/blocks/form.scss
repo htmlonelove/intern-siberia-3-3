@@ -1,0 +1,243 @@
+.form {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform $trans-eio-700, opacity $trans-eio-700;
+  transition-delay: 0.7s;
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 size(-16px) 0 0;
+
+    @include vp-1279 {
+      margin: 0;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    margin: 0 size(16px) size(24px) 0;
+
+    @include vp-1279 {
+      margin: 0 0 24px 0;
+    }
+
+    @include vp-767 {
+      margin: 0 0 size(32px) 0;
+    }
+  }
+
+  .custom-input {
+    width: calc(50% - #{size(16px)});
+    margin: 0 size(16px) size(16px) 0;
+
+    @include vp-1279 {
+      width: 100%;
+      margin: 0 0 16px 0;
+    }
+
+    &:first-of-type {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__confidential {
+    max-width: size(500px);
+
+    .link {
+      color: $color-coffee-bean;
+
+      &[href]:hover {
+        color: $color-rodeo-dust;
+      }
+    }
+
+    @include vp-767 {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: calc(100% + #{size(16px)});
+
+    @include vp-767 {
+      align-items: center;
+      width: 100%;
+    }
+
+    .btn {
+      // margin: 0 0 size(24px) 0;
+      width: calc(66.5% - #{size(16px)});
+
+      @include vp-767 {
+        width: size(203px);
+        margin: 0 0 size(24px) 0;
+      }
+    }
+
+    .form__confidential {
+      width: size(365px);
+      max-width: unset;
+      margin: 0 30% 0 33.5%;
+      justify-self: flex-end;
+
+      @include vp-767 {
+        margin: 0;
+        max-width: 101%;
+        flex-shrink: 0;
+      }
+
+      .link {
+        color: $color-coffee-bean;
+      }
+    }
+  }
+
+  &__price {
+    display: flex;
+    align-items: center;
+    width: 33.5%;
+    margin: 0 0 size(24px) 0;
+
+    span {
+      flex-shrink: 0
+    }
+
+    @include vp-767 {
+      margin: 0 auto size(20px) 0;
+    }
+
+    &::after {
+      content: "";
+      margin: 0 size(32px);
+      width: size(192px);
+      height: size(1px);
+      background-color: rgba($color-coffee-bean, 0.2);
+      transform: translateY(-50%);
+
+      @include vp-1023 {
+        display: none;
+      }
+    }
+  }
+
+  .subtitle {
+    margin: 0 0 size(24px) 0;
+  }
+
+  &__caption {
+    position: relative;
+    max-width: size(578px);
+    margin: 0 0 size(32px) 0;
+
+    @include vp-767 {
+      margin: 0 0 size(47px) 0;
+    }
+
+    br {
+      @include vp-767 {
+        display: none;
+      }
+    }
+
+    span {
+      font-weight: 500;
+      cursor: pointer;
+
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          & + .form__preview {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__preview {
+    position: absolute;
+    right: -38%;
+    top: 50%;
+    width: size(275px);
+    height: size(186px);
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0);
+    border-radius: size(16px);
+    overflow: hidden;
+    transition: opacity $trans-default;
+
+    @include vp-1279 {
+      right: -28%;
+      width: size(205px);
+      height: size(126px);
+    }
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--row {
+    .custom-input:first-of-type {
+      flex: unset;
+    }
+  }
+
+  &--three-column {
+    .custom-input {
+      width: calc(33.3333% + #{size(-16px)});
+
+      @include vp-1679 {
+        width: calc(33.333% + #{-16px});
+        margin-right: 16px;
+      }
+
+      input {
+        width: 100%;
+        @include vp-767 {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .form__confidential {
+      @include vp-767 {
+        max-width: initial;
+        width: 101%;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include vp-767 {
+      display: inline-flex;
+    }
+  }
+
+  &__desktop {
+    @include vp-767 {
+      display: none;
+    }
+  }
+
+  &--dark {
+    .form__confidential {
+      color: rgba($color-default-white, 0.5);
+
+      .link {
+        color: rgba($color-default-white, 0.7);
+      }
+    }
+  }
+}

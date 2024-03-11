@@ -1,0 +1,14 @@
+mixin video()
+  .video(data-modal-trigger="video", data-modal-animated, data-fix-block)&attributes(attributes)
+    button(data-open-modal="video", aria-label="Открыть видео").video__link
+    video(data-src="video/intro-video-prev.mp4" src="/" preload="auto" muted autoplay loop playsinline).video__desktop
+    video(data-src="video/intro-video-mobile.mp4" src="/" preload="auto" controls playsinline).video__mobile
+    //- .video__mobile(data-id="nwEKzrWMwOA", id="player")
+    .video__cover
+      +picture("content", "lobby", "content", "lobby", "jpg", 363, 242, "Видео о бане")
+      video(src="video/intro-video-prev-mobile.mp4" preload="auto" muted autoplay loop playsinline)
+      p.video__title.text.text--small-caps.text--white видео о бане
+      p.video__duration 2:20
+        span.visually-hidden Длительность видео
+    .video__btn
+      +icon("icon-play", 32, 32)

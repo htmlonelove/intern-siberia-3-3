@@ -1,0 +1,305 @@
+.socials {
+  &--with-border {
+    .socials__item {
+      border-right: 1px solid rgba($color-coffee-bean, 0.12);
+
+      @include vp-1023 {
+        border-right: none;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+
+      &:first-child {
+        border-left: 1px solid rgba($color-coffee-bean, 0.12);
+
+        @include vp-767 {
+          border-left: none;
+        }
+      }
+    }
+  }
+
+  &--rounded {
+    .socials__item {
+      width: size(56px);
+      height: size(56px);
+      margin-right: size(8px);
+
+      @include vp-767 {
+        width: size(36px);
+        height: size(36px);
+        margin-right: size(8px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .socials__link {
+      width: size(56px);
+      height: size(56px);
+      border-radius: 50%;
+
+      @include vp-767 {
+        width: size(36px);
+        height: size(36px);
+
+        &--whatsapp .socials__icon {
+          width: size(16px);
+          height: size(16px);
+        }
+      }
+
+      &--whatsapp {
+        color: $color-default-white;
+        background-color: $color-fruit-salad;
+
+        .socials__icon {
+          width: size(18px);
+          height: size(18px);
+        }
+      }
+
+      &--telegram {
+        color: $color-default-white;
+        background-color: $color-summer-sky;
+
+        .socials__icon {
+          width: size(17px);
+          height: size(17px);
+        }
+      }
+    }
+  }
+
+  &--rounded-mobile {
+    .socials__item {
+      @include vp-767 {
+        width: size(36px);
+        height: size(36px);
+        margin-right: size(8px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    .socials__link {
+      @include vp-767 {
+        width: size(36px);
+        height: size(36px);
+        border-radius: 50%;
+
+        &--whatsapp {
+          color: $color-default-white;
+          background-color: $color-fruit-salad;
+        }
+
+        &--telegram {
+          color: $color-default-white;
+          background-color: $color-summer-sky;
+        }
+
+        &--whatsapp .socials__icon {
+          width: size(16px);
+          height: size(16px);
+        }
+      }
+    }
+  }
+
+  &--hover {
+    .socials__link {
+      transition: color $trans-default,
+        background-color $trans-default;
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          &.socials__link--whatsapp {
+            color: $color-default-white;
+            background-color: $color-fruit-salad;
+          }
+
+          &.socials__link--telegram {
+            color: $color-default-white;
+            background-color: $color-summer-sky;
+          }
+        }
+      }
+    }
+  }
+
+  &--hover-squirrel {
+    .socials__link {
+      transition: color $trans-default,
+        background-color $trans-default;
+
+      @media (hover: hover), screen and (min-width: 0\0) {
+        &:hover,
+        &:focus {
+          background-color: $color-squirrel;
+        }
+      }
+    }
+  }
+
+  &--square {
+    .socials__link {
+      width: 100%;
+      height: 100%;
+
+      @include vp-1023 {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+
+        &--whatsapp {
+          color: $color-default-white;
+          background-color: $color-fruit-salad;
+
+          .socials__icon {
+            width: size(18px);
+            height: size(18px);
+          }
+        }
+
+        &--telegram {
+          color: $color-default-white;
+          background-color: $color-summer-sky;
+
+          .socials__icon {
+            width: size(16px);
+            height: size(16px);
+          }
+        }
+      }
+    }
+
+    .socials__item {
+      .socials__link {
+        transition: color $trans-default,
+          background-color $trans-default;
+
+        @media (hover: hover), screen and (min-width: 0\0) {
+          &:hover,
+          &:focus {
+            &.socials__link--whatsapp {
+              color: $color-default-white;
+              background-color: $color-fruit-salad;
+            }
+
+            &.socials__link--telegram {
+              color: $color-default-white;
+              background-color: $color-summer-sky;
+            }
+          }
+        }
+      }
+
+      @include vp-1023 {
+        border-radius: 50%;
+        margin-right: size(8px);
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &--invert {
+    .socials__link {
+      color: $color-default-white;
+      border-radius: 50%;
+      transition: background-color $trans-default;
+
+      &--telegram {
+        background-color: $color-summer-sky;
+      }
+
+      &--whatsapp {
+        background-color: $color-fruit-salad;
+      }
+    }
+
+    .socials__item {
+      .socials__link {
+        @media (hover: hover), screen and (min-width: 0\0) {
+          &:hover,
+          &:focus {
+            background-color: $color-mongoose;
+          }
+        }
+      }
+    }
+  }
+
+  &--small {
+    .socials__item {
+      width: size(36px);
+      height: size(36px);
+
+      @include vp-767 {
+        width: size(36px);
+        height: size(36px);
+      }
+    }
+
+    .socials__icon {
+      width: size(16px);
+      height: size(16px);
+    }
+  }
+}
+
+.socials__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socials__item {
+  width: 64px;
+  height: 64px;
+
+  @include vp-767 {
+    width: size(36px);
+    height: size(36px);
+  }
+}
+
+.socials__link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  &--whatsapp {
+    color: $color-fruit-salad;
+  }
+
+  &--telegram {
+    color: $color-summer-sky;
+  }
+}
+
+.socials__icon {
+  width: size(18px);
+  height: size(18px);
+  margin: auto;
+
+  @include vp-767 {
+    width: size(16px);
+    height: size(16px);
+  }
+}

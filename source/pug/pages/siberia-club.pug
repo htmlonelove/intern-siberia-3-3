@@ -1,0 +1,126 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Siberia Club - Siberia" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = "wrapper--dark"
+  - const hasHeader = true
+  - const headerMods = "header--dark"
+  - const hasFooter = true
+  - const footerMods = "footer--dark"
+  - const currentUrl = "siberia-club.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    .page-content
+      div(data-animate)
+        section.inner-intro.inner-intro--narrow.fib.d-200.inner-intro--dark
+          .container
+            .inner-intro__heading
+              h2.subtitle.subtitle--white банный клуб
+              +opening-hours().inner-intro__opening-hours
+            h1.inner-intro__title.title.title--white-with-accent Закрытый банный
+              br
+              |  клуб Siberia
+            p.inner-intro__description.text.text--body.text--white-opacity Для тех, кто ценит настоящую банную культуру и&nbsp;общение в&nbsp;кругу близких по&nbsp;духу.
+            .inner-intro__video-block
+              .inner-intro__img-wrapper
+                +picture("content/siberia-club/desktop", "video", "content/siberia-club/mobile", "video", "jpg", 1600, 898, "Банный клуб")
+      div(data-animate)
+        section.section.section--padding-narrow.section--dark.mission.fib.d-200
+          .container
+            h2.subtitle.subtitle--white миссия банного клуба
+            +quote("Дмитрий Портнягин", "Основатель Siberia", true, "content", "portnyagin").quote--light
+              p.title.title--s.title--white-with-accent.title--accent-rodeo-dust
+                span.accent Мы&nbsp;объединяем успешных людей
+                |  вокруг банной культуры как элемента стиля жизни и
+                span.accent  &nbsp;создаем пространство,
+                |  которое помогает нашим гостям строить доверительные отношения,
+                span.accent  где все равны.
+                |  Без&nbsp;статусов и&nbsp;масок.
+      div(data-animate)
+        section.section.section--wide.section--dark.privileges.fib.d-200
+          .container
+            .section__top
+              h2.subtitle.subtitle--white привилегии
+                br
+                |  для&nbsp;членов&nbsp;клуба
+              .section__heading
+                p.title.title--s.title--white-with-accent Что получает каждый участник банного клуба
+                  span.hidden  Siberia
+                p.text.text--body.text--white-opacity В&nbsp;первую очередь, доступ к&nbsp;дополнительным возможностям и&nbsp;сервису.
+            ol.ordered-list.ordered-list--verical.ordered-list--mobile-cards.ordered-list--wide.ordered-list--rodeo-dust
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Именной банный
+                  br
+                  | набор
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Приоритетное бронирование
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Клубный день
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Индивидуальный набор косметики
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Скидка&nbsp;10% на&nbsp;все банные услуги
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent 4&nbsp;выездных мероприятия&nbsp;в&nbsp;год
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Валет-паркинг
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Консьерж-сервис
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Личный комьюнити-менеджер
+              li.ordered-list__item
+                .ordered-list__num
+                  .ordered-list__dot
+                p.title.title--xxs-2.title--white-with-accent Доступ к закрытому
+                  br
+                  | чату
+      div(data-animate)
+        section.section.section--dark.section--padding-very-low.membership.fib.d-200
+          .container
+            h2.subtitle.subtitle--white условия вступления в клуб
+            .membership__price 250 000 ₽
+            .membership__text-block
+              p.title.title--xxs-3.title--white-with-accent Членство в&nbsp;клубе бесплатное
+              p.text.text--body.text--white-opacity Для получения клубной карты Siberia необходимо внести депозит в&nbsp;250&nbsp;000&nbsp;₽ на&nbsp;баланс клубной карты.
+      div(data-animate)
+        section.section.section--wide.section--dark.section--padding-bottom-low.application-for-membership.fib.d-200
+          .container
+            .section__top
+              h2.subtitle.subtitle--white заявка на&nbsp;звонок
+              .section__heading
+                p.title.title--s.title--white-with-accent.title--accent-rodeo-dust Заявка
+                  span.accent  на&nbsp;вступление в&nbsp;клуб
+                p.text.text--body.text--white-opacity.application-for-membership__heading-text  Оставьте контакты и&nbsp;наш менеджер свяжется с&nbsp;вами или звоните по&nbsp;номеру&nbsp;
+                  +link("tel:+79032995755", "+7 903 299 57 55").link--white.link--hover-rodeo-dust.link--fw-500
+            +bottom-block({name: "Константин Константинопольский", position: "Менеджер по&nbsp;работе с&nbsp;членами клуба", isForm: true, title: "Заявка отправлена", text: "Спасибо за обращение. Мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время.", bg: {name: "club", format: "jpg", width: 700, height: 467}, id: "submit_form_club"}).bottom-block--dark.bottom-block--wrapper-np.bottom-block--not-manager
+              block form
+                +form({name: "Константин Константинопольский", position: "Менеджер по работе с клиентами", buttonClass: "btn--reverse", linkClass: "link--hover-rodeo-dust", action: "./php_mailer_club/send.php", isOferta: true})(data-callback="contacts").form--three-column.form--dark
+                  +custom-input({inputLabel: "Фамилия, имя, отчество", inputId: "club-name", inputName: "name", inputError: "Фамилия, имя, отчество"})(data-validate-type="text").custom-input--dark
+                  +custom-input({inputLabel: "Телефон", inputId: "phone", inputName: "club-phone", inputError: "Телефон"})(data-validate-type="phone").custom-input--dark
+                  +custom-input({inputLabel: "Email", inputId: "email", inputName: "club-email", inputError: "Email"})(data-validate-type="email").custom-input--dark
+                  +custom-input({inputLabel: "Город", inputId: "city", inputName: "club-city", inputError: "Город"})(data-validate-type="text").custom-input--dark
+
+block modals
+  +modal("modal--no-scale modal--map")(data-modal="map")
+    +modal-map()
+  +modal("modal--no-scale modal--call modal--call-dark")(data-modal="call")
+    +modal-call(true).modal-call--dark

@@ -34,6 +34,7 @@ import {initMobileSlider} from './modules/sliders/init-mobile-slider';
 import {initPlayer} from './modules/init-player';
 import {initContactsSlider} from './modules/sliders/init-contacts-slider';
 import {screenHeight} from './modules/init-screen-height';
+import {setDefaultSertificat} from './sertificats/sertificats';
 
 // ---------------------------------
 
@@ -65,6 +66,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initMoveTo();
   initIntroSlider();
   initAnimateCircleText();
+  setDefaultSertificat();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
@@ -84,6 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initInnerContactsMap();
     initPlayer();
+    setDefaultSertificat();
   });
 });
 

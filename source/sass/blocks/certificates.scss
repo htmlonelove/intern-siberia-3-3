@@ -68,6 +68,7 @@
     }
 
     &--gift {
+      animation: fade-in-from-none 0.5s ease-in-out;
       display: none;
       flex-wrap: wrap;
       margin: size(-32px) 0 size(48px) 0;

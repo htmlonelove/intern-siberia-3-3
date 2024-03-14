@@ -2,6 +2,7 @@ let isPaperSerificate = false;
 let isHorizontalPosition = false;
 let isGift = false;
 let currentСertificateNumber = 1;
+const certificateForm = document.querySelector('form[action="/api/buy/certificate"]');
 const selectedPrice = document.querySelector('[data-price-value]');
 const giftFieldset = document.querySelector('[data-certificates="gift"]');
 const giftCheckbox = document.querySelector('[data-certificates="toggle"]').firstElementChild;
@@ -11,6 +12,8 @@ const СertificateList = document.querySelectorAll('input[name="certificate-opti
 const СertificatesContainer = document.querySelector('.certificates__options');
 const priceList = document.querySelectorAll('.certificate-option__text');
 const nameInput = document.querySelector('input[name="certificates-name"]');
+const phoneInput = document.querySelector('input[name="certificates-phone"]');
+const emailInput = document.querySelector('input[name="certificates-email"]');
 
 //модалка - сертификат
 const previewButton = document.querySelector('[data-open-modal="certificate"]');
@@ -33,8 +36,11 @@ function setDefaultСertificate() {
   selectedPrice.textContent = priceList[0].textContent;
 }
 
+//
+
 // открывает/закрывает дополнительные поля формы для подарочного сертификата
 // + меняет логическую переменную  ?это подарок? (по умолчанию = она в false = не подарок)
+// + ставит / снимает data-required атрибут с полей name/phone/email
 function switchGiftFieldset() {
   if (getComputedStyle(giftFieldset).display === 'none') {
     giftFieldset.style.display = 'block';
@@ -43,8 +49,14 @@ function switchGiftFieldset() {
   }
   if (isGift) {
     isGift = false;
+    nameInput.parentElement.parentElement.setAttribute('data-required', '');
+    phoneInput.parentElement.parentElement.setAttribute('data-required', '');
+    emailInput.parentElement.parentElement.setAttribute('data-required', '');
   } else {
     isGift = true;
+    nameInput.parentElement.parentElement.removeAttribute('data-required');
+    phoneInput.parentElement.parentElement.removeAttribute('data-required');
+    emailInput.parentElement.parentElement.removeAttribute('data-required');
   }
 }
 
@@ -74,6 +86,8 @@ function changeSelectedPrice(evt) {
 
 // генерирует сертификат в соответствии с выбранными параметрами [в момент нажатия кнопки 'посмотреть сертификат']
 function generateСertificate() {
+  //проводим валидацию формы
+  // window.form.validateForm(certificateForm);
   // ориентируем сертификат: вертикальный/горизонтальный
   if (isHorizontalPosition) {
     if (СertificateModal.classList.contains('is-vertical')) {

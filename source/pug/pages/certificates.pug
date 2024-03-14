@@ -58,7 +58,7 @@ block main
               span.accent Подарите посещение
               |  Siberia самым важным людям
             p.certificates__text.text.text--body Новый опыт — лучший подарок, а посещение Siberia запомнится надолго.
-            +form({isCertificates: true, action: "/api/buy/certificate", btnText: "Перейти к оплате", btnTextMob: "Оплатить"})(data-animate, data-certificates="parent", data-callback="base")
+            +form({isCertificates: true, action: "/api/buy/certificate", btnText: "Перейти к оплате", btnTextMob: "Оплатить"})(data-animate, data-certificates="parent", data-callback="base", data-form-validate="data-form-validate")
               fieldset.certificates__fieldset.fib
                 p.subtitle Выберите сумму сертификата
                 .certificates__options(data-validate-type="toggle-group")
@@ -77,9 +77,9 @@ block main
                 +custom-toggle({inputLabel: "Сертификат в подарок (получатель&nbsp;другой человек)"})(data-certificates="toggle").custom-toggle--checkbox.fib
 
               fieldset.certificates__fieldset.certificates__fieldset--gift(data-certificates="gift")
-                +custom-input({inputLabel: "Имя получателя", inputId: "name-gift", inputName: "certificates-reciever-name", inputError: "Имя получателя"})(data-validate-type="text", data-limitations="letters", data-client="name")
+                +custom-input({inputLabel: "Имя получателя", inputId: "name-gift", inputName: "certificates-reciever-name", inputError: "Имя получателя"})(data-validate-type="text", data-limitations="letters", data-client="name", data-required)
                 .certificates__field-wrapper
-                  +custom-input({inputLabel: "Телефон получателя", inputId: "phone-gift", inputName: "certificates-reciever-phone", inputError: "Телефон получателя"})(data-validate-type="phone", data-client="phone")
+                  +custom-input({inputLabel: "Телефон получателя", inputId: "phone-gift", inputName: "certificates-reciever-phone", inputError: "Телефон получателя"})(data-validate-type="phone", data-client="phone", data-required)
                   p.text.text--small Телефон необходим для привязки к нему номера&nbsp;сертификата
                 +custom-textarea({inputLabel: "Сообщение на сертификате (до&nbsp;128&nbsp;символов)", inputId: "message", inputName: "certificates-comment", inputMaxLength: 128})
 

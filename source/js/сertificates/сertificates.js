@@ -1,35 +1,35 @@
 let isPaperSerificate = false;
 let isHorizontalPosition = false;
 let isGift = false;
-let currentSertificateNumber = 1;
+let currentСertificateNumber = 1;
 const selectedPrice = document.querySelector('[data-price-value]');
 const giftFieldset = document.querySelector('[data-certificates="gift"]');
 const giftCheckbox = document.querySelector('[data-certificates="toggle"]').firstElementChild;
 const paperCheckbox = giftCheckbox.parentElement.previousElementSibling;
 const orientationRadio = document.querySelector('.certificates__orientation');
-const sertificateList = document.querySelectorAll('input[name="certificate-option"]');
-const sertificatesContainer = document.querySelector('.certificates__options');
+const СertificateList = document.querySelectorAll('input[name="certificate-option"]');
+const СertificatesContainer = document.querySelector('.certificates__options');
 const priceList = document.querySelectorAll('.certificate-option__text');
 const nameInput = document.querySelector('input[name="certificates-name"]');
 
 //модалка - сертификат
 const previewButton = document.querySelector('[data-open-modal="certificate"]');
-const sertificateModal = document.querySelector('.modal-certificate');
-const sertificateDeposit = document.querySelector('[data-certificate="deposit"]');
-const sertificateMessage = document.querySelector('[data-certificate="message"]');
-const sertificateMessageAppeal = sertificateMessage.textContent.slice(0, 8);
+const СertificateModal = document.querySelector('.modal-certificate');
+const СertificateDeposit = document.querySelector('[data-certificate="deposit"]');
+const СertificateMessage = document.querySelector('[data-certificate="message"]');
+const СertificateMessageAppeal = СertificateMessage.textContent.slice(0, 8);
 
 // листенеры на чекбоксы и радио и кнопки
 paperCheckbox.addEventListener('change', switchSertificatType);
 giftCheckbox.addEventListener('change', switchGiftFieldset);
 orientationRadio.addEventListener('change', switchSertificatOrientation);
-sertificatesContainer.addEventListener('change', changeSelectedPrice);
-previewButton.addEventListener('click', generateSertificate);
+СertificatesContainer.addEventListener('change', changeSelectedPrice);
+previewButton.addEventListener('click', generateСertificate);
 
 
 // устанавливает выбранный по умолчанию сертификат
-function setDefaultSertificate() {
-  sertificateList[0].checked = true;
+function setDefaultСertificate() {
+  СertificateList[0].checked = true;
   selectedPrice.textContent = priceList[0].textContent;
 }
 
@@ -68,25 +68,27 @@ function switchSertificatType() {
 
 // приводит цену сертификата рядом с кнопкой 'перейти к оплате' в соответсвие с выбранным сертификатом
 function changeSelectedPrice(evt) {
-  currentSertificateNumber = Number(evt.target.id.slice(-1));
-  selectedPrice.textContent = priceList[currentSertificateNumber - 1].textContent;
+  currentСertificateNumber = Number(evt.target.id.slice(-1));
+  selectedPrice.textContent = priceList[currentСertificateNumber - 1].textContent;
 }
 
 // генерирует сертификат в соответствии с выбранными параметрами [в момент нажатия кнопки 'посмотреть сертификат']
-function generateSertificate() {
+function generateСertificate() {
+  // ориентируем сертификат: вертикальный/горизонтальный
   if (isHorizontalPosition) {
-    if (sertificateModal.classList.contains('is-vertical')) {
-      sertificateModal.classList.remove('is-vertical');
+    if (СertificateModal.classList.contains('is-vertical')) {
+      СertificateModal.classList.remove('is-vertical');
     }
-    sertificateModal.classList.add('is-horisontal');
+    СertificateModal.classList.add('is-horisontal');
   } else {
-    if (sertificateModal.classList.contains('is-horisontal')) {
-      sertificateModal.classList.remove('is-horisontal');
+    if (СertificateModal.classList.contains('is-horisontal')) {
+      СertificateModal.classList.remove('is-horisontal');
     }
-    sertificateModal.classList.add('is-vertical');
+    СertificateModal.classList.add('is-vertical');
   }
-  sertificateDeposit.textContent = priceList[currentSertificateNumber - 1].textContent;
-
+  // выставляем номинал сертификата
+  СertificateDeposit.textContent = priceList[currentСertificateNumber - 1].textContent;
+  // готовим текста для сертификата
   if (isGift) {
     const recieverNameInput = document.querySelector('input[name="certificates-reciever-name"]'); //дополнительные поля формы
     const messageInput = document.querySelector('textarea[name="certificates-comment"]'); //дополнительные поля формы
@@ -94,10 +96,10 @@ function generateSertificate() {
     if (messageInput.value.length === 0) {
       comma = '';
     }
-    sertificateMessage.textContent = `${recieverNameInput.value}${comma}${messageInput.value}`;
+    СertificateMessage.textContent = `${recieverNameInput.value}${comma}${messageInput.value}`;
   } else {
-    sertificateMessage.textContent = `${sertificateMessageAppeal}${nameInput.value}!`;
+    СertificateMessage.textContent = `${СertificateMessageAppeal}${nameInput.value}!`;
   }
 }
 
-export {setDefaultSertificate};
+export {setDefaultСertificate};

@@ -58,7 +58,7 @@ block main
               span.accent Подарите посещение
               |  Siberia самым важным людям
             p.certificates__text.text.text--body Новый опыт — лучший подарок, а посещение Siberia запомнится надолго.
-            +form({isCertificates: true, action: "/api/buy/certificate", btnText: "Перейти к оплате", btnTextMob: "Оплатить"})(data-animate, data-certificates="parent", data-callback="certificate")
+            +form({isCertificates: true, action: "/api/buy/certificate", btnText: "Перейти к оплате", btnTextMob: "Оплатить"})(data-animate, data-certificates="parent", data-callback="base")
               fieldset.certificates__fieldset.fib
                 p.subtitle Выберите сумму сертификата
                 .certificates__options(data-validate-type="toggle-group")
@@ -68,9 +68,9 @@ block main
               fieldset.certificates__fieldset.fib
                 p.subtitle Заполните форму
                 .certificates__wrapper
-                  +custom-input({inputLabel: "Ваши имя и фамилия", inputId: "name", inputName: "certificates-name", inputError: "Ваши имя и фамилия"})(data-validate-type="text", data-limitations="letters", data-client="name")
-                  +custom-input({inputLabel: "Телефон", inputId: "phone", inputName: "certificates-phone", inputError: "Телефон"})(data-validate-type="phone", data-client="phone")
-                  +custom-input({inputLabel: "Email", inputId: "email", inputName: "certificates-email", inputError: "Email"})(data-validate-type="email", data-client="email")
+                  +custom-input({inputLabel: "Ваши имя и фамилия", inputId: "name", inputName: "certificates-name", inputError: "Ваши имя и фамилия"})(data-validate-type="text", data-limitations="letters", data-client="name", data-required)
+                  +custom-input({inputLabel: "Телефон", inputId: "phone", inputName: "certificates-phone", inputError: "Телефон"})(data-validate-type="phone", data-client="phone", data-required)
+                  +custom-input({inputLabel: "Email", inputId: "email", inputName: "certificates-email", inputError: "Email"})(data-validate-type="email", data-client="email", data-required)
 
                 +custom-toggle({inputLabel: "Хочу физический сертификат", inputId: "real"}).custom-toggle--checkbox.fib
 

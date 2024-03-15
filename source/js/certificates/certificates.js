@@ -64,8 +64,8 @@ function setGestureListeners() {
   // certificateModal.addEventListener('gesturechange', gestureCertificate);
   // certificateModal.addEventListener('gestureend', gestureEndCertificate);
 
-  certificateModal.addEventListener('touchstart', start, false);
-  certificateModal.addEventListener('touchmove', move, false);
+  certificateModal.addEventListener('touchstart', startScale, false);
+  certificateModal.addEventListener('touchmove', moveScale, false);
   // certificateModal.addEventListener('gesturechange', (event) => {
   //   // Your code handling the gesturechange event goes here
   //   // event.target.innerHTML = ' Scale: ' + Math.round((event.scale * scale) * 100) / 100;
@@ -205,7 +205,7 @@ function generateCertificate() {
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-function start(evt) {
+function startScale(evt) {
   if (evt.targetTouches.length === 2) {
     previousDistance2 = 0; // обнуляем исходные данные для нового жеста
     // Проверяем два ли пальца на экране
@@ -217,7 +217,7 @@ function start(evt) {
   }
 }
 
-function move(evt) {
+function moveScale(evt) {
   if (evt.targetTouches.length === 2 && evt.changedTouches.length === 2) {
     // Проверяем, совпадают ли касания
     currentDistance2 = Math.hypot(

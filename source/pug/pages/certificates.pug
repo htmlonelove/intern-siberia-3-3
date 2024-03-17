@@ -77,9 +77,9 @@ block main
                 +custom-toggle({inputLabel: "Сертификат в подарок (получатель&nbsp;другой человек)"})(data-certificates="toggle").custom-toggle--checkbox.fib
 
               fieldset.certificates__fieldset.certificates__fieldset--gift(data-certificates="gift")
-                +custom-input({inputLabel: "Имя получателя", inputId: "name-gift", inputName: "certificates-reciever-name", inputError: "Имя получателя"})(data-validate-type="text", data-limitations="letters", data-client="name", data-required)
+                +custom-input({inputLabel: "Имя получателя", inputId: "name-gift", inputName: "certificates-reciever-name", inputError: "Имя получателя"})(data-validate-type="text", data-limitations="letters", data-client="name")
                 .certificates__field-wrapper
-                  +custom-input({inputLabel: "Телефон получателя", inputId: "phone-gift", inputName: "certificates-reciever-phone", inputError: "Телефон получателя"})(data-validate-type="phone", data-client="phone", data-required)
+                  +custom-input({inputLabel: "Телефон получателя", inputId: "phone-gift", inputName: "certificates-reciever-phone", inputError: "Телефон получателя"})(data-validate-type="phone", data-client="phone")
                   p.text.text--small Телефон необходим для привязки к нему номера&nbsp;сертификата
                 +custom-textarea({inputLabel: "Сообщение на сертификате (до&nbsp;128&nbsp;символов)", inputId: "message", inputName: "certificates-comment", inputMaxLength: 128})
 

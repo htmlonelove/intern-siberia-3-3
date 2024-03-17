@@ -5,10 +5,10 @@ let isPaperSerificate = false;
 let isHorizontalPosition = false;
 let isGift = false;
 let currentCertificateNumber = 1;
-// let rotation = 0;
-// let scale = 1;
 let metaContent;
-// const certificateForm = document.querySelector('form[action="/api/buy/certificate"]');
+
+const certificateForm = document.querySelector('form[action="/api/buy/certificate"]');
+const FORM_ACTION = certificateForm.action;
 const selectedPrice = document.querySelector('[data-price-value]');
 const giftFieldset = document.querySelector('[data-certificates="gift"]');
 const giftCheckbox = document.querySelector('[data-certificates="toggle"]').firstElementChild;
@@ -20,22 +20,22 @@ const priceList = document.querySelectorAll('.certificate-option__text');
 const nameInput = document.querySelector('input[name="certificates-name"]');
 const phoneInput = document.querySelector('input[name="certificates-phone"]');
 const emailInput = document.querySelector('input[name="certificates-email"]');
+const recieverNameInput = document.querySelector('input[name="certificates-reciever-name"]');
+const recieverPhoneInput = document.querySelector('input[name="certificates-reciever-phone"]');
+const messageInput = document.querySelector('textarea[name="certificates-comment"]');
 
-//модалка - сертификат
+// Модалка - сертификат
 const metaScaleInstruction = document.querySelector('meta[name="viewport"]');
-console.log('metaScaleInstruction = ' + metaScaleInstruction);
-console.log('metaScaleInstruction.content = ' + metaScaleInstruction.content);
-
 const previewButton = document.querySelector('[data-open-modal="certificate"]');
 const closeButton = document.querySelector('.modal__close-btn');
 const certificateOverlay = document.querySelector('.modal__overlay');
-const certificateModal = document.querySelector('.modal__content');
+const certificateModalContent = document.querySelector('.modal__content');
+const certificateModal = document.querySelector('.modal-certificate');
 const certificateDeposit = document.querySelector('[data-certificate="deposit"]');
 const certificateMessage = document.querySelector('[data-certificate="message"]');
 const certificateMessageAppeal = certificateMessage.textContent.slice(0, 8);
 
-
-// листенеры на чекбоксы,радио,кнопки, оверлей и на превью сертификата
+// Листенеры на чекбоксы,радио,кнопки, оверлей и на превью сертификата
 paperCheckbox.addEventListener('change', switchSertificatType);
 giftCheckbox.addEventListener('change', switchGiftFieldset);
 orientationRadio.addEventListener('change', switchSertificatOrientation);
@@ -44,53 +44,33 @@ previewButton.addEventListener('click', generateCertificate);
 closeButton.addEventListener('click', allowPageScale);
 certificateOverlay.addEventListener('click', allowPageScale);
 
+// Листенер на submit формы
+certificateForm.addEventListener('submit', (evt) => {
+  evt.preventDefault();
+  if (window.form.validateForm(certificateForm)) {
+    sendData(new FormData(evt.target));
+  }
+});
 
-// запрещает масштабирование страницы
+// Запрещает масштабирование страницы
 function denyPageScale() {
   metaContent = metaScaleInstruction.content + ', maximum-scale=1.0, user-scalable=no';
-  console.log('metaContent deny = ' + metaContent);
   metaScaleInstruction.setAttribute('content', metaContent);
 }
 
-// разрешает масштабирование страницы
+// Разрешает масштабирование страницы
 function allowPageScale() {
   metaContent = metaScaleInstruction.content.slice(0, -37);
-  console.log('metaContent allow = ' + metaContent);
   metaScaleInstruction.setAttribute('content', metaContent);
 }
 
-// ставит листенеры на движения пальцев поверх контента модалки с превью сертификата
+// Ставит листенеры на движения пальцев поверх контента модалки с превью сертификата
 function setGestureListeners() {
-  // certificateModal.addEventListener('gesturechange', gestureCertificate);
-  // certificateModal.addEventListener('gestureend', gestureEndCertificate);
-
-  certificateModal.addEventListener('touchstart', startScale, false);
-  certificateModal.addEventListener('touchmove', moveScale, false);
-  // certificateModal.addEventListener('gesturechange', (event) => {
-  //   // Your code handling the gesturechange event goes here
-  //   // event.target.innerHTML = ' Scale: ' + Math.round((event.scale * scale) * 100) / 100;
-  //   // event.target.style.webkitTransform = ' scale(' + event.scale * scale + ')';
-  //   event.target.style.webkitTransform = ' scale(' + event.scale * scale + ')';
-  //   // eslint-disable-next-line no-alert
-  //   alert('YES!');
-  // });
-
-  // certificateModal.addEventListener('gestureend', (event) => {
-  // // Your code handling the gesturechange event goes here
-  //   scale = event.scale * scale;
-  //   // eslint-disable-next-line no-alert
-  //   alert('YES!');
-  // });
+  certificateModalContent.addEventListener('touchstart', startScale, false);
+  certificateModalContent.addEventListener('touchmove', moveScale, false);
 }
 
-// удаляет листенеры на движения пальцев поверх контента модалки с превью сертификата
-// function removeGestureListeners() {
-//   сertificateModal.removeEventListener('gesturechange', gestureCertificate);
-//   сertificateModal.removeEventListener('gestureend', gestureEndCertificate);
-//   allowPageScale();
-// }
-
-// устанавливает выбранный по умолчанию сертификат
+// Инициализирует страницу сертификаты
 function initCertificates() {
   certificateList[0].checked = true;
   selectedPrice.textContent = priceList[0].textContent;
@@ -98,7 +78,7 @@ function initCertificates() {
   setGestureListeners();
 }
 
-// открывает/закрывает дополнительные поля формы для подарочного сертификата
+// Открывает/закрывает дополнительные поля формы для подарочного сертификата
 // + меняет логическую переменную  ?это подарок? (по умолчанию = она в false = не подарок)
 // + ставит / снимает data-required атрибут с полей name/phone/email
 function switchGiftFieldset() {
@@ -112,15 +92,23 @@ function switchGiftFieldset() {
     nameInput.parentElement.parentElement.setAttribute('data-required', '');
     phoneInput.parentElement.parentElement.setAttribute('data-required', '');
     emailInput.parentElement.parentElement.setAttribute('data-required', '');
+    if (recieverNameInput.parentElement.parentElement.hasAttribute('data-required')) {
+      recieverNameInput.parentElement.parentElement.removeAttribute('data-required');
+    }
+    if (recieverPhoneInput.parentElement.parentElement.hasAttribute('data-required')) {
+      recieverPhoneInput.parentElement.parentElement.removeAttribute('data-required');
+    }
   } else {
     isGift = true;
     nameInput.parentElement.parentElement.removeAttribute('data-required');
     phoneInput.parentElement.parentElement.removeAttribute('data-required');
     emailInput.parentElement.parentElement.removeAttribute('data-required');
+    recieverNameInput.parentElement.parentElement.setAttribute('data-required', '');
+    recieverPhoneInput.parentElement.parentElement.setAttribute('data-required', '');
   }
 }
 
-// меняет логическую переменную, от которой зависит ориентация сертификата (по умолчанию = false = вертикальная )
+// Меняет логическую переменную, от которой зависит ориентация сертификата (по умолчанию = false = вертикальная )
 function switchSertificatOrientation() {
   if (isHorizontalPosition) {
     isHorizontalPosition = false;
@@ -129,7 +117,7 @@ function switchSertificatOrientation() {
   }
 }
 
-// меняет логическую переменную-запрос на бумажный сертификат (по умолчанию = false = бумажный сертификат не нужен) )
+// Меняет логическую переменную-запрос на бумажный сертификат (по умолчанию = false = бумажный сертификат не нужен) )
 function switchSertificatType() {
   if (isPaperSerificate) {
     isPaperSerificate = false;
@@ -138,7 +126,7 @@ function switchSertificatType() {
   }
 }
 
-// приводит цену сертификата рядом с кнопкой 'перейти к оплате' в соответсвие с выбранным сертификатом
+// Приводит цену сертификата рядом с кнопкой 'перейти к оплате' в соответсвие с выбранным сертификатом
 function changeSelectedPrice(evt) {
   currentCertificateNumber = Number(evt.target.id.slice(-1));
   selectedPrice.textContent = priceList[currentCertificateNumber - 1].textContent;
@@ -146,9 +134,7 @@ function changeSelectedPrice(evt) {
 
 // генерирует сертификат в соответствии с выбранными параметрами [в момент нажатия кнопки 'посмотреть сертификат']
 function generateCertificate() {
-  // проводим валидацию формы
-  // window.form.validateForm(certificateForm);
-
+  certificateMessage.textContent = '';
   // запрещаем scale страницы
   denyPageScale();
 
@@ -168,43 +154,24 @@ function generateCertificate() {
   certificateDeposit.textContent = priceList[currentCertificateNumber - 1].textContent;
   // готовим текста для сертификата
   if (isGift) {
-    const recieverNameInput = document.querySelector('input[name="certificates-reciever-name"]'); //дополнительные поля формы
-    const messageInput = document.querySelector('textarea[name="certificates-comment"]'); //дополнительные поля формы
+
     let comma = ', ';
     if (messageInput.value.length === 0) {
       comma = '';
     }
     certificateMessage.textContent = `${recieverNameInput.value}${comma}${messageInput.value}`;
   } else {
-    certificateMessage.textContent = `${certificateMessageAppeal}${nameInput.value}!`;
+    if (nameInput.value.length === 0) {
+      certificateMessage.textContent = '';
+    } else {
+      certificateMessage.textContent = `${certificateMessageAppeal}${nameInput.value} !`;
+    }
   }
 }
 
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-// // обработчик жестов пальцами
-// function gestureCertificate(event) {
-//   event.target.innerHTML = ' Scale: ' + Math.round((event.scale * scale) * 100) / 100;
-//   // event.target.style.webkitTransform = ' scale(' + event.scale * scale + ')';
-//   certificateDeposit.style.webkitTransform = ' scale(' + event.scale * scale + ')';
-//   alert('YES!');
-//   // console.log('Rotation: ' +
-//   // Math.round((event.rotation + rotation) * 100) / 100
-//   // + ' Scale: ' + Math.round((event.scale * scale) * 100) / 100);
-//   // event.target.style.webkitTransform = 'rotate(' + (event.rotation + rotation) % 360
-//   // + 'deg)' + ' scale(' + event.scale * scale + ')';
-// }
-
-// // обработчик окончания жеста
-// function gestureEndCertificate(event) {
-//   // rotation = event.rotation + rotation;
-//   scale = event.scale * scale;
-// }
-
-// //////////////////////////////////////////////////////////////////////////////////////////////////
-
-
+// Начало жеста двумя пальцами
 function startScale(evt) {
   if (evt.targetTouches.length === 2) {
     previousDistance2 = 0; // обнуляем исходные данные для нового жеста
@@ -217,6 +184,7 @@ function startScale(evt) {
   }
 }
 
+// Функция масштабирования через жест двумя пальцами по экрану
 function moveScale(evt) {
   if (evt.targetTouches.length === 2 && evt.changedTouches.length === 2) {
     // Проверяем, совпадают ли касания
@@ -232,25 +200,46 @@ function moveScale(evt) {
 
     if (currentDistance1 > currentDistance2) {
       // Если пальцы сейчас находятся ближе, чем когда они впервые коснулись экрана, они сжимаются (уменьшаем масштаб).
-      // console.log('dist2 = ' + dist2);
-      // console.log('previous dist2 = ' + previousDist2);
-      // console.log('dist2 / previousDist2 = ' + (2 - previousDist2 / dist2).toFixed(1).toString());
-      // console.log('уменьшение масштаба');
       if (2 - previousDistance2 / currentDistance2 > 0.3) { // ограничение минимального масштаба
-        certificateModal.style.webkitTransform = ' scale(' + (2 - previousDistance2 / currentDistance2).toFixed(1).toString() + ')';
+        certificateModalContent.style.webkitTransform = ' scale(' + (2 - previousDistance2 / currentDistance2).toFixed(1).toString() + ')';
       }
     }
 
     if (currentDistance1 < currentDistance2) {
       // Если пальцы расставлены дальше, чем при первом прикосновении к экрану, они выполняют жест увеличения (увеличиваем масштаб).
-      // console.log('dist2 = ' + dist2);
-      // console.log('previous dist2 = ' + previousDist2);
-      // console.log('dist2 / previousDist2 = ' + (dist2 / previousDist2).toFixed(1).toString());
-      // console.log('увеличение масштаба');
-      certificateModal.style.webkitTransform = ' scale(' + (currentDistance2 / previousDistance2).toFixed(1).toString() + ')';
+      certificateModalContent.style.webkitTransform = ' scale(' + (currentDistance2 / previousDistance2).toFixed(1).toString() + ')';
     }
   }
 }
+
+
+// Функция показа страницы-ошибки
+function showFormError() {
+  window.open('./certificates-error.html');
+}
+
+// Функция показа страницы успешной отправки формы
+function showFormSuccess() {
+  window.open('./certificates-success.html');
+  certificateForm.reset();
+}
+
+// Функция отправки данных формы на сервер
+const sendData = (body) => fetch(`${FORM_ACTION}`,
+    {
+      method: 'POST',
+      body,
+    })
+    .then((response) => {
+      if (!response.ok) {
+        showFormError();
+      } else {
+        showFormSuccess();
+      }
+    })
+    .catch(() => {
+      showFormError();
+    });
 
 
 export {initCertificates};

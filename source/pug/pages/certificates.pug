@@ -74,7 +74,7 @@ block main
 
                 +custom-toggle({inputLabel: "Хочу физический сертификат", inputId: "real"}).custom-toggle--checkbox.fib
 
-                +custom-toggle({inputLabel: "Сертификат в подарок (получатель&nbsp;другой человек)"})(data-certificates="toggle").custom-toggle--checkbox.fib
+                +custom-toggle({inputLabel: "Сертификат в подарок (получатель&nbsp;другой человек)", inputId: "gift"})(data-certificates="toggle").custom-toggle--checkbox.fib
 
               fieldset.certificates__fieldset.certificates__fieldset--gift(data-certificates="gift")
                 +custom-input({inputLabel: "Имя получателя", inputId: "name-gift", inputName: "certificates-reciever-name", inputError: "Имя получателя"})(data-validate-type="text", data-limitations="letters", data-client="name")

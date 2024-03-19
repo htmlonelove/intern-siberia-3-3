@@ -7,12 +7,12 @@ let isGift = false;
 let currentCertificateNumber = 1;
 let metaContent;
 
+
 const certificateForm = document.querySelector('form[action="/api/buy/certificate"]');
-const FORM_ACTION = certificateForm.action;
 const selectedPrice = document.querySelector('[data-price-value]');
 const giftFieldset = document.querySelector('[data-certificates="gift"]');
-const giftCheckbox = document.querySelector('[data-certificates="toggle"]').firstElementChild;
-const paperCheckbox = giftCheckbox.parentElement.previousElementSibling;
+const giftCheckbox = document.querySelector('#gift');
+const paperCheckbox = document.querySelector('#real');
 const orientationRadio = document.querySelector('.certificates__orientation');
 const certificateList = document.querySelectorAll('input[name="certificate-option"]');
 const certificatesContainer = document.querySelector('.certificates__options');
@@ -33,24 +33,39 @@ const certificateModalContent = document.querySelector('.modal__content');
 const certificateModal = document.querySelector('.modal-certificate');
 const certificateDeposit = document.querySelector('[data-certificate="deposit"]');
 const certificateMessage = document.querySelector('[data-certificate="message"]');
-const certificateMessageAppeal = certificateMessage.textContent.slice(0, 8);
 
-// Листенеры на чекбоксы,радио,кнопки, оверлей и на превью сертификата
-paperCheckbox.addEventListener('change', switchSertificatType);
-giftCheckbox.addEventListener('change', switchGiftFieldset);
-orientationRadio.addEventListener('change', switchSertificatOrientation);
-certificatesContainer.addEventListener('change', changeSelectedPrice);
-previewButton.addEventListener('click', generateCertificate);
-closeButton.addEventListener('click', allowPageScale);
-certificateOverlay.addEventListener('click', allowPageScale);
+// Функция установки листенеров на чекбоксы,радио,кнопки, оверлей и на превью сертификата
+function setAllCertificateListeners() {
+  paperCheckbox.addEventListener('change', switchSertificatType);
+  giftCheckbox.addEventListener('change', switchGiftFieldset);
+  orientationRadio.addEventListener('change', switchSertificatOrientation);
+  certificatesContainer.addEventListener('change', changeSelectedPrice);
+  previewButton.addEventListener('click', generateCertificate);
+  closeButton.addEventListener('click', allowPageScale);
+  certificateOverlay.addEventListener('click', allowPageScale);
+  certificateForm.addEventListener('submit', submitForm); // Листенер на submit формы
+}
 
-// Листенер на submit формы
-certificateForm.addEventListener('submit', (evt) => {
+// Функция отправки формы
+function submitForm(evt) {
   evt.preventDefault();
   if (window.form.validateForm(certificateForm)) {
     sendData(new FormData(evt.target));
   }
-});
+}
+
+// Инициализирует страницу сертификаты
+function initCertificates() {
+  window.onload = function () {
+    if (window.location.href.indexOf('certificates.html') > -1) {
+      certificateList[0].checked = true;
+      selectedPrice.textContent = priceList[0].textContent;
+      // ставим листенеры на масштабирование сертификата жестом пальцев
+      setGestureListeners();
+      setAllCertificateListeners();
+    }
+  };
+}
 
 // Запрещает масштабирование страницы
 function denyPageScale() {
@@ -68,14 +83,6 @@ function allowPageScale() {
 function setGestureListeners() {
   certificateModalContent.addEventListener('touchstart', startScale, false);
   certificateModalContent.addEventListener('touchmove', moveScale, false);
-}
-
-// Инициализирует страницу сертификаты
-function initCertificates() {
-  certificateList[0].checked = true;
-  selectedPrice.textContent = priceList[0].textContent;
-  // ставим листенеры на масштабирование сертификата жестом пальцев
-  setGestureListeners();
 }
 
 // Открывает/закрывает дополнительные поля формы для подарочного сертификата
@@ -100,9 +107,22 @@ function switchGiftFieldset() {
     }
   } else {
     isGift = true;
+    if (nameInput.parentElement.parentElement.classList.contains('is-invalid') || emailInput.parentElement.parentElement.classList.contains('is-invalid') || phoneInput.parentElement.parentElement.classList.contains('is-invalid')) {
+      recieverPhoneInput.parentElement.parentElement.classList.add('is-invalid');
+      recieverNameInput.parentElement.parentElement.classList.add('is-invalid');
+    }
     nameInput.parentElement.parentElement.removeAttribute('data-required');
     phoneInput.parentElement.parentElement.removeAttribute('data-required');
     emailInput.parentElement.parentElement.removeAttribute('data-required');
+    if (nameInput.parentElement.parentElement.classList.contains('is-invalid')) {
+      nameInput.parentElement.parentElement.classList.remove('is-invalid');
+    }
+    if (emailInput.parentElement.parentElement.classList.contains('is-invalid')) {
+      emailInput.parentElement.parentElement.classList.remove('is-invalid');
+    }
+    if (phoneInput.parentElement.parentElement.classList.contains('is-invalid')) {
+      phoneInput.parentElement.parentElement.classList.remove('is-invalid');
+    }
     recieverNameInput.parentElement.parentElement.setAttribute('data-required', '');
     recieverPhoneInput.parentElement.parentElement.setAttribute('data-required', '');
   }
@@ -164,7 +184,7 @@ function generateCertificate() {
     if (nameInput.value.length === 0) {
       certificateMessage.textContent = '';
     } else {
-      certificateMessage.textContent = `${certificateMessageAppeal}${nameInput.value} !`;
+      certificateMessage.textContent = `${certificateMessage.textContent.slice(0, 8)}${nameInput.value} !`;
     }
   }
 }
@@ -215,17 +235,17 @@ function moveScale(evt) {
 
 // Функция показа страницы-ошибки
 function showFormError() {
-  window.open('./certificates-error.html');
+  window.open('./certificates-error.html', '_self');
 }
 
 // Функция показа страницы успешной отправки формы
 function showFormSuccess() {
-  window.open('./certificates-success.html');
+  window.open('./certificates-success.html', '_self');
   certificateForm.reset();
 }
 
 // Функция отправки данных формы на сервер
-const sendData = (body) => fetch(`${FORM_ACTION}`,
+const sendData = (body) => fetch(`${certificateForm.action}`,
     {
       method: 'POST',
       body,

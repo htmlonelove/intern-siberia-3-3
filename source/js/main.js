@@ -36,6 +36,8 @@ import {initContactsSlider} from './modules/sliders/init-contacts-slider';
 import {screenHeight} from './modules/init-screen-height';
 import {initCertificates} from './certificates/certificates';
 import {Form} from './vendor/form-validate/form'; // подтягиваем Валидацию
+import {initBookingBathModal} from './modules/booking/bath-modal';
+
 
 // ---------------------------------
 
@@ -91,7 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initInnerContactsMap();
     initPlayer();
-    initCertificates();
+    initBookingBathModal();
   });
 });
 

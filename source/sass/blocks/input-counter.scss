@@ -30,6 +30,7 @@
       fill: none;
       width: size(20px);
       height: size(20px);
+      pointer-events: none;
     }
 
     &:disabled {

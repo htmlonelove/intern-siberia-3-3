@@ -27,7 +27,7 @@ const syncServer = () => {
 
   gulp.watch('source/pug/**/*.pug', gulp.series(pug, refresh));
   gulp.watch('source/sass/**/*.{scss,sass}', streamStyles);
-  gulp.watch('source/js/**/*.{js}', gulp.series(compileScripts, refresh));
+  gulp.watch('source/js/**/*.js', gulp.series(compileScripts, refresh));
   gulp.watch('source/data/**/*.{js,json}', gulp.series(copy, refresh));
   gulp.watch('source/img/**/*.svg', gulp.series(copySvg, sprite, pug, refresh));
   gulp.watch('source/img/**/*.{png,jpg,webp}', gulp.series(copyImages, pug, refresh));

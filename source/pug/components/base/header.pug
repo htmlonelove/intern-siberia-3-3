@@ -115,6 +115,6 @@ mixin header(headerMods, currentUrl)
           if currentUrl === "booking.html"
             +btn({tag: "button", type: "button", text: "Забронировать баню"})(disabled).btn--top-not-square.header__btn-reserve
           else
-            //- +btn({tag: "a", href: bath ? `booking.html?${bath}` : "booking.html", text: "Забронировать баню"}).btn--top-not-square.header__btn-reserve
-            +btn({text: "Забронировать баню"})(data-open-modal="call").btn--top-not-square.header__btn-reserve
+            +btn({tag: "a", href: bath ? `booking.html?${bath}` : "booking.html", text: "Забронировать баню"}).btn--top-not-square.header__btn-reserve
+            //- +btn({text: "Забронировать баню"})(data-open-modal="call").btn--top-not-square.header__btn-reserve
     .header__overlay

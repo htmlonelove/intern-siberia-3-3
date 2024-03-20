@@ -17,7 +17,6 @@ export async function renderBaths() {
   }).catch(() => {
     throw new Error(ERROR_TEXT);
   });
-
   renderCards(baths);
 }
 

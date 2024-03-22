@@ -1,5 +1,3 @@
-import {renderCards} from './bath-cards-render';
-
 const URL = '../../../api/objects';
 const ERROR_TEXT = 'Не удалось получить данные';
 
@@ -11,12 +9,12 @@ async function getResponse(url = URL) {
   return await response.json();
 }
 
-export async function renderBaths() {
+export async function getBaths(func) {
   const baths = await getResponse().then((data) => {
     return data.data;
   }).catch(() => {
     throw new Error(ERROR_TEXT);
   });
-  renderCards(baths);
+  func(baths);
 }
 

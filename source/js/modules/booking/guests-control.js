@@ -1,7 +1,18 @@
 export const guestsQtyControl = () => {
   if (document.querySelectorAll('[data-counter="parent"]').length > 0) {
+    const DEFAULT_ADULTS_VALUE = 2;
     const decreaseBtns = document.querySelectorAll('[data-counter="decrease"]');
     const increaseBtns = document.querySelectorAll('[data-counter="increase"]');
+
+    const setDefaultValue = () => {
+      const adultsCounterContainer = document.querySelector('[data-counter-type="adults"]');
+      adultsCounterContainer.querySelector('input').value = DEFAULT_ADULTS_VALUE;
+
+      const decreaseBtn = adultsCounterContainer.querySelector('[data-counter="decrease"]');
+      decreaseBtn.removeAttribute('disabled');
+    };
+
+    setDefaultValue();
 
     decreaseBtns.forEach((btn) => {
       btn.addEventListener('click', (evt) => {

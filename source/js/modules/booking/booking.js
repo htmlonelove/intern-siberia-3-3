@@ -1,5 +1,6 @@
-import {guestsQtyControl} from './guests-qty';
-import {renderBaths} from './get-data';
+import {guestsQtyControl} from './guests-control';
+import {getBaths} from './get-data';
+import {renderCards} from './bath-cards-render';
 
 guestsQtyControl();
-renderBaths();
+getBaths(renderCards);

@@ -34,7 +34,7 @@ import {initMobileSlider} from './modules/sliders/init-mobile-slider';
 import {initPlayer} from './modules/init-player';
 import {initContactsSlider} from './modules/sliders/init-contacts-slider';
 import {screenHeight} from './modules/init-screen-height';
-import './modules/booking/booking';
+import {initBooking} from './modules/booking/booking';
 
 // ---------------------------------
 
@@ -85,6 +85,8 @@ window.addEventListener('DOMContentLoaded', () => {
     initHeader();
     initInnerContactsMap();
     initPlayer();
+
+    initBooking();
   });
 });
 

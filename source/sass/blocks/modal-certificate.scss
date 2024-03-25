@@ -229,7 +229,7 @@
       min-height: size(209px);
     }
 
-    .modal-certificate__icons  {
+    .modal-certificate__icons {
       padding: size(28px) size(24px) size(27px) size(28px);
 
       @include vp-767 {
@@ -268,7 +268,7 @@
       line-height: size(12px);
       margin-top: size(-5px);
 
-      @include vp-767  {
+      @include vp-767 {
         margin-top: size(-40px);
         font-size: size(4.5px);
         line-height: size(5px);
@@ -316,7 +316,7 @@
       text-transform: uppercase;
       max-width: size(620px);
 
-      @include vp-767  {
+      @include vp-767 {
         font-size: size(8px);
         line-height: size(9px);
       }
@@ -327,7 +327,7 @@
       line-height: size(16px);
       margin-bottom: size(-9px);
 
-      @include vp-767  {
+      @include vp-767 {
         font-size: size(5px);
         line-height: size(6px);
       }
@@ -440,7 +440,7 @@
       font-size: size(7px);
       line-height: size(9px);
 
-      @include vp-767  {
+      @include vp-767 {
         font-size: size(4.5px);
         line-height: size(5px);
       }
@@ -450,7 +450,7 @@
       font-size: size(9px);
       line-height: size(11px);
 
-      @include vp-767  {
+      @include vp-767 {
         font-size: size(6px);
         line-height: size(8px);
         margin-bottom: size(-5px);
@@ -493,7 +493,7 @@
       line-height: size(18px);
       text-transform: uppercase;
 
-      @include vp-767  {
+      @include vp-767 {
         text-transform: uppercase;
         font-size: size(10px);
         line-height: size(12px);

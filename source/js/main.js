@@ -35,6 +35,10 @@ import {initPlayer} from './modules/init-player';
 import {initContactsSlider} from './modules/sliders/init-contacts-slider';
 import {screenHeight} from './modules/init-screen-height';
 import {initBooking} from './modules/booking/booking';
+import {initCertificates} from './certificates/certificates';
+import {Form} from './vendor/form-validate/form'; // подтягиваем Валидацию
+import {initBookingBathModal} from './modules/booking/bath-modal';
+
 
 // ---------------------------------
 
@@ -66,12 +70,17 @@ window.addEventListener('DOMContentLoaded', () => {
   initMoveTo();
   initIntroSlider();
   initAnimateCircleText();
+  initCertificates();
 
   // все скрипты должны быть в обработчике 'DOMContentLoaded', но не все в 'load'
   // в load следует добавить скрипты, не участвующие в работе первого экрана
   window.addEventListener('load', () => {
-    initRotateScreen();
 
+    const form = new Form();
+    window.form = form;
+    form.init();
+
+    initRotateScreen();
     initContactsMap();
     initContactsSlider();
     cookieConsentChecker();
@@ -87,6 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initPlayer();
 
     initBooking();
+    initBookingBathModal();
   });
 });
 
